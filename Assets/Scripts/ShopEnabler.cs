@@ -8,9 +8,12 @@ public class ShopEnabler : MonoBehaviour
     public Texture2D aimTexture;
     public Texture2D cursorTexture;
 
+    Animator sellerAnimator;
+
     private void Awake()
     {
         shop = FindObjectOfType<Shop>();
+        sellerAnimator = GetComponent<Animator>();
     }
 
     private void OnMouseEnter()
@@ -39,11 +42,25 @@ public class ShopEnabler : MonoBehaviour
         {
             Cursor.SetCursor(aimTexture, new Vector2(0, 0), CursorMode.Auto);
             shop.gameObject.SetActive(false);
+            sellerAnimator.SetBool("IsClicked", true);
         }
         else
         {
             Cursor.SetCursor(cursorTexture, new Vector2(0, 0), CursorMode.Auto);
             shop.gameObject.SetActive(true);
+            sellerAnimator.SetBool("IsClicked", true);
         }
+    }
+
+    public void OpenShopFinish()
+    {
+        sellerAnimator.SetBool("IsClicked", false);
+        sellerAnimator.SetBool("ShopIsClosed", false);
+    }
+
+    public void ClosedShopFinish()
+    {
+        sellerAnimator.SetBool("IsClicked", false);
+        sellerAnimator.SetBool("ShopIsClosed", true);
     }
 }
