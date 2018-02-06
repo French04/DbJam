@@ -113,10 +113,11 @@ MonoBehaviour:
   weaponType: 0
   bullet: {fileID: 1016532901519986, guid: 09a525eb59eea6d40be10ade985047a5, type: 2}
   damage: 50
-  firePower: 2000
+  firePower: 100
   fireRate: 1
   spreadWidth: 0
   spreadBulletCount: 0
+  spreadFrequency: 1000000
 --- !u!212 &212301537827675698
 SpriteRenderer:
   m_ObjectHideFlags: 1

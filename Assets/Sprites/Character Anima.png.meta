@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 2450f60409497a643a46a3871d1c02b9
-timeCreated: 1517941002
+guid: 0a4c152ff6ba0324aac59f9ad1ff207f
+timeCreated: 1517944381
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -11,7 +11,7 @@ TextureImporter:
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 0
+    enableMipMap: 1
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -35,7 +35,7 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: -1
-    aniso: -1
+    aniso: 16
     mipBias: -1
     wrapU: 1
     wrapV: -1
@@ -82,12 +82,12 @@ TextureImporter:
       name: Character Anima_0
       rect:
         serializedVersion: 2
-        x: 38
-        y: 385
+        x: 25
+        y: 362
         width: 66
-        height: 90
+        height: 95
       alignment: 9
-      pivot: {x: 0.6470684, y: 0.77135146}
+      pivot: {x: 0.49242425, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -96,12 +96,12 @@ TextureImporter:
       name: Character Anima_1
       rect:
         serializedVersion: 2
-        x: 43
-        y: 188.50002
-        width: 52
-        height: 98.999985
+        x: 33
+        y: 189
+        width: 56
+        height: 119
       alignment: 9
-      pivot: {x: 0.6011959, y: 0.8183609}
+      pivot: {x: 0.49107146, y: 0.45378155}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -110,12 +110,12 @@ TextureImporter:
       name: Character Anima_2
       rect:
         serializedVersion: 2
-        x: 195
-        y: 37
+        x: 163
+        y: 35.5
         width: 185
         height: 479
       alignment: 9
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0.5, y: 0.4947808}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -124,12 +124,12 @@ TextureImporter:
       name: Character Anima_3
       rect:
         serializedVersion: 2
-        x: 431
-        y: 240
-        width: 84
-        height: 153
+        x: 395
+        y: 243
+        width: 88
+        height: 155
       alignment: 9
-      pivot: {x: 0.25231534, y: 0.8639311}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -137,6 +137,6 @@ TextureImporter:
     outline: []
     physicsShape: []
   spritePackingTag: 
-  userData: 99479781061356
+  userData: 99480001974199
   assetBundleName: 
   assetBundleVariant: 

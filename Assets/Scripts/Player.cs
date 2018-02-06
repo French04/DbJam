@@ -7,7 +7,8 @@ public class Player : MonoBehaviour
     public Texture2D aimTexture = null;
     public GameObject currentWeapon = null;
     public static Player instance;
-        
+    ShopEnabler seller;
+
 
     void Start ()
     {
@@ -15,26 +16,35 @@ public class Player : MonoBehaviour
         Cursor.SetCursor(aimTexture, new Vector2(0, 0), CursorMode.Auto);
         GameObject weaponPrefab = Resources.Load("Weapons/Winchester") as GameObject;
         currentWeapon = Instantiate(weaponPrefab, transform.position, Quaternion.identity);
+        seller = GameObject.Find("Seller").GetComponent<ShopEnabler>();
     }
 	
 	
 	void Update ()
     {
-        Vector3 pos = transform.position;
-        pos.x += 0.5f;
-        pos.y += 0.4f;
-        currentWeapon.transform.position = pos;
-
-        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Debug.Log(mousePos - currentWeapon.transform.position);
-
-        currentWeapon.transform.rotation = Quaternion.LookRotation(Vector3.forward, mousePos - currentWeapon.transform.position);
-
-        if (currentWeapon != null)
+        if (!seller.openShop)
         {
-            if (Input.GetMouseButton(0))
+            Vector3 pos = transform.position;
+            pos.x += 0.5f;
+            pos.y += 0.4f;
+            currentWeapon.transform.position = pos;
+
+            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Debug.Log(Quaternion.LookRotation(Vector3.forward, mousePos - currentWeapon.transform.position).eulerAngles);
+                        
+            float angle = Quaternion.LookRotation(Vector3.forward, mousePos - currentWeapon.transform.position).eulerAngles.z;
+
+            if (angle < 340 && angle > 190)
             {
-                currentWeapon.GetComponent<Weapon>().Fire();
+                currentWeapon.transform.rotation = Quaternion.LookRotation(Vector3.forward, mousePos - currentWeapon.transform.position);
+            }
+
+            if (currentWeapon != null)
+            {
+                if (Input.GetMouseButton(0))
+                {
+                    currentWeapon.GetComponent<Weapon>().Fire();
+                }
             }
         }
     }   
