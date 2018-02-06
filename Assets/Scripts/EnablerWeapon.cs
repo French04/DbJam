@@ -5,11 +5,14 @@ using UnityEngine.UI;
 
 public class EnablerWeapon : MonoBehaviour
 {
-    [HideInInspector]
+    //[HideInInspector]
     public bool imEnabled = true;
 
-    [HideInInspector]
+    //[HideInInspector]
     public bool purchased = false;
+
+    //[HideInInspector]
+    public bool iAmCurrentWeapon = false;
 
     Image myImage;
 
@@ -27,45 +30,54 @@ public class EnablerWeapon : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        //if im not purchasede
-        if (!purchased)
+        //if i am not the current weapon
+        if (!iAmCurrentWeapon)
         {
-            //if i have money
-            if(shop.organ1 >= organ1value && shop.organ2 >= organ2value && shop.organ3 >= organ3value && shop.organ4 >= organ4value && shop.organ5 >= organ5value && shop.organ6 >= organ6value)
+            //if im not purchasede
+            if (!purchased)
             {
-                //if i am disabled
-                if (!imEnabled)
+                //if i have money
+                if(shop.organ1 >= organ1value && shop.organ2 >= organ2value && shop.organ3 >= organ3value && shop.organ4 >= organ4value && shop.organ5 >= organ5value && shop.organ6 >= organ6value)
                 {
-                    imEnabled = true;
-                    Color myColor;
-                    myColor = Color.white;
-                    myColor.a = 1;
-                    myImage.color = myColor;
+                    //if i am disabled
+                    if (!imEnabled)
+                    {
+                        imEnabled = true;
+                        Color myColor;
+                        myColor = Color.white;
+                        myColor.a = 1;
+                        myImage.color = myColor;
+                    }
+                }
+                else
+                {
+                    //if i am enabled
+                    if (imEnabled)
+                    {
+                        imEnabled = false;
+                        Color myColor;
+                        myColor = Color.white;
+                        myColor.a = 0.2f;
+                        myImage.color = myColor;
+                    }
                 }
             }
-            else
-            {
-                //if i am enabled
-                if (imEnabled)
-                {
-                    imEnabled = false;
-                    Color myColor;
-                    myColor = Color.white;
-                    myColor.a = 0.2f;
-                    myImage.color = myColor;
-                }
-            }
-        }
-        else //if i have already buy this weapon
-        {            
-            if (!imEnabled)
-            {
+            else //if i have already buy this weapon
+            {            
                 imEnabled = true;
                 Color myColor;
                 myColor = Color.white;
                 myColor.a = 1;
                 myImage.color = myColor;
             }
+        }
+        else
+        {
+            imEnabled = true;
+            Color myColor;
+            myColor = Color.green;
+            myColor.a = 1;
+            myImage.color = myColor;
         }
 	}
 }

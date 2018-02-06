@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Shop : MonoBehaviour
 {
-    public EnablerWeapon[] Weapon;
+    public EnablerWeapon[] weapon;
 
     //[HideInInspector]
     public int organ1 = 0, organ2 = 0, organ3 = 0, organ4 = 0, organ5 = 0, organ6 = 0;
@@ -17,19 +17,20 @@ public class Shop : MonoBehaviour
 
     private void Start()
     {
-        Weapon[0].purchased = true;
+        weapon[0].purchased = true;
 
         player = FindObjectOfType<Player>();
+
         gameObject.SetActive(false);
     }
 
     public void SelectWeapon(int choise)
     {
         //if the weapon is buyable
-        if (Weapon[choise].imEnabled)
+        if (weapon[choise].imEnabled)
         {
             //if i have already buy this weapon
-            if(Weapon[choise].purchased == true)
+            if(weapon[choise].purchased == true)
             {
                 Debug.Log("arma già acquistata");
                 WeaponSelected = choise;
@@ -39,15 +40,15 @@ public class Shop : MonoBehaviour
             else
             {
                 Debug.Log("arma nuova");
-                organ1 -= Weapon[choise].organ1value;
-                organ2 -= Weapon[choise].organ2value;
-                organ3 -= Weapon[choise].organ3value;
-                organ4 -= Weapon[choise].organ4value;
-                organ5 -= Weapon[choise].organ5value;
-                organ6 -= Weapon[choise].organ6value;
+                organ1 -= weapon[choise].organ1value;
+                organ2 -= weapon[choise].organ2value;
+                organ3 -= weapon[choise].organ3value;
+                organ4 -= weapon[choise].organ4value;
+                organ5 -= weapon[choise].organ5value;
+                organ6 -= weapon[choise].organ6value;
 
                 WeaponSelected = choise;
-                Weapon[choise].purchased = true;
+                weapon[choise].purchased = true;
 
                 InstantiateWeapon();
             }
@@ -104,5 +105,14 @@ public class Shop : MonoBehaviour
 
         }
 
+        weapon[WeaponSelected].iAmCurrentWeapon = true;
+
+        for (int i = 0; i < weapon.Length; i++)
+        {
+            if (weapon[i] == weapon[WeaponSelected])
+                continue;
+
+            weapon[i].iAmCurrentWeapon = false;
+        }
     }
 }
