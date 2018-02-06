@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SpawnEnemies : MonoBehaviour
 {
+    public static SpawnEnemies instance;
     public float spawnDistance = 1f;
 
     private List<WaveSpawn> _LevelWaves = new List<WaveSpawn>();
@@ -12,23 +13,47 @@ public class SpawnEnemies : MonoBehaviour
 
     private Transform _SpawnPoint;
     private IEnumerator _SpawnEnum;
+    private int _LastEnemiesStanding;
 
-    private float _WaveTimer;
-
-    private int _WaveEnemiesCount;
+    private float _WaveTimer = 0;
+    private int _WaveEnemiesCount = 0;
     private int _CurrentWave = 0;
+    private float _TimeToNextWave = 0;
+    private float _NextSpawnTimer = 0;
+
+    public int LastEnemiesStanding { get { return _LastEnemiesStanding; } set { _LastEnemiesStanding = value; } }
 
     private void Awake()
     {
+        instance = this;
+
         _CurrentLevel = GameObject.Find("ManagerContainers").GetComponent<SpawnContainer>().levels[LevelCounter.currentLevel];
         _SpawnPoint = GameObject.Find("SpawnPoint").transform;
         _SpawnEnum = Spawn();
-        
 
         foreach (WaveSpawn waves in _CurrentLevel.waveNumber)
         {
             _LevelWaves.Add(waves);
         }
+
+        GetWaveInfo();
+    }
+
+
+
+    private void Update()
+    {
+        if (_WaveTimer <= 0)
+        {
+            _WaveTimer -= Time.deltaTime;
+            StopEnemiesSpawn();
+        }
+    }
+
+    private void GetWaveInfo()
+    {
+        if (_EnemyesType.Count > 0)
+            _EnemyesType.Clear();
 
         foreach (GameObject go in _CurrentLevel.waveNumber[_CurrentWave].typeOfEnemies)
         {
@@ -37,12 +62,9 @@ public class SpawnEnemies : MonoBehaviour
 
         _WaveTimer = _LevelWaves[_CurrentWave].waveTimer;
         _WaveEnemiesCount = ReturnEnemiesCount();
+        _TimeToNextWave = _LevelWaves[_CurrentWave].timeToNextWave;
+         _NextSpawnTimer = _LevelWaves[_CurrentWave].nextSpawnCountDown;
         StartCoroutine(_SpawnEnum);
-    }
-
-    private void Update()
-    {
-
     }
 
     private IEnumerator Spawn()
@@ -51,15 +73,57 @@ public class SpawnEnemies : MonoBehaviour
         {
             var clone = Instantiate(RandomEnemy());
             clone.transform.position = new Vector2(_SpawnPoint.position.x + i * spawnDistance , _SpawnPoint.position.y);
+            _WaveEnemiesCount--;
+
+            if (_WaveEnemiesCount <= 0)
+                StartCoroutine(StopEnemiesSpawn());
+
             yield return null;
         }
-
-        _CurrentWave++;
-        yield return new WaitForSeconds(_LevelWaves[_CurrentWave].nextSpawnCountDown);
+        
+        yield return new WaitForSeconds(_NextSpawnTimer);
         StartCoroutine(_SpawnEnum);
     }
 
+    private IEnumerator StopEnemiesSpawn()
+    {
+        StopCoroutine(_SpawnEnum);
+        yield return StartCoroutine(CheckEnemiesLeft());
+        yield return StartCoroutine(WaitForTheNextWave());
 
+        if (_CurrentWave < _CurrentLevel.waveNumber.Length -1)
+        {
+            _CurrentWave++;
+            GetWaveInfo();
+        }
+        else
+        {
+            print("Waves over, good job (trigger go to the next level)");
+            //SceneManager.LoadAsync(level++);
+        }
+        yield return null;
+    }
+
+    private IEnumerator WaitForTheNextWave()
+    {
+        print("Shopping time!");
+        yield return new WaitForSeconds(_TimeToNextWave);
+        print("Shopping time over");
+    }
+
+    private IEnumerator CheckEnemiesLeft()
+    {
+        while(_LastEnemiesStanding > 0)
+        {
+            yield return null;
+        }
+        print("Wave Cleared");
+    }
+
+    private void GetLastEnemiesLeft()
+    {
+        _LastEnemiesStanding = GameObject.FindGameObjectsWithTag("Enemy").Length;
+    }
 
     private GameObject RandomEnemy()
     {
@@ -72,7 +136,6 @@ public class SpawnEnemies : MonoBehaviour
     {
         return Random.Range(_LevelWaves[_CurrentWave].randomMinEnemies, _LevelWaves[_CurrentWave].randomMaxEnemies);
     }
-
 
     private int ReturnEnemiesCount()
     {
@@ -87,4 +150,7 @@ public class SpawnEnemies : MonoBehaviour
         var enemy9 = _LevelWaves[_CurrentWave].heavyEnemiesV3;
         return enemy1 + enemy2 + enemy3 + enemy4 + enemy5 + enemy6 + enemy7 + enemy8 + enemy9;
     }
+
+
+
 }

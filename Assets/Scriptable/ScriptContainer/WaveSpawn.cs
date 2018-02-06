@@ -17,6 +17,7 @@ public class WaveSpawn : ScriptableObject
 
     public float waveTimer;
     public float nextSpawnCountDown;
+    public float timeToNextWave;
 
     public int randomMinEnemies;
     public int randomMaxEnemies;
