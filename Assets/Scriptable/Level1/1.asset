@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c7b9f03600a7f04881ac93b1e31eefa, type: 3}
+  m_Name: 1
+  m_EditorClassIdentifier: 
+  lightEnemies: 50
+  lightEnemiesV2: 0
+  lightEnemiesV3: 0
+  heavyEnemies: 0
+  heavyEnemiesV2: 0
+  heavyEnemiesV3: 0
+  flyingEnemies: 0
+  flyingEnemiesV2: 0
+  flyingEnemiesV3: 0
+  waveTimer: 300
+  nextSpawnCountDown: 5
+  randomMinEnemies: 5
+  randomMaxEnemies: 10
+  typeOfEnemies:
+  - {fileID: 1815259317536992, guid: 28d9274fd6ab95e45addb5c1e86ff278, type: 2}

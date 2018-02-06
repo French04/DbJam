@@ -5,15 +5,14 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public Texture2D aimTexture = null;
-    LineRenderer lineRenderer = null;
-    public GameObject currentWeapon = null; 
+    public GameObject currentWeapon = null;
+    //public static Player instance;
         
 
     void Start ()
     {
+        //instance = this;
         Cursor.SetCursor(aimTexture, new Vector2(0, 0), CursorMode.Auto);
-        lineRenderer = GetComponent<LineRenderer>();
-
         GameObject weaponPrefab = Resources.Load("Weapons/Winchester") as GameObject;
         currentWeapon = Instantiate(weaponPrefab, transform.position, Quaternion.identity);
     }
