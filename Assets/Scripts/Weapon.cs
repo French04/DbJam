@@ -16,18 +16,12 @@ public class Weapon : MonoBehaviour
     Transform bulletSpawn;
     float lastFireTime = 0;
     
-    //
+    
     void Start()
     {
         bulletSpawn = transform.GetChild(0);
     }
 
-
-    void Update()
-    {
-        Debug.Log(Input.mousePosition + "   " + Camera.main.ScreenToWorldPoint(Input.mousePosition));
-    }
-    
 
     public void Fire()
     {
@@ -45,14 +39,12 @@ public class Weapon : MonoBehaviour
                 for (int i = 0; i < spreadBulletCount; i++)
                 {
                     Vector3 mousePosTemp = Input.mousePosition;
-                    //mousePosTemp.y += 
-
-                    Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
                     float bulletOffset = Random.Range(-spreadWidth, spreadWidth);
-                    mousePos.y *= bulletOffset;
-                    mousePos.x /= bulletOffset;
+                    mousePosTemp.y += bulletOffset;
+                    mousePosTemp.x += -bulletOffset;
 
+                    Vector3 mousePos = Camera.main.ScreenToWorldPoint(mousePosTemp);
                     Vector3 direction = mousePos - transform.position;
                     GameObject newBullet = Instantiate(bullet, bulletSpawn.position, Quaternion.identity);
                     newBullet.GetComponent<Rigidbody2D>().AddForce(direction * firePower);
