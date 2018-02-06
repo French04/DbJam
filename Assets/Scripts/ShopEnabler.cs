@@ -15,6 +15,8 @@ public class ShopEnabler : MonoBehaviour
     [HideInInspector]
     public bool openShop = false;
 
+    bool canClickOnSeller = true;
+
     private void Awake()
     {
         shop = FindObjectOfType<Shop>();
@@ -29,8 +31,9 @@ public class ShopEnabler : MonoBehaviour
 
     private void OnMouseOver()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && canClickOnSeller == true)
         {
+            canClickOnSeller = false;
             EnableShop();
         }
     }
@@ -46,14 +49,14 @@ public class ShopEnabler : MonoBehaviour
         if (shop.gameObject.activeSelf)
         {
             Cursor.SetCursor(aimTexture, new Vector2(0, 0), CursorMode.Auto);
-            shop.gameObject.SetActive(false);
+            //shop.gameObject.SetActive(false);
             sellerAnimator.SetBool("IsClicked", true);
             openShop = false;
         }
         else
         {
             Cursor.SetCursor(cursorTexture, new Vector2(0, 0), CursorMode.Auto);
-            shop.gameObject.SetActive(true);
+            //shop.gameObject.SetActive(true);
             sellerAnimator.SetBool("IsClicked", true);
             openShop = true;
         }
@@ -63,11 +66,15 @@ public class ShopEnabler : MonoBehaviour
     {
         sellerAnimator.SetBool("IsClicked", false);
         sellerAnimator.SetBool("ShopIsClosed", false);
+        shop.gameObject.SetActive(true);
+        canClickOnSeller = true;
     }
 
     public void ClosedShopFinish()
     {
         sellerAnimator.SetBool("IsClicked", false);
         sellerAnimator.SetBool("ShopIsClosed", true);
+        shop.gameObject.SetActive(false);
+        canClickOnSeller = true;
     }
 }
