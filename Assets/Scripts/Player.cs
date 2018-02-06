@@ -6,21 +6,22 @@ public class Player : MonoBehaviour
 {
     public Texture2D aimTexture = null;
     public GameObject currentWeapon = null;
+    public Transform IK;
     public static Player instance;
     ShopEnabler seller;
 
 
-    void Start ()
+    void Start()
     {
         instance = this;
         Cursor.SetCursor(aimTexture, new Vector2(0, 0), CursorMode.Auto);
-        GameObject weaponPrefab = Resources.Load("Weapons/Winchester") as GameObject;
-        currentWeapon = Instantiate(weaponPrefab, transform.position, Quaternion.identity);
+        //GameObject weaponPrefab = Resources.Load("Weapons/Winchester") as GameObject;
+        //currentWeapon = Instantiate(weaponPrefab, transform.position, Quaternion.identity);
         seller = GameObject.Find("Seller").GetComponent<ShopEnabler>();
     }
-	
-	
-	void Update ()
+
+
+    void Update()
     {
         if (!seller.openShop)
         {
@@ -31,13 +32,27 @@ public class Player : MonoBehaviour
 
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             //Debug.Log(Quaternion.LookRotation(Vector3.forward, mousePos - currentWeapon.transform.position).eulerAngles);
-                        
-            float angle = Quaternion.LookRotation(Vector3.forward, mousePos - currentWeapon.transform.position).eulerAngles.z;
 
-            if (angle < 340 && angle > 190)
+            //float angle = Quaternion.LookRotation(Vector3.forward, mousePos - currentWeapon.transform.position).eulerAngles.z;
+
+            //if (angle < 340 && angle > 190)
+            //{
+            //currentWeapon.transform.rotation = Quaternion.LookRotation(Vector3.forward, mousePos - currentWeapon.transform.position);
+            //}
+
+            /*Vector3 IKPos = IK.transform.position;
+            IKPos.y = mousePos.y;
+            IK.transform.position = IKPos;*/
+
+            if (Input.mousePosition.x > Camera.main.WorldToScreenPoint(transform.position).x - 70)
             {
-                currentWeapon.transform.rotation = Quaternion.LookRotation(Vector3.forward, mousePos - currentWeapon.transform.position);
-            }
+                IK.transform.position = mousePos;
+            }//
+
+            /*Camera.main.WorldToScreenPoint(transform.position);
+
+            Debug.Log(Camera.main.WorldToScreenPoint(transform.position));*/
+            //
 
             if (currentWeapon != null)
             {
@@ -47,5 +62,6 @@ public class Player : MonoBehaviour
                 }
             }
         }
-    }   
+    }
 }
+
