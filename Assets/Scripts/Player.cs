@@ -30,7 +30,7 @@ public class Player : MonoBehaviour
             currentWeapon.transform.position = pos;
 
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Debug.Log(Quaternion.LookRotation(Vector3.forward, mousePos - currentWeapon.transform.position).eulerAngles);
+            //Debug.Log(Quaternion.LookRotation(Vector3.forward, mousePos - currentWeapon.transform.position).eulerAngles);
                         
             float angle = Quaternion.LookRotation(Vector3.forward, mousePos - currentWeapon.transform.position).eulerAngles.z;
 

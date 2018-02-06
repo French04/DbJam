@@ -8,14 +8,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c7b9f03600a7f04881ac93b1e31eefa, type: 3}
-  m_Name: 3
+  m_Script: {fileID: 11500000, guid: 6521f8f6bc2851f449d757d48056dd76, type: 3}
+  m_Name: Level1
   m_EditorClassIdentifier: 
-  LightEnemys: 5
-  heavyEnemys: 1
-  flyingEnemys: 2
-  unknownEnemys: 3
-  waveTimer: 300
-  nextSpawnCountDown: 5
-  randomMinEnemys: 3
-  randomMaxEnemys: 5
+  waveNumber:
+  - {fileID: 11400000, guid: 58541c93651b67a4d8b364eaf95ff2f3, type: 2}
+  - {fileID: 11400000, guid: c88b49ddd68f09542a0f4c2379acdda6, type: 2}

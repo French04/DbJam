@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 95815027832520264}
   m_Layer: 8
   m_Name: LightEnemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -117,8 +117,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 399b1d180ec332448916ce4a943ecebe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 2
-  lifePoints: 100
+  movementSpeed: 10
+  lifePoints: 50
 --- !u!212 &212526546348095386
 SpriteRenderer:
   m_ObjectHideFlags: 1
