@@ -21,6 +21,8 @@ public class Shop : MonoBehaviour
 
         player = FindObjectOfType<Player>();
 
+        ChangeColor();
+
         gameObject.SetActive(false);
     }
 
@@ -105,6 +107,11 @@ public class Shop : MonoBehaviour
 
         }
 
+        ChangeColor();
+    }
+
+    void ChangeColor()
+    {
         weapon[WeaponSelected].iAmCurrentWeapon = true;
 
         for (int i = 0; i < weapon.Length; i++)

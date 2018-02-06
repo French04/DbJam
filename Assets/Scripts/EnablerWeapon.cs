@@ -5,13 +5,13 @@ using UnityEngine.UI;
 
 public class EnablerWeapon : MonoBehaviour
 {
-    //[HideInInspector]
+    [HideInInspector]
     public bool imEnabled = true;
 
-    //[HideInInspector]
+    [HideInInspector]
     public bool purchased = false;
 
-    //[HideInInspector]
+    [HideInInspector]
     public bool iAmCurrentWeapon = false;
 
     Image myImage;
