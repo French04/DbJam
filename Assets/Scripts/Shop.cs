@@ -1,19 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Shop : MonoBehaviour
 {
+    public Image[] Weapon;
 
-	// Use this for initialization
-	void Start ()
+    [HideInInspector]
+    public int money = 0;
+
+    [HideInInspector]
+    public int WeaponSelected = 0;
+
+    public void SelectWeapon(int choise)
     {
-		
-	}
-	
-	// Update is called once per frame
-	void Update ()
-    {
-		
-	}
+        WeaponSelected = choise;
+    }
 }
