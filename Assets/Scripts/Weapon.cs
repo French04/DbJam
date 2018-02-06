@@ -14,13 +14,13 @@ public class Weapon : MonoBehaviour
     public int spreadBulletCount = 8;
     public float spreadFrequency = 1000000;
     float heatLevel = 0;
-    Transform bulletSpawn;
+    public Transform bulletSpawn;
     float lastFireTime = 0;
     
     
     void Start()
     {
-        bulletSpawn = transform.GetChild(0);
+        //bulletSpawn = transform.GetChild(0);
     }
 
 
@@ -31,7 +31,7 @@ public class Weapon : MonoBehaviour
             if (weaponType == WeaponType.OneShot)
             {
                 GameObject newBullet = Instantiate(bullet, bulletSpawn.position, Quaternion.identity);
-                newBullet.GetComponent<Rigidbody2D>().AddForce(transform.up * firePower, ForceMode2D.Impulse);
+                newBullet.GetComponent<Rigidbody2D>().AddForce(bulletSpawn.transform.right * firePower, ForceMode2D.Impulse);
                 Destroy(newBullet, 2);
             }
             else if (weaponType == WeaponType.Spread)
