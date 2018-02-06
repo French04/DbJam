@@ -10,6 +10,8 @@ public class ShopEnabler : MonoBehaviour
 
     Animator sellerAnimator;
 
+    public Color selectedColor, unselectedColor;
+
     private void Awake()
     {
         shop = FindObjectOfType<Shop>();
@@ -19,7 +21,7 @@ public class ShopEnabler : MonoBehaviour
     private void OnMouseEnter()
     {
         SpriteRenderer myRenderer = GetComponent<SpriteRenderer>();
-        myRenderer.color = Color.blue;
+        myRenderer.color = selectedColor;
     }
 
     private void OnMouseOver()
@@ -33,7 +35,7 @@ public class ShopEnabler : MonoBehaviour
     private void OnMouseExit()
     {
         SpriteRenderer myRenderer = GetComponent<SpriteRenderer>();
-        myRenderer.color = Color.red;
+        myRenderer.color = unselectedColor;
     }
 
     public void EnableShop()
