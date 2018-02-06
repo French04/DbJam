@@ -28,8 +28,8 @@ public class EnemyBehaviour : MonoBehaviour
     {
         if(collision.collider.CompareTag("Bullet"))
         {
-            //var _BulletDmg = Player.instance.currentWeapon.GetComponent<Weapon>().damage;
-            //lifePoints -= _BulletDmg;
+            var _BulletDmg = Player.instance.currentWeapon.GetComponent<Weapon>().damage;
+            lifePoints -= _BulletDmg;
             print("Subtract life points");
             if (lifePoints <= 0)
                 Destroy(gameObject);

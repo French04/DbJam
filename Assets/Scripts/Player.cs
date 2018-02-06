@@ -6,12 +6,12 @@ public class Player : MonoBehaviour
 {
     public Texture2D aimTexture = null;
     public GameObject currentWeapon = null;
-    //public static Player instance;
+    public static Player instance;
         
 
     void Start ()
     {
-        //instance = this;
+        instance = this;
         Cursor.SetCursor(aimTexture, new Vector2(0, 0), CursorMode.Auto);
         GameObject weaponPrefab = Resources.Load("Weapons/Winchester") as GameObject;
         currentWeapon = Instantiate(weaponPrefab, transform.position, Quaternion.identity);

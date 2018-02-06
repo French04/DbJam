@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class SpawnEnemies : MonoBehaviour
 {
-
     public float spawnDistance = 1f;
 
     private List<WaveSpawn> _LevelWaves = new List<WaveSpawn>();
@@ -13,7 +12,6 @@ public class SpawnEnemies : MonoBehaviour
 
     private Transform _SpawnPoint;
     private IEnumerator _SpawnEnum;
-
 
     private int _WaveEnemiesCount;
     private int _CurrentWave = 0;
@@ -34,7 +32,6 @@ public class SpawnEnemies : MonoBehaviour
         }
 
         _WaveEnemiesCount = ReturnEnemiesCount();
-
         StartCoroutine(_SpawnEnum);
     }
 
@@ -51,6 +48,7 @@ public class SpawnEnemies : MonoBehaviour
             clone.transform.position = new Vector2(_SpawnPoint.position.x + i * spawnDistance , _SpawnPoint.position.y);
             yield return null;
         }
+
         _CurrentWave++;
         yield return new WaitForSeconds(_LevelWaves[_CurrentWave].nextSpawnCountDown);
         StartCoroutine(_SpawnEnum);
@@ -62,7 +60,6 @@ public class SpawnEnemies : MonoBehaviour
     {
         var random = Random.Range(0, _EnemyesType.Count);
         return _EnemyesType[random];
-
 
     }
 
