@@ -20,6 +20,7 @@ public class Shop : MonoBehaviour
         Weapon[0].purchased = true;
 
         player = FindObjectOfType<Player>();
+        gameObject.SetActive(false);
     }
 
     public void SelectWeapon(int choise)
