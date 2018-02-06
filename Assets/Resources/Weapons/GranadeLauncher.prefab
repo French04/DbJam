@@ -113,7 +113,7 @@ MonoBehaviour:
   weaponType: 0
   bullet: {fileID: 1016532901519986, guid: 44417f1072cbfe045be5e3bfea52398a, type: 2}
   damage: 500
-  firePower: 50
+  firePower: 250
   fireRate: 2
   spreadWidth: 10
   spreadBulletCount: 8

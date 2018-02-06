@@ -22,7 +22,7 @@ GameObject:
   m_Layer: 0
   m_Name: BulletSpawn
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -64,8 +64,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1775714604499428}
-  m_LocalRotation: {x: 0, y: 0, z: 0.9080649, w: -0.41882947}
-  m_LocalPosition: {x: -2.66, y: -1.2900001, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: -0.8359809, w: 0.54875857}
+  m_LocalPosition: {x: -17.563873, y: -2.6358619, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4454273496308000}
@@ -93,7 +93,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1251525827504152}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.66, z: 0}
+  m_LocalPosition: {x: 0.011, y: 1.354, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4188693784175498}
@@ -113,7 +113,7 @@ MonoBehaviour:
   weaponType: 0
   bullet: {fileID: 1016532901519986, guid: 44417f1072cbfe045be5e3bfea52398a, type: 2}
   damage: 1
-  firePower: 500
+  firePower: 2500
   fireRate: 1
   spreadWidth: 10
   spreadBulletCount: 8
