@@ -110,13 +110,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43fd7cb1cfbd5ab4dab77c064d900ff4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponType: 0
+  weaponType: 1
   bullet: {fileID: 1016532901519986, guid: 44417f1072cbfe045be5e3bfea52398a, type: 2}
   damage: 1
-  firePower: 1000
+  firePower: 100
   fireRate: 1
-  spreadWidth: 0
-  spreadBulletCount: 0
+  spreadWidth: 100
+  spreadBulletCount: 80
 --- !u!212 &212301537827675698
 SpriteRenderer:
   m_ObjectHideFlags: 1
