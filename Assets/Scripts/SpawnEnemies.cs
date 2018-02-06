@@ -13,6 +13,8 @@ public class SpawnEnemies : MonoBehaviour
     private Transform _SpawnPoint;
     private IEnumerator _SpawnEnum;
 
+    private float _WaveTimer;
+
     private int _WaveEnemiesCount;
     private int _CurrentWave = 0;
 
@@ -21,6 +23,7 @@ public class SpawnEnemies : MonoBehaviour
         _CurrentLevel = GameObject.Find("ManagerContainers").GetComponent<SpawnContainer>().levels[LevelCounter.currentLevel];
         _SpawnPoint = GameObject.Find("SpawnPoint").transform;
         _SpawnEnum = Spawn();
+        _WaveTimer = _LevelWaves[_CurrentWave].waveTimer;
 
         foreach (WaveSpawn waves in _CurrentLevel.waveNumber)
         {

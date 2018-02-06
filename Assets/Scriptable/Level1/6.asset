@@ -9,13 +9,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2c7b9f03600a7f04881ac93b1e31eefa, type: 3}
-  m_Name: 5
+  m_Name: 6
   m_EditorClassIdentifier: 
-  LightEnemys: 5
-  heavyEnemys: 1
-  flyingEnemys: 2
-  unknownEnemys: 3
+  lightEnemies: 0
+  lightEnemiesV2: 0
+  lightEnemiesV3: 0
+  heavyEnemies: 0
+  heavyEnemiesV2: 0
+  heavyEnemiesV3: 0
+  flyingEnemies: 0
+  flyingEnemiesV2: 0
+  flyingEnemiesV3: 0
   waveTimer: 300
   nextSpawnCountDown: 5
-  randomMinEnemys: 3
-  randomMaxEnemys: 5
+  randomMinEnemies: 0
+  randomMaxEnemies: 0
+  typeOfEnemies: []
