@@ -11,11 +11,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c7b9f03600a7f04881ac93b1e31eefa, type: 3}
   m_Name: 2
   m_EditorClassIdentifier: 
-  LightEnemys: 5
-  heavyEnemys: 1
-  flyingEnemys: 2
-  unknownEnemys: 3
+  lightEnemies: 2
+  lightEnemiesV2: 0
+  lightEnemiesV3: 0
+  heavyEnemies: 0
+  heavyEnemiesV2: 0
+  heavyEnemiesV3: 0
+  flyingEnemies: 0
+  flyingEnemiesV2: 0
+  flyingEnemiesV3: 0
   waveTimer: 300
   nextSpawnCountDown: 5
-  randomMinEnemys: 3
-  randomMaxEnemys: 5
+  timeToNextWave: 5
+  randomMinEnemies: 2
+  randomMaxEnemies: 2
+  typeOfEnemies: []

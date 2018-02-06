@@ -14,7 +14,3 @@ MonoBehaviour:
   waveNumber:
   - {fileID: 11400000, guid: 67c5742d1a72a9a4db6fdb26a0c8f182, type: 2}
   - {fileID: 11400000, guid: 9636c30cb2bb3bd4d9614cb4f44db116, type: 2}
-  - {fileID: 11400000, guid: f6b6f6aad0fa34f4c9dd76d64a20c767, type: 2}
-  - {fileID: 11400000, guid: 0795222e0bbfa7d4ea7c8fdf8fc0ae51, type: 2}
-  - {fileID: 11400000, guid: 2a631a6e6c5b253499f28637b5207aad, type: 2}
-  - {fileID: 11400000, guid: 8f9d5a04d51552744a589637da420f93, type: 2}

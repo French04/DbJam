@@ -29,7 +29,7 @@ public class EnemyBehaviour : MonoBehaviour
         {
             var _BulletDmg = Player.instance.currentWeapon.GetComponent<Weapon>().damage;
             lifePoints -= _BulletDmg;
-            print("Subtract life points");
+            
             if (lifePoints <= 0)
                 Destroy(gameObject);
         }
@@ -46,7 +46,7 @@ public class EnemyBehaviour : MonoBehaviour
     private IEnumerator KillingCivilian()
     {
         _CanMove = false;
-        print("Killing civilian");
+        
         yield return new WaitForSeconds(5f); //change waiting value with animation timer
         Destroy(gameObject);
         _CanMove = true;
@@ -57,6 +57,6 @@ public class EnemyBehaviour : MonoBehaviour
         if (SpawnEnemies.instance.LastEnemiesStanding > 0)
             SpawnEnemies.instance.LastEnemiesStanding--;
 
-        print("Monster Killed");
+        
     }
 }

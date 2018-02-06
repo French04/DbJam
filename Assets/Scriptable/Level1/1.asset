@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c7b9f03600a7f04881ac93b1e31eefa, type: 3}
   m_Name: 1
   m_EditorClassIdentifier: 
-  lightEnemies: 50
+  lightEnemies: 2
   lightEnemiesV2: 0
   lightEnemiesV3: 0
   heavyEnemies: 0
@@ -22,7 +22,8 @@ MonoBehaviour:
   flyingEnemiesV3: 0
   waveTimer: 300
   nextSpawnCountDown: 5
-  randomMinEnemies: 5
-  randomMaxEnemies: 10
+  timeToNextWave: 10
+  randomMinEnemies: 2
+  randomMaxEnemies: 2
   typeOfEnemies:
   - {fileID: 1815259317536992, guid: 28d9274fd6ab95e45addb5c1e86ff278, type: 2}

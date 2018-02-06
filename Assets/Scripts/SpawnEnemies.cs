@@ -29,7 +29,7 @@ public class SpawnEnemies : MonoBehaviour
 
         _CurrentLevel = GameObject.Find("ManagerContainers").GetComponent<SpawnContainer>().levels[LevelCounter.currentLevel];
         _SpawnPoint = GameObject.Find("SpawnPoint").transform;
-        _SpawnEnum = Spawn();
+        //_SpawnEnum = Spawn();
 
         foreach (WaveSpawn waves in _CurrentLevel.waveNumber)
         {
@@ -43,9 +43,13 @@ public class SpawnEnemies : MonoBehaviour
 
     private void Update()
     {
-        if (_WaveTimer <= 0)
+        if (_WaveTimer > 0)
         {
             _WaveTimer -= Time.deltaTime;
+            
+        }
+        else
+        {
             StopEnemiesSpawn();
         }
     }
@@ -63,12 +67,14 @@ public class SpawnEnemies : MonoBehaviour
         _WaveTimer = _LevelWaves[_CurrentWave].waveTimer;
         _WaveEnemiesCount = ReturnEnemiesCount();
         _TimeToNextWave = _LevelWaves[_CurrentWave].timeToNextWave;
-         _NextSpawnTimer = _LevelWaves[_CurrentWave].nextSpawnCountDown;
-        StartCoroutine(_SpawnEnum);
+        _NextSpawnTimer = _LevelWaves[_CurrentWave].nextSpawnCountDown;
+        StartCoroutine(_SpawnEnum = Spawn());
+        
     }
 
     private IEnumerator Spawn()
     {
+        print("Spawn enemies");
         for(int i = 0; i < ReturnRandomEnemiesNumber(); i++)
         {
             var clone = Instantiate(RandomEnemy());
@@ -76,23 +82,28 @@ public class SpawnEnemies : MonoBehaviour
             _WaveEnemiesCount--;
 
             if (_WaveEnemiesCount <= 0)
+            {
                 StartCoroutine(StopEnemiesSpawn());
+            }
 
             yield return null;
         }
         
         yield return new WaitForSeconds(_NextSpawnTimer);
-        StartCoroutine(_SpawnEnum);
+        StartCoroutine(_SpawnEnum = Spawn());
     }
 
     private IEnumerator StopEnemiesSpawn()
     {
         StopCoroutine(_SpawnEnum);
+
+
         yield return StartCoroutine(CheckEnemiesLeft());
         yield return StartCoroutine(WaitForTheNextWave());
 
-        if (_CurrentWave < _CurrentLevel.waveNumber.Length -1)
+        if (_CurrentWave < _LevelWaves.Count -1)
         {
+            print("Call next wave");
             _CurrentWave++;
             GetWaveInfo();
         }
@@ -113,6 +124,8 @@ public class SpawnEnemies : MonoBehaviour
 
     private IEnumerator CheckEnemiesLeft()
     {
+        GetLastEnemiesLeft();
+
         while(_LastEnemiesStanding > 0)
         {
             yield return null;
@@ -148,6 +161,7 @@ public class SpawnEnemies : MonoBehaviour
         var enemy7 = _LevelWaves[_CurrentWave].heavyEnemies;
         var enemy8 = _LevelWaves[_CurrentWave].heavyEnemiesV2;
         var enemy9 = _LevelWaves[_CurrentWave].heavyEnemiesV3;
+        print(enemy1 + enemy2 + enemy3 + enemy4 + enemy5 + enemy6 + enemy7 + enemy8 + enemy9);
         return enemy1 + enemy2 + enemy3 + enemy4 + enemy5 + enemy6 + enemy7 + enemy8 + enemy9;
     }
 
