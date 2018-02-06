@@ -517,6 +517,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 114273375351702740, guid: 13e2f27a444c04e49b916f963545246d,
+        type: 2}
+      propertyPath: aimTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: 63fa74d3294038c439a983eaf7189569, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 13e2f27a444c04e49b916f963545246d, type: 2}
   m_IsPrefabParent: 0

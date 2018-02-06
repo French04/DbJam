@@ -26,6 +26,8 @@ public class Player : MonoBehaviour
         currentWeapon.transform.position = pos;
 
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Debug.Log(mousePos - currentWeapon.transform.position);
+
         currentWeapon.transform.rotation = Quaternion.LookRotation(Vector3.forward, mousePos - currentWeapon.transform.position);
 
         if (currentWeapon != null)

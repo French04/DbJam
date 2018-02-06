@@ -69,10 +69,10 @@ CircleCollider2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1016532901519986}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -89,7 +89,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e480bf9feb2453e44a992a8fdadf2565, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _DestroyOnCollision: 1
+  destroyOnContact: 1
+  realisticBalistic: 1
 --- !u!212 &212860397024050028
 SpriteRenderer:
   m_ObjectHideFlags: 1
