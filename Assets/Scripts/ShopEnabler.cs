@@ -12,6 +12,9 @@ public class ShopEnabler : MonoBehaviour
 
     public Color selectedColor, unselectedColor;
 
+    [HideInInspector]
+    public bool openShop = false;
+
     private void Awake()
     {
         shop = FindObjectOfType<Shop>();
@@ -45,12 +48,14 @@ public class ShopEnabler : MonoBehaviour
             Cursor.SetCursor(aimTexture, new Vector2(0, 0), CursorMode.Auto);
             shop.gameObject.SetActive(false);
             sellerAnimator.SetBool("IsClicked", true);
+            openShop = false;
         }
         else
         {
             Cursor.SetCursor(cursorTexture, new Vector2(0, 0), CursorMode.Auto);
             shop.gameObject.SetActive(true);
             sellerAnimator.SetBool("IsClicked", true);
+            openShop = true;
         }
     }
 
