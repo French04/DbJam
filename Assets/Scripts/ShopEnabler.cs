@@ -5,6 +5,8 @@ using UnityEngine;
 public class ShopEnabler : MonoBehaviour
 {
     Shop shop;
+    public Texture2D aimTexture;
+    public Texture2D cursorTexture;
 
     private void Awake()
     {
@@ -35,10 +37,12 @@ public class ShopEnabler : MonoBehaviour
     {
         if (shop.gameObject.activeSelf)
         {
+            Cursor.SetCursor(aimTexture, new Vector2(0, 0), CursorMode.Auto);
             shop.gameObject.SetActive(false);
         }
         else
         {
+            Cursor.SetCursor(cursorTexture, new Vector2(0, 0), CursorMode.Auto);
             shop.gameObject.SetActive(true);
         }
     }
