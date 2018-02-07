@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(AudioSource))]
 public class Shop : MonoBehaviour
 {
     EnablerWeapon[] weapon = new EnablerWeapon[10];
@@ -18,6 +19,9 @@ public class Shop : MonoBehaviour
     Player player;
 
     OrganCollector organCollector;
+
+    public AudioClip buySound;
+    private AudioSource audioSource;
 
     private void Start()
     {
@@ -68,6 +72,8 @@ public class Shop : MonoBehaviour
         ChangeColor();
 
         gameObject.SetActive(false);
+
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void SelectWeapon(int choise)
@@ -85,6 +91,7 @@ public class Shop : MonoBehaviour
             }
             else
             {
+                audioSource.PlayOneShot(buySound);
                 //arma nuova
                 organCollector.heart -= weapon[choise].heart;
                 organCollector.brain -= weapon[choise].brain;
