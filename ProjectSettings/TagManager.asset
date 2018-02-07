@@ -7,7 +7,12 @@ TagManager:
   - Enemy
   - Civilian
   - Bullet
-  - Organ
+  - Lungs
+  - Liver
+  - Kidney
+  - Intestine
+  - Heart
+  - Brain
   layers:
   - Default
   - TransparentFX
