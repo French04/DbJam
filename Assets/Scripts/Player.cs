@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
 {
     public Texture2D aimTexture = null;
     public GameObject currentWeapon = null;
+    public GameObject grabber = null;
     public Transform IK;
     public static Player instance;
     ShopEnabler seller;
@@ -64,6 +65,11 @@ public class Player : MonoBehaviour
                 if (Input.GetMouseButton(0))
                 {
                     StartCoroutine(currentWeapon.GetComponent<Weapon>().Fire());
+                }
+                
+                if (Input.GetMouseButton(1))
+                {
+                    grabber.GetComponent<Grabber>().FireGrabber();
                 }
             }
         }
