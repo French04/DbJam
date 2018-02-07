@@ -11,15 +11,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c7b9f03600a7f04881ac93b1e31eefa, type: 3}
   m_Name: Level12Wave4
   m_EditorClassIdentifier: 
-  lightEnemies: 4
-  lightEnemiesV2: 3
-  lightEnemiesV3: 0
-  heavyEnemies: 4
-  heavyEnemiesV2: 1
-  heavyEnemiesV3: 0
-  flyingEnemies: 2
-  flyingEnemiesV2: 1
-  flyingEnemiesV3: 0
+  lightEnemies: 0
+  lightEnemiesV2: 5
+  lightEnemiesV3: 6
+  heavyEnemies: 0
+  heavyEnemiesV2: 4
+  heavyEnemiesV3: 6
+  flyingEnemies: 0
+  flyingEnemiesV2: 2
+  flyingEnemiesV3: 7
   waveTimer: 20
   nextSpawnCountDown: 3
   timeToNextWave: 5

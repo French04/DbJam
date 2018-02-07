@@ -13,13 +13,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lightEnemies: 4
   lightEnemiesV2: 3
-  lightEnemiesV3: 0
-  heavyEnemies: 4
-  heavyEnemiesV2: 1
-  heavyEnemiesV3: 0
+  lightEnemiesV3: 2
+  heavyEnemies: 1
+  heavyEnemiesV2: 4
+  heavyEnemiesV3: 1
   flyingEnemies: 2
-  flyingEnemiesV2: 1
-  flyingEnemiesV3: 0
+  flyingEnemiesV2: 0
+  flyingEnemiesV3: 3
   waveTimer: 20
   nextSpawnCountDown: 3
   timeToNextWave: 5
