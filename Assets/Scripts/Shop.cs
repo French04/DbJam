@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Shop : MonoBehaviour
 {
-    public EnablerWeapon[] weapon;
+    EnablerWeapon[] weapon = new EnablerWeapon[10];
 
     //[HideInInspector]
     public int organ1 = 0, organ2 = 0, organ3 = 0, organ4 = 0, organ5 = 0, organ6 = 0;
@@ -17,9 +17,15 @@ public class Shop : MonoBehaviour
 
     private void Start()
     {
+        for (int i = 0; i < weapon.Length; i++)
+        {
+            weapon[i] = transform.GetChild(i).GetComponent<EnablerWeapon>();
+        }
+
         weapon[0].purchased = true;
 
         player = FindObjectOfType<Player>();
+        player.currentWeapon = player.transform.Find("Wpn_Winchester").gameObject;
 
         ChangeColor();
 
@@ -65,8 +71,8 @@ public class Shop : MonoBehaviour
         {
 
             case 0:
-                GameObject weaponPrefab0 = Resources.Load("Weapons/Winchester") as GameObject;
-                player.currentWeapon = Instantiate(weaponPrefab0, transform.position, Quaternion.identity);
+                //GameObject weaponPrefab0 = Resources.Load("Weapons/Winchester") as GameObject;
+                //player.currentWeapon = Instantiate(weaponPrefab0, transform.position, Quaternion.identity);
                 break;
             case 1:
                 GameObject weaponPrefab1 = Resources.Load("Weapons/Sniper") as GameObject;
