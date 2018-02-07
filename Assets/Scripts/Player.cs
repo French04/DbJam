@@ -58,17 +58,17 @@ public class Player : MonoBehaviour
             if (Input.mousePosition.x > Camera.main.WorldToScreenPoint(transform.position).x - 50)
             {
                 IK.transform.position = mousePos;
-            }
 
-            if (currentWeapon != null)
-            {
-                if (Input.GetMouseButton(0))
+                if (currentWeapon != null)
                 {
-                    StartCoroutine(currentWeapon.GetComponent<Weapon>().Fire());
-                }
-                else if (Input.GetMouseButton(1))
-                {
-                    grabber.GetComponent<Grabber>().FireGrabber();
+                    if (Input.GetMouseButton(0))
+                    {
+                        StartCoroutine(currentWeapon.GetComponent<Weapon>().Fire());
+                    }
+                    else if (Input.GetMouseButton(1))
+                    {
+                        grabber.GetComponent<Grabber>().FireGrabber();
+                    }
                 }
             }
         }
