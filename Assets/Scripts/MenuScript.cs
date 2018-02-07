@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class MenuScript : MonoBehaviour {
 
 	public Animator buttonsSlide;
+    
 
 	public void PlayPressed()
 	{
@@ -23,5 +24,16 @@ public class MenuScript : MonoBehaviour {
 		buttonsSlide.SetBool ("isPlay", false);
 
 	}
+
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
+
+    public void LoadLevel(int i)
+    {
+        LevelCounter.currentLevel = i;
+        GameManager.JumpToLevel(LevelCounter.currentLevel);
+    }
 
 }
