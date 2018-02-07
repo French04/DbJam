@@ -1510,14 +1510,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b8e88b51f1f22e4c9b7fa31b59fe5a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxCalor: 125
-  Step1: 25
-  Step2: 50
-  Step3: 75
-  Step4: 100
-  Step5: 125
-  calorIncrease: 20
-  calorDecrease: 20
 --- !u!114 &114448262091753298
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1794,12 +1786,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c95f493648c66648ac009c25e6ace4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  organ1: 0
-  organ2: 0
-  organ3: 0
-  organ4: 0
-  organ5: 0
-  organ6: 0
+  organ1: 500
+  organ2: 500
+  organ3: 500
+  organ4: 500
+  organ5: 500
+  organ6: 500
   WeaponSelected: 0
 --- !u!114 &114588784475228216
 MonoBehaviour:
@@ -1932,14 +1924,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b8e88b51f1f22e4c9b7fa31b59fe5a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxCalor: 125
-  Step1: 25
-  Step2: 50
-  Step3: 75
-  Step4: 100
-  Step5: 125
-  calorIncrease: 20
-  calorDecrease: 20
 --- !u!114 &114662356401890632
 MonoBehaviour:
   m_ObjectHideFlags: 1
