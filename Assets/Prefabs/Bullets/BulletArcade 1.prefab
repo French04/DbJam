@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 50103404444263388}
   - component: {fileID: 114950365285232502}
   m_Layer: 11
-  m_Name: BulletArcade
+  m_Name: BulletArcade 1
   m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -123,7 +123,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c572b9ac56ac7894a986fc1c41b7173b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7667a776c37ba3e4d8dd0542475bfcf4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

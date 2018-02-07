@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 50103404444263388}
   - component: {fileID: 114950365285232502}
   m_Layer: 11
-  m_Name: BulletBalistic
+  m_Name: BulletArcade 2
   m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -57,7 +57,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -90,7 +90,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyOnContact: 1
-  realisticBalistic: 1
+  realisticBalistic: 0
 --- !u!212 &212860397024050028
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -123,7 +123,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 4b73974275917774ca543d4f694e799b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
