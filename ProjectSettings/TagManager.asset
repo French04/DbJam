@@ -13,6 +13,8 @@ TagManager:
   - Intestine
   - Heart
   - Brain
+  - Organ
+  - Grabber
   layers:
   - Default
   - TransparentFX

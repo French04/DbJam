@@ -10,29 +10,28 @@ public class Grabber : MonoBehaviour
 
     public void FireGrabber()
     {
-        Debug.Log("USE GRABBER");
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mousePos.z = 0;
 
-        RaycastHit hit;
+        RaycastHit2D[] hits = Physics2D.RaycastAll(bulletSpawn.transform.position, (Vector2)(mousePos - bulletSpawn.transform.position) * 10);
 
-
-        //if (Physics2D.Raycast((Vector2)bulletSpawn.transform.position, (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition), out hit))
-        if (Physics.Raycast(bulletSpawn.transform.position, Camera.main.ScreenToWorldPoint(Input.mousePosition) - bulletSpawn.transform.position, out hit))
+        if (hits.Length > 0)
         {
-            Debug.Log(hit.collider.tag);
-
-            if (hit.collider.tag == "Lungs" || hit.collider.tag == "Liver" || hit.collider.tag == "Kidney" || hit.collider.tag == "Intestine" || hit.collider.tag == "Heart" || hit.collider.tag == "Brain")
+            foreach (RaycastHit2D hit in hits)
             {
-                
+                if (hit.collider.tag == "Lungs" || hit.collider.tag == "Liver" || hit.collider.tag == "Kidney" || hit.collider.tag == "Intestine" || hit.collider.tag == "Heart" || hit.collider.tag == "Brain")
+                {
+                    hit.collider.gameObject.GetComponent<Rigidbody2D>().gravityScale = 0;
+                    hit.collider.gameObject.transform.position = Vector3.Lerp(hit.collider.gameObject.transform.position, transform.position, 1f * Time.deltaTime);
+                }
             }
         }
-
-        /*GameObject newBullet = Instantiate(bullet, bulletSpawn.position, Quaternion.identity);
-        newBullet.GetComponent<Rigidbody2D>().AddForce(bulletSpawn.transform.right * grabPower, ForceMode2D.Impulse);
-        Destroy(newBullet, bulletPersistence);*/
     }
 
     void OnDrawGizmos()
     {
-        Gizmos.DrawRay(bulletSpawn.transform.position, Camera.main.ScreenToWorldPoint(Input.mousePosition) - bulletSpawn.transform.position);
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mousePos.z = 0;
+        Gizmos.DrawRay(bulletSpawn.transform.position, (mousePos - bulletSpawn.transform.position) * 10);
     }
 }
