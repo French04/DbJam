@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 58779712046762258}
   - component: {fileID: 50103404444263388}
   - component: {fileID: 114950365285232502}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: BulletBalistic
   m_TagString: Bullet
   m_Icon: {fileID: 0}

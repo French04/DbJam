@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 58262535964632556}
   - component: {fileID: 114174633157238318}
   m_Layer: 10
-  m_Name: Kidney
+  m_Name: kidney
   m_TagString: Kidney
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -6,7 +6,6 @@ public class SpawnEnemies : MonoBehaviour
 {
     public static SpawnEnemies instance;
     public float spawnDistance = 1f;
-    public int level = 0;
 
     private List<WaveSpawn> _LevelWaves = new List<WaveSpawn>();
     private List<GameObject> _EnemyesType = new List<GameObject>();
@@ -30,7 +29,6 @@ public class SpawnEnemies : MonoBehaviour
     private void Awake()
     {
         instance = this;
-        LevelCounter.currentLevel = level;
         
         _CurrentLevel = Resources.Load<SpawnContainer>("Scriptable/ScriptableContainer/SpawnContainer").levels[LevelCounter.currentLevel];
         _Boss = _CurrentLevel.boss;
@@ -129,7 +127,7 @@ public class SpawnEnemies : MonoBehaviour
             }
             print("Waves over, good job (trigger go to the next level)");
             //SceneManager.LoadAsync(level++);
-            //LevelCounter.level ++;
+            GameManager.NextLevel();
         }
         yield return null;
     }

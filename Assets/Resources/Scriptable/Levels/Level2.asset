@@ -14,3 +14,5 @@ MonoBehaviour:
   waveNumber:
   - {fileID: 11400000, guid: 0ad8e96628eb8aa4ea3153632b2bf85a, type: 2}
   - {fileID: 11400000, guid: 0ad8e96628eb8aa4ea3153632b2bf85a, type: 2}
+  civilians: 7
+  boss: {fileID: 0}

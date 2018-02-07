@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+
+[RequireComponent(typeof(AudioSource))]
 public class EnemyBehaviour : MonoBehaviour
 {
     public float movementSpeed = 2f;
@@ -13,6 +15,23 @@ public class EnemyBehaviour : MonoBehaviour
     //GameObject[] organ = new GameObject[6];
 
     bool coroutineStarted = false;
+
+    AudioSource audioSource;
+    public AudioClip spawn;
+    public AudioClip death;
+    public AudioClip hurt;
+    // public AudioClip attack;
+    public AudioClip civilianScream;
+    public float volume;
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+    void OnBecameVisible()
+    {
+        audioSource.PlayOneShot(spawn, volume);
+    }
 
     private void Awake()
     {
@@ -51,26 +70,38 @@ public class EnemyBehaviour : MonoBehaviour
             else if (lifePoints > 0)
             {
                 lifePoints -= _BulletDmg;
+                audioSource.PlayOneShot(spawn, volume);
             }
         }
 
-        if(collision.collider.CompareTag("Civilian"))
-        {
-            //StartCoroutine(KillingCivilian());
-            //Play animation killing civilian
-            //Play animation civilian dying
+    }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+       
+        if (collision.tag == "Bullet")
+        {
+            var _BulletDmg = Player.instance.currentWeapon.GetComponent<Weapon>().damage;
+
+            if (lifePoints <= 0 && coroutineStarted == false)
+            {
+                coroutineStarted = true;
+                _CanMove = false;
+                DropOrgans(_EnemyName);
+            }
+            else if (lifePoints > 0)
+            {
+                lifePoints -= _BulletDmg;
+            }
+        }
+
+        if(collision.tag == "Civilian")
+        {
+            StartCoroutine(EatingCivilian());
+            audioSource.PlayOneShot(civilianScream, volume);
         }
     }
 
-    private IEnumerator KillingCivilian()
-    {
-        _CanMove = false;
-        
-        yield return new WaitForSeconds(5f); //change waiting value with animation timer
-        //Destroy(gameObject);
-        //_CanMove = true;
-    }
 
     private void OnDestroy()
     {
@@ -198,5 +229,20 @@ public class EnemyBehaviour : MonoBehaviour
             yield return null;
         }
         Destroy(gameObject);
+        audioSource.PlayOneShot(death, volume);
+    }
+
+    private IEnumerator EatingCivilian()
+    {
+        CivilianManager.instance.CiviliansReamins--;
+
+        if(CivilianManager.instance.CiviliansReamins <= 0)
+        {
+            GameManager.GameOver();
+        }
+        
+        yield return new WaitForSeconds(2.0f);
+        Destroy(gameObject);
     }
 }
+
