@@ -1055,11 +1055,6 @@ Prefab:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 114595553826026032, guid: 5aab97572c30c174aafdab89d318bab0,
-        type: 2}
-      propertyPath: bullet
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 137313614976921588, guid: 5aab97572c30c174aafdab89d318bab0,
         type: 2}
       propertyPath: m_Mesh
