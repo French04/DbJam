@@ -22,6 +22,7 @@ public class EnemyBehaviour : MonoBehaviour
         for (int i = 0; i < organ.Length; i++)
         {
             organ[i] = transform.GetChild(i).gameObject;
+            organ[i].SetActive(false);
         }
     }
 
