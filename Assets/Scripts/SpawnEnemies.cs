@@ -18,6 +18,7 @@ public class SpawnEnemies : MonoBehaviour
     private IEnumerator _SpawnEnum;
     private int _LastEnemiesStanding;
 
+    private bool _TimeTrigger = true;
     private float _WaveTimer = 0;
     private int _WaveEnemiesCount = 0;
     private int _CurrentWave = 0;
@@ -47,7 +48,7 @@ public class SpawnEnemies : MonoBehaviour
 
     private void Update()
     {
-        if (_WaveTimer > 0)
+        if (_WaveTimer > 0 && _TimeTrigger)
         {
             _WaveTimer -= Time.deltaTime;
             
@@ -72,6 +73,7 @@ public class SpawnEnemies : MonoBehaviour
         _WaveEnemiesCount = ReturnEnemiesCount();
         _TimeToNextWave = _LevelWaves[_CurrentWave].timeToNextWave;
         _NextSpawnTimer = _LevelWaves[_CurrentWave].nextSpawnCountDown;
+        _TimeTrigger = true;
         StartCoroutine(_SpawnEnum = Spawn());
         
     }
@@ -101,9 +103,8 @@ public class SpawnEnemies : MonoBehaviour
 
     private IEnumerator StopEnemiesSpawn()
     {
+        
         StopCoroutine(_SpawnEnum);
-
-
         yield return StartCoroutine(CheckEnemiesLeft());
         yield return StartCoroutine(WaitForTheNextWave());
 
@@ -115,8 +116,11 @@ public class SpawnEnemies : MonoBehaviour
         }
         else
         {
-            yield return StartCoroutine(BossFight());
-            yield return StartCoroutine(WaitForTheNextWave());
+            if (_Boss != null)
+            {
+                yield return StartCoroutine(BossFight());
+                yield return StartCoroutine(WaitForTheNextWave());
+            }
             print("Waves over, good job (trigger go to the next level)");
             //SceneManager.LoadAsync(level++);
             //LevelCounter.level ++;
@@ -127,6 +131,7 @@ public class SpawnEnemies : MonoBehaviour
     private IEnumerator WaitForTheNextWave()
     {
         print("Shopping time!");
+        _TimeTrigger = false;
         yield return new WaitForSeconds(_TimeToNextWave);
         print("Shopping time over");
     }
