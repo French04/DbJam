@@ -36,7 +36,7 @@ public class CalorBar : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-		/*if(shop.WeaponSelected == 7 || shop.WeaponSelected == 9)
+        /*if(shop.WeaponSelected == 7 || shop.WeaponSelected == 9)
         {
             //increase calor valor if the player shoot with the gatling o machineGun
             if (Input.GetMouseButton(0))
@@ -56,6 +56,8 @@ public class CalorBar : MonoBehaviour
         {
             calor -= calorDecrease * Time.deltaTime; ;
         }*/
+
+        Debug.Log(player.currentWeapon.GetComponent<Weapon>().heatLevel);
 
         //block1
         if(player.currentWeapon.GetComponent<Weapon>().heatLevel < Step1 && feedbackBlock[0].activeSelf)
