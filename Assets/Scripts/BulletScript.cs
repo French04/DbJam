@@ -19,7 +19,14 @@ public class BulletScript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.tag != "Bullet" && destroyOnContact)
+        if (name.Contains("Rocket"))
+        {
+            gameObject.transform.GetChild(0).GetComponent<ParticleSystem>().Play();
+            gameObject.GetComponent<SpriteRenderer>().enabled = false;
+            gameObject.transform.GetChild(1).gameObject.SetActive(false);
+            Destroy(gameObject, 4);
+        }
+        else if (collision.collider.tag != "Bullet" && destroyOnContact)
         {
             Destroy(gameObject);
         }

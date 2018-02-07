@@ -57,7 +57,7 @@ public class CalorBar : MonoBehaviour
             calor -= calorDecrease * Time.deltaTime; ;
         }*/
 
-        Debug.Log(player.currentWeapon.GetComponent<Weapon>().heatLevel);
+
 
         //block1
         if(player.currentWeapon.GetComponent<Weapon>().heatLevel < Step1 && feedbackBlock[0].activeSelf)
