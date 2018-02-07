@@ -24,9 +24,12 @@ public class EnemyBehaviour : MonoBehaviour
     public AudioClip civilianScream;
     public float volume;
 
+    SpriteRenderer spriteRenderer;
+
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
     void OnBecameVisible()
     {
@@ -59,6 +62,7 @@ public class EnemyBehaviour : MonoBehaviour
         if(collision.collider.CompareTag("Bullet"))
         {
             var _BulletDmg = Player.instance.currentWeapon.GetComponent<Weapon>().damage;
+            StartCoroutine(Flickering());
             
 
             if (lifePoints <= 0 && coroutineStarted == false)
@@ -243,6 +247,52 @@ public class EnemyBehaviour : MonoBehaviour
         
         yield return new WaitForSeconds(2.0f);
         Destroy(gameObject);
+    }
+
+    private IEnumerator Flickering()
+    {
+        Color noColor;
+        Color yesColor;
+        noColor = spriteRenderer.color;
+        yesColor = spriteRenderer.color;
+        noColor.a = 0f;
+        yesColor.a = 1f;
+
+
+        for (int i = 0; i < 10; i++)
+        {
+            int randomforceX = Random.Range(-300, 300);
+            int randomforceY = Random.Range(100, 300);
+            GameObject SpawnedOrgan = Instantiate(Resources.Load("Organs/Blood") as GameObject, transform.position, Quaternion.identity);
+            SpawnedOrgan.GetComponent<Rigidbody2D>().AddForce(new Vector2(randomforceX, randomforceY));
+        }
+
+
+
+        spriteRenderer.color = noColor;
+        yield return new WaitForSeconds(0.1f);
+        spriteRenderer.color = yesColor;
+        
+        yield return new WaitForSeconds(0.1f);
+
+        spriteRenderer.color = noColor;
+        yield return new WaitForSeconds(0.1f);
+        spriteRenderer.color = yesColor;
+       
+        yield return new WaitForSeconds(0.1f);
+
+        spriteRenderer.color = noColor;
+        yield return new WaitForSeconds(0.1f);
+      
+        spriteRenderer.color = yesColor;
+        yield return new WaitForSeconds(0.1f);
+
+        spriteRenderer.color = noColor;
+        yield return new WaitForSeconds(0.1f);
+        
+        spriteRenderer.color = yesColor;
+        yield return new WaitForSeconds(0.1f);
+
     }
 }
 
