@@ -376,6 +376,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: de390d02d1cd4ec4b87f7a06fdebc07d, type: 2}
   m_IsPrefabParent: 0
+--- !u!4 &983099626 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4259779672202722, guid: 5aab97572c30c174aafdab89d318bab0,
+    type: 2}
+  m_PrefabInternal: {fileID: 1740655836}
 --- !u!1 &1040512499
 GameObject:
   m_ObjectHideFlags: 0
@@ -1201,6 +1206,56 @@ Prefab:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 114129807388848450, guid: 5aab97572c30c174aafdab89d318bab0,
+        type: 2}
+      propertyPath: bulletSpawn
+      value: 
+      objectReference: {fileID: 983099626}
+    - target: {fileID: 114528951069222376, guid: 5aab97572c30c174aafdab89d318bab0,
+        type: 2}
+      propertyPath: bulletSpawn
+      value: 
+      objectReference: {fileID: 983099626}
+    - target: {fileID: 114866381236958986, guid: 5aab97572c30c174aafdab89d318bab0,
+        type: 2}
+      propertyPath: bulletSpawn
+      value: 
+      objectReference: {fileID: 983099626}
+    - target: {fileID: 114485310217900726, guid: 5aab97572c30c174aafdab89d318bab0,
+        type: 2}
+      propertyPath: bulletSpawn
+      value: 
+      objectReference: {fileID: 983099626}
+    - target: {fileID: 114595553826026032, guid: 5aab97572c30c174aafdab89d318bab0,
+        type: 2}
+      propertyPath: bulletSpawn
+      value: 
+      objectReference: {fileID: 983099626}
+    - target: {fileID: 114103848492307740, guid: 5aab97572c30c174aafdab89d318bab0,
+        type: 2}
+      propertyPath: bulletSpawn
+      value: 
+      objectReference: {fileID: 983099626}
+    - target: {fileID: 114021618459152566, guid: 5aab97572c30c174aafdab89d318bab0,
+        type: 2}
+      propertyPath: bulletSpawn
+      value: 
+      objectReference: {fileID: 983099626}
+    - target: {fileID: 114134212989153342, guid: 5aab97572c30c174aafdab89d318bab0,
+        type: 2}
+      propertyPath: bulletSpawn
+      value: 
+      objectReference: {fileID: 983099626}
+    - target: {fileID: 114389171332956766, guid: 5aab97572c30c174aafdab89d318bab0,
+        type: 2}
+      propertyPath: bulletSpawn
+      value: 
+      objectReference: {fileID: 983099626}
+    - target: {fileID: 114114781444324162, guid: 5aab97572c30c174aafdab89d318bab0,
+        type: 2}
+      propertyPath: bulletSpawn
+      value: 
+      objectReference: {fileID: 983099626}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5aab97572c30c174aafdab89d318bab0, type: 2}
   m_IsPrefabParent: 0
