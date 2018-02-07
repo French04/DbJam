@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+
+[RequireComponent(typeof(AudioSource))]
 public class EnemyBehaviour : MonoBehaviour
 {
     public float movementSpeed = 2f;
@@ -13,6 +15,23 @@ public class EnemyBehaviour : MonoBehaviour
     //GameObject[] organ = new GameObject[6];
 
     bool coroutineStarted = false;
+
+    AudioSource audioSource;
+    public AudioClip spawn;
+    public AudioClip death;
+    public AudioClip hurt;
+    // public AudioClip attack;
+    public AudioClip civilianScream;
+    public float volume;
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+    void OnBecameVisible()
+    {
+        audioSource.PlayOneShot(spawn, volume);
+    }
 
     private void Awake()
     {
@@ -51,6 +70,7 @@ public class EnemyBehaviour : MonoBehaviour
             else if (lifePoints > 0)
             {
                 lifePoints -= _BulletDmg;
+                audioSource.PlayOneShot(spawn, volume);
             }
         }
 
@@ -78,6 +98,7 @@ public class EnemyBehaviour : MonoBehaviour
         if(collision.tag == "Civilian")
         {
             StartCoroutine(EatingCivilian());
+            audioSource.PlayOneShot(civilianScream, volume);
         }
     }
 
@@ -208,6 +229,7 @@ public class EnemyBehaviour : MonoBehaviour
             yield return null;
         }
         Destroy(gameObject);
+        audioSource.PlayOneShot(death, volume);
     }
 
     private IEnumerator EatingCivilian()
