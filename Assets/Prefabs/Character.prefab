@@ -1158,7 +1158,7 @@ MonoBehaviour:
   weaponType: 1
   bullet: {fileID: 1016532901519986, guid: 1cc3f562b0f0cf345b70fc4bc666264a, type: 2}
   damage: 50
-  firePower: 70
+  firePower: 40
   fireRate: 0.3
   bulletPersistence: 2
   spreadWidth: 0
@@ -1206,11 +1206,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponType: 0
-  bullet: {fileID: 1016532901519986, guid: 1cc3f562b0f0cf345b70fc4bc666264a, type: 2}
+  bullet: {fileID: 1016532901519986, guid: 145fbcf14c1328246baa81903e2e3361, type: 2}
   damage: 350
-  firePower: 20
+  firePower: 12
   fireRate: 2
-  bulletPersistence: 5
+  bulletPersistence: 3
   spreadWidth: 0
   spreadBulletCount: 0
   spreadFrequency: 0
@@ -1525,8 +1525,8 @@ MonoBehaviour:
   weaponType: 3
   bullet: {fileID: 1016532901519986, guid: 1cc3f562b0f0cf345b70fc4bc666264a, type: 2}
   damage: 100
-  firePower: 70
-  fireRate: 0.3
+  firePower: 40
+  fireRate: 0.8
   bulletPersistence: 2
   spreadWidth: 0
   spreadBulletCount: 0
@@ -1699,7 +1699,7 @@ MonoBehaviour:
   bullet: {fileID: 1016532901519986, guid: 09a525eb59eea6d40be10ade985047a5, type: 2}
   damage: 50
   firePower: 50
-  fireRate: 1
+  fireRate: 0.5
   bulletPersistence: 2
   spreadWidth: 0
   spreadBulletCount: 0
