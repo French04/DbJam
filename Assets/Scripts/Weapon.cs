@@ -26,6 +26,7 @@ public class Weapon : MonoBehaviour
 
     public AudioClip fireSound;
     private AudioSource audioSource;
+	public float volume;
 
     private void Start()
     {
@@ -63,7 +64,7 @@ public class Weapon : MonoBehaviour
 
             if (weaponType == WeaponType.OneShot_Heating && heatLevel < 100 || weaponType == WeaponType.OneShot)
             {
-                audioSource.PlayOneShot(fireSound, 1);
+				audioSource.PlayOneShot(fireSound, volume);
                 GameObject newBullet = Instantiate(bullet, bulletSpawn.position, Quaternion.identity);
                 newBullet.GetComponent<Rigidbody2D>().AddForce(bulletSpawn.transform.right * firePower, ForceMode2D.Impulse);
                 Destroy(newBullet, bulletPersistence);
@@ -74,7 +75,7 @@ public class Weapon : MonoBehaviour
 
                 for (int i = 0; i < spreadBulletCount; i++)
                 {
-                    audioSource.PlayOneShot(fireSound, 1);
+					audioSource.PlayOneShot(fireSound, volume);
                     float bulletOffset = Mathf.Sin((float)i * spreadFrequency) * spreadWidth; //Random.Range(-spreadWidth, spreadWidth);
                     mousePosTemp.y += bulletOffset;
                     mousePosTemp.x += -bulletOffset;
@@ -91,9 +92,9 @@ public class Weapon : MonoBehaviour
             }
             else if (weaponType == WeaponType.ThreeShots)
             {
+				audioSource.PlayOneShot(fireSound, volume);
                 for (int i = 0; i < 3; i++)
                 {
-                    audioSource.PlayOneShot(fireSound, 1);
                     GameObject newBullet = Instantiate(bullet, bulletSpawn.position, Quaternion.identity);
                     newBullet.GetComponent<Rigidbody2D>().AddForce(bulletSpawn.transform.right * firePower, ForceMode2D.Impulse);
                     Destroy(newBullet, bulletPersistence);
