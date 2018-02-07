@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class Pause : MonoBehaviour
 {
     public static Pause instance;
+    public GameObject gameOverScreen;
 
     private void Awake()
     {
@@ -25,6 +26,12 @@ public class Pause : MonoBehaviour
     public void MainMenuLevel()
     {
         SceneManager.LoadScene("MainMenu");
+        LevelCounter.currentLevel = 0;
+    }
+
+    public void RetryMission()
+    {
+        SceneManager.LoadScene(LevelCounter.currentLevel);
     }
 
 

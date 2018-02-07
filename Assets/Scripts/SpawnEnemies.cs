@@ -126,7 +126,7 @@ public class SpawnEnemies : MonoBehaviour
                 yield return StartCoroutine(WaitForTheNextWave());
             }
             print("Waves over, good job (trigger go to the next level)");
-            //SceneManager.LoadAsync(level++);
+            
             GameManager.NextLevel();
         }
         yield return null;
