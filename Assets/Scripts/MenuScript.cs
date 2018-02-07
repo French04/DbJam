@@ -36,4 +36,5 @@ public class MenuScript : MonoBehaviour {
         GameManager.JumpToLevel(LevelCounter.currentLevel);
     }
 
+    
 }

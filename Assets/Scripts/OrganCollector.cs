@@ -11,6 +11,7 @@ public class OrganCollector : MonoBehaviour
     public static OrganCollector instance;
 
     GameObject feedback;
+    GameObject pauseButton;
 
     // Use this for initialization
     void Start ()
@@ -31,18 +32,24 @@ public class OrganCollector : MonoBehaviour
         }
 
         feedback = GameObject.Find("FeedBack");
+        pauseButton = GameObject.Find("PauseButton");
+        
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
-		if(SceneManager.GetActiveScene().name != "Main Menu")
+		if(SceneManager.GetActiveScene().name != "MainMenu")
         {
             feedback.SetActive(true);
+            pauseButton.SetActive(true);
+            
+
         }
         else
         {
             feedback.SetActive(false);
+            pauseButton.SetActive(false);
         }
 	}
 }
