@@ -22,7 +22,7 @@ public class Grabber : MonoBehaviour
                 if (hit.collider.tag == "Lungs" || hit.collider.tag == "Liver" || hit.collider.tag == "Kidney" || hit.collider.tag == "Intestine" || hit.collider.tag == "Heart" || hit.collider.tag == "Brain")
                 {
                     hit.collider.gameObject.GetComponent<Rigidbody2D>().gravityScale = 0;
-                    hit.collider.gameObject.transform.position = Vector3.Lerp(hit.collider.gameObject.transform.position, transform.position, 1f * Time.deltaTime);
+                    hit.collider.gameObject.transform.position = Vector3.Lerp(hit.collider.gameObject.transform.position, transform.position, grabPower * Time.deltaTime);
                 }
             }
         }

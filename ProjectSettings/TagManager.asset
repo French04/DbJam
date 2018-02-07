@@ -7,13 +7,13 @@ TagManager:
   - Enemy
   - Civilian
   - Bullet
-  - Lungs
-  - Liver
-  - Kidney
-  - Intestine
-  - Heart
-  - Brain
   - Organ
+  - Brain
+  - Heart
+  - Intestine
+  - Kidney
+  - Liver
+  - Lungs
   - Grabber
   layers:
   - Default
