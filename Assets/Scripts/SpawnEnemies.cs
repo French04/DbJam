@@ -86,6 +86,12 @@ public class SpawnEnemies : MonoBehaviour
         {
             var clone = Instantiate(RandomEnemy());
             clone.transform.position = new Vector2(_SpawnPoint.position.x + i * spawnDistance , _SpawnPoint.position.y);
+            if (clone.name.Contains("Flying"))
+            {
+                var _NewPos = clone.transform.position;
+                _NewPos.y += 10;
+                clone.transform.position = _NewPos;
+            }
             _WaveEnemiesCount--;
 
             if (_WaveEnemiesCount <= 0)
