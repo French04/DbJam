@@ -17,14 +17,14 @@ MonoBehaviour:
   heavyEnemies: 4
   heavyEnemiesV2: 1
   heavyEnemiesV3: 0
-  flyingEnemies: 8
+  flyingEnemies: 3
   flyingEnemiesV2: 0
   flyingEnemiesV3: 0
-  waveTimer: 60
+  waveTimer: 15
   nextSpawnCountDown: 3
   timeToNextWave: 5
-  randomMinEnemies: 2
-  randomMaxEnemies: 4
+  randomMinEnemies: 3
+  randomMaxEnemies: 5
   typeOfEnemies:
   - {fileID: 1815259317536992, guid: 28d9274fd6ab95e45addb5c1e86ff278, type: 2}
   - {fileID: 1448826862346976, guid: d12edfe83ee191a409a3b48f49aaf676, type: 2}

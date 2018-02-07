@@ -11,4 +11,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6521f8f6bc2851f449d757d48056dd76, type: 3}
   m_Name: Level11
   m_EditorClassIdentifier: 
-  waveNumber: []
+  waveNumber:
+  - {fileID: 11400000, guid: b41f3b99258b29f42b7fd50c87d20d66, type: 2}
+  - {fileID: 11400000, guid: 4bdf9e51e4882904f91c30d2dfc4ec3d, type: 2}
+  - {fileID: 11400000, guid: 0fb3b73a42e198f4aae7e9aeb195a9f4, type: 2}
+  - {fileID: 11400000, guid: 3498d1b667c608d40a4f45bc583fedf3, type: 2}

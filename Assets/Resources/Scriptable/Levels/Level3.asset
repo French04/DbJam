@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Name: Level3
   m_EditorClassIdentifier: 
   waveNumber:
-  - {fileID: 11400000, guid: b5b610bf4fa1e6f4f8a596b6f5689d39, type: 2}
-  - {fileID: 11400000, guid: 7632b5b32baaca84cb07cb3e44b8de4e, type: 2}
-  - {fileID: 11400000, guid: 888b0c1b7e9d3b649823e42a1340b929, type: 2}
+  - {fileID: 11400000, guid: 7dbd45fad8a6e9e49b19bc729c5332aa, type: 2}
+  - {fileID: 11400000, guid: 98d96d6dc577b9748bb735634f49b071, type: 2}
+  - {fileID: 11400000, guid: 733928551c25cbf4a92d8edd49a01583, type: 2}
