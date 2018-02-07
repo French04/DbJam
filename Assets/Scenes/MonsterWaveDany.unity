@@ -380,6 +380,21 @@ Prefab:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 114595553826026032, guid: 5aab97572c30c174aafdab89d318bab0,
+        type: 2}
+      propertyPath: weaponType
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114595553826026032, guid: 5aab97572c30c174aafdab89d318bab0,
+        type: 2}
+      propertyPath: fireRate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114595553826026032, guid: 5aab97572c30c174aafdab89d318bab0,
+        type: 2}
+      propertyPath: firePower
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5aab97572c30c174aafdab89d318bab0, type: 2}
   m_IsPrefabParent: 0

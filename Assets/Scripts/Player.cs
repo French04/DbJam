@@ -63,7 +63,7 @@ public class Player : MonoBehaviour
             {
                 if (Input.GetMouseButton(0))
                 {
-                    currentWeapon.GetComponent<Weapon>().Fire();
+                    StartCoroutine(currentWeapon.GetComponent<Weapon>().Fire());
                 }
             }
         }

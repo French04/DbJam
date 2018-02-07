@@ -952,7 +952,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1483577776440240}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.96, y: -1.547, z: -3.072606}
+  m_LocalPosition: {x: -6.82886, y: -0.68680555, z: -3.072606}
   m_LocalScale: {x: 0.8248822, y: 0.82488227, z: 0.82488227}
   m_Children:
   - {fileID: 4050372068069942}
@@ -1050,9 +1050,11 @@ MonoBehaviour:
   damage: 1
   firePower: 100
   fireRate: 0.1
+  bulletPersistence: 2
   spreadWidth: 5
   spreadBulletCount: 8
   spreadFrequency: 1000000
+  threeShotDifference: 0.1
   heatIncreaseSpeed: 0.1
   heatDecreaseSpeed: 0.1
   bulletSpawn: {fileID: 4259779672202722}
@@ -1088,9 +1090,11 @@ MonoBehaviour:
   damage: 1
   firePower: 100
   fireRate: 0.1
+  bulletPersistence: 2
   spreadWidth: 5
   spreadBulletCount: 12
   spreadFrequency: 1000000
+  threeShotDifference: 0.1
   heatIncreaseSpeed: 0
   heatDecreaseSpeed: 0
   bulletSpawn: {fileID: 4259779672202722}
@@ -1107,7 +1111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 0.5180763
+  m_Length: 0.5180757
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 4887046402118958}
   m_AttachedIK: {fileID: 114451064640907966}
@@ -1127,9 +1131,11 @@ MonoBehaviour:
   damage: 1
   firePower: 100
   fireRate: 0.1
+  bulletPersistence: 2
   spreadWidth: 5
   spreadBulletCount: 8
   spreadFrequency: 1000000
+  threeShotDifference: 0.1
   heatIncreaseSpeed: 0.1
   heatDecreaseSpeed: 0.1
   bulletSpawn: {fileID: 4259779672202722}
@@ -1150,9 +1156,11 @@ MonoBehaviour:
   damage: 1
   firePower: 100
   fireRate: 0.1
+  bulletPersistence: 2
   spreadWidth: 5
   spreadBulletCount: 8
   spreadFrequency: 1000000
+  threeShotDifference: 0.1
   heatIncreaseSpeed: 0.1
   heatDecreaseSpeed: 0.1
   bulletSpawn: {fileID: 4259779672202722}
@@ -1173,9 +1181,11 @@ MonoBehaviour:
   damage: 1
   firePower: 100
   fireRate: 0.1
+  bulletPersistence: 2
   spreadWidth: 5
   spreadBulletCount: 8
   spreadFrequency: 1000000
+  threeShotDifference: 0.1
   heatIncreaseSpeed: 0.1
   heatDecreaseSpeed: 0.1
   bulletSpawn: {fileID: 4259779672202722}
@@ -1192,7 +1202,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 0.8500128
+  m_Length: 0.8500129
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 4387918808503080}
   m_AttachedIK: {fileID: 0}
@@ -1277,7 +1287,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 0.79842514
+  m_Length: 0.79842454
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 4150414092368922}
   m_AttachedIK: {fileID: 114269756421523808}
@@ -1310,7 +1320,7 @@ MonoBehaviour:
   m_Length: 1.63
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 0}
-  m_AttachedIK: {fileID: 114898488572330618}
+  m_AttachedIK: {fileID: 114269756421523808}
 --- !u!114 &114348825169790842
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1367,9 +1377,11 @@ MonoBehaviour:
   damage: 1
   firePower: 100
   fireRate: 0.1
+  bulletPersistence: 2
   spreadWidth: 5
   spreadBulletCount: 8
   spreadFrequency: 1000000
+  threeShotDifference: 0.1
   heatIncreaseSpeed: 0.1
   heatDecreaseSpeed: 0.1
   bulletSpawn: {fileID: 4259779672202722}
@@ -1486,9 +1498,11 @@ MonoBehaviour:
   damage: 1
   firePower: 100
   fireRate: 0.1
+  bulletPersistence: 2
   spreadWidth: 5
   spreadBulletCount: 8
   spreadFrequency: 1000000
+  threeShotDifference: 0.1
   heatIncreaseSpeed: 0.1
   heatDecreaseSpeed: 0.1
   bulletSpawn: {fileID: 4259779672202722}
@@ -1531,9 +1545,11 @@ MonoBehaviour:
   damage: 1
   firePower: 100
   fireRate: 0.1
+  bulletPersistence: 2
   spreadWidth: 5
   spreadBulletCount: 8
   spreadFrequency: 1000000
+  threeShotDifference: 0.1
   heatIncreaseSpeed: 0.1
   heatDecreaseSpeed: 0.1
   bulletSpawn: {fileID: 4259779672202722}
@@ -1590,9 +1606,11 @@ MonoBehaviour:
   damage: 1
   firePower: 100
   fireRate: 0.1
+  bulletPersistence: 2
   spreadWidth: 5
   spreadBulletCount: 8
   spreadFrequency: 1000000
+  threeShotDifference: 0.1
   heatIncreaseSpeed: 0.1
   heatDecreaseSpeed: 0.1
   bulletSpawn: {fileID: 4259779672202722}
@@ -1653,11 +1671,13 @@ MonoBehaviour:
   damage: 1
   firePower: 100
   fireRate: 0.1
+  bulletPersistence: 2
   spreadWidth: 5
   spreadBulletCount: 8
   spreadFrequency: 1000000
-  heatIncreaseSpeed: 2
-  heatDecreaseSpeed: 10
+  threeShotDifference: 0.1
+  heatIncreaseSpeed: 0
+  heatDecreaseSpeed: 0
   bulletSpawn: {fileID: 4259779672202722}
   heatLevel: 0
 --- !u!114 &114612847438700532
@@ -1785,10 +1805,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 0.32000023
+  m_Length: 0.32000002
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 4890333776770902}
-  m_AttachedIK: {fileID: 114898488572330618}
+  m_AttachedIK: {fileID: 114269756421523808}
 --- !u!114 &114822909695088986
 MonoBehaviour:
   m_ObjectHideFlags: 1

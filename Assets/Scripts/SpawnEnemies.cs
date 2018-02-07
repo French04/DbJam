@@ -6,10 +6,12 @@ public class SpawnEnemies : MonoBehaviour
 {
     public static SpawnEnemies instance;
     public float spawnDistance = 1f;
+    public int level = 0;
 
     private List<WaveSpawn> _LevelWaves = new List<WaveSpawn>();
     private List<GameObject> _EnemyesType = new List<GameObject>();
     private Level _CurrentLevel;
+    private EnemiesCounter _EnemiesCounter;
 
     private Transform _SpawnPoint;
     private IEnumerator _SpawnEnum;
@@ -26,19 +28,18 @@ public class SpawnEnemies : MonoBehaviour
     private void Awake()
     {
         instance = this;
-
-        _CurrentLevel = GameObject.Find("ManagerContainers").GetComponent<SpawnContainer>().levels[LevelCounter.currentLevel];
+        LevelCounter.currentLevel = level;
+        _CurrentLevel = Resources.Load<SpawnContainer>("Scriptable/ScriptableContainer/SpawnContainer").levels[LevelCounter.currentLevel];
         _SpawnPoint = GameObject.Find("SpawnPoint").transform;
-        //_SpawnEnum = Spawn();
+        _SpawnEnum = Spawn();
 
-        foreach (WaveSpawn waves in _CurrentLevel.waveNumber)
+        foreach (WaveSpawn waves in _CurrentLevel.waveNumber )
         {
             _LevelWaves.Add(waves);
         }
 
         GetWaveInfo();
     }
-
 
 
     private void Update()
@@ -75,6 +76,7 @@ public class SpawnEnemies : MonoBehaviour
     private IEnumerator Spawn()
     {
         print("Spawn enemies");
+        
         for(int i = 0; i < ReturnRandomEnemiesNumber(); i++)
         {
             var clone = Instantiate(RandomEnemy());
@@ -88,6 +90,7 @@ public class SpawnEnemies : MonoBehaviour
 
             yield return null;
         }
+        
         
         yield return new WaitForSeconds(_NextSpawnTimer);
         StartCoroutine(_SpawnEnum = Spawn());
@@ -111,6 +114,7 @@ public class SpawnEnemies : MonoBehaviour
         {
             print("Waves over, good job (trigger go to the next level)");
             //SceneManager.LoadAsync(level++);
+            //LevelCounter.level ++;
         }
         yield return null;
     }
@@ -140,8 +144,61 @@ public class SpawnEnemies : MonoBehaviour
 
     private GameObject RandomEnemy()
     {
-        var random = Random.Range(0, _EnemyesType.Count);
-        return _EnemyesType[random];
+        int _RandomEnemy = 0;
+        string _EnemyName = "";
+
+        var loop = true;
+        while(loop)
+        {
+            loop = false;
+            _RandomEnemy  = Random.Range(0, _EnemyesType.Count);
+            _EnemyName = _EnemyesType[_RandomEnemy].name;
+            print(_EnemyName);
+
+            if (_EnemyName == "LightEnemy" && _EnemiesCounter.lightEnemies > 0)
+            {
+                _EnemiesCounter.lightEnemies--;
+            }
+            else if (_EnemyName == "LightEnemyV2" && _EnemiesCounter.lightEnemiesV2 > 0)
+            {
+                _EnemiesCounter.lightEnemiesV2--;
+            }
+            else if (_EnemyName == "LightEnemyV3" && _EnemiesCounter.lightEnemiesV3 > 0)
+            { 
+                _EnemiesCounter.lightEnemiesV3--;
+            }
+            else if (_EnemyName == "FlyingEnemy" && _EnemiesCounter.flyingEnemies > 0)
+            {
+                _EnemiesCounter.flyingEnemies--;
+            }
+            else if (_EnemyName == "FlyingEnemyV2" && _EnemiesCounter.flyingEnemiesV2 > 0)
+            {
+                _EnemiesCounter.flyingEnemiesV2--;
+            }
+            else if (_EnemyName == "FlyingEnemyV3" && _EnemiesCounter.flyingEnemiesV3 > 0)
+            {
+                _EnemiesCounter.flyingEnemiesV3--;
+            }
+            else if (_EnemyName == "HeavyEnemy" && _EnemiesCounter.heavyEnemies > 0)
+            {
+                _EnemiesCounter.heavyEnemies--;
+            }
+            else if (_EnemyName == "HeavyEnemyV2" && _EnemiesCounter.heavyEnemiesV2 > 0)
+            {
+                _EnemiesCounter.heavyEnemiesV2--;
+            }
+            else if (_EnemyName == "HeavyEnemyV3" && _EnemiesCounter.heavyEnemiesV3 > 0)
+            {
+                _EnemiesCounter.heavyEnemiesV3--;
+            }
+            else
+            {
+                loop = true;
+            }
+
+        }
+
+        return _EnemyesType[_RandomEnemy];
 
     }
 
@@ -152,17 +209,27 @@ public class SpawnEnemies : MonoBehaviour
 
     private int ReturnEnemiesCount()
     {
-        var enemy1 = _LevelWaves[_CurrentWave].lightEnemies;
-        var enemy2 = _LevelWaves[_CurrentWave].lightEnemiesV2;
-        var enemy3 = _LevelWaves[_CurrentWave].lightEnemiesV3;
-        var enemy4 = _LevelWaves[_CurrentWave].flyingEnemies;
-        var enemy5 = _LevelWaves[_CurrentWave].flyingEnemiesV2;
-        var enemy6 = _LevelWaves[_CurrentWave].flyingEnemiesV3;
-        var enemy7 = _LevelWaves[_CurrentWave].heavyEnemies;
-        var enemy8 = _LevelWaves[_CurrentWave].heavyEnemiesV2;
-        var enemy9 = _LevelWaves[_CurrentWave].heavyEnemiesV3;
-        print(enemy1 + enemy2 + enemy3 + enemy4 + enemy5 + enemy6 + enemy7 + enemy8 + enemy9);
-        return enemy1 + enemy2 + enemy3 + enemy4 + enemy5 + enemy6 + enemy7 + enemy8 + enemy9;
+        _EnemiesCounter = null;
+        _EnemiesCounter = new EnemiesCounter();
+
+        _EnemiesCounter.lightEnemies = _LevelWaves[_CurrentWave].lightEnemies;
+        _EnemiesCounter.lightEnemiesV2 = _LevelWaves[_CurrentWave].lightEnemiesV2;
+        _EnemiesCounter.lightEnemiesV3 = _LevelWaves[_CurrentWave].lightEnemiesV3;
+        _EnemiesCounter.flyingEnemies = _LevelWaves[_CurrentWave].flyingEnemies;
+        _EnemiesCounter.flyingEnemiesV2 = _LevelWaves[_CurrentWave].flyingEnemiesV2;
+        _EnemiesCounter.flyingEnemiesV3 = _LevelWaves[_CurrentWave].flyingEnemiesV3;
+        _EnemiesCounter.heavyEnemies = _LevelWaves[_CurrentWave].heavyEnemies;
+        _EnemiesCounter.heavyEnemiesV2 = _LevelWaves[_CurrentWave].heavyEnemiesV2;
+        _EnemiesCounter.heavyEnemiesV3 = _LevelWaves[_CurrentWave].heavyEnemiesV3;
+
+        print(_EnemiesCounter.lightEnemies + "" + _EnemiesCounter.lightEnemiesV2 + "" + _EnemiesCounter.lightEnemiesV3 + "" + _EnemiesCounter.flyingEnemies 
+                + "" + _EnemiesCounter.flyingEnemiesV2 + "" + _EnemiesCounter.flyingEnemiesV3 + "" + _EnemiesCounter.heavyEnemies + "" +_EnemiesCounter.heavyEnemiesV2 
+                + "" + _EnemiesCounter.heavyEnemiesV3);
+        print(_EnemiesCounter.lightEnemies + _EnemiesCounter.lightEnemiesV2 + _EnemiesCounter.lightEnemiesV3 + _EnemiesCounter.flyingEnemies + _EnemiesCounter.flyingEnemiesV2
+                + _EnemiesCounter.flyingEnemiesV3 + _EnemiesCounter.heavyEnemies + _EnemiesCounter.heavyEnemiesV2 + _EnemiesCounter.heavyEnemiesV3);
+
+        return _EnemiesCounter.lightEnemies + _EnemiesCounter.lightEnemiesV2 + _EnemiesCounter.lightEnemiesV3 + _EnemiesCounter.flyingEnemies + _EnemiesCounter.flyingEnemiesV2
+                + _EnemiesCounter.flyingEnemiesV3 + _EnemiesCounter.heavyEnemies + _EnemiesCounter.heavyEnemiesV2 + _EnemiesCounter.heavyEnemiesV3;
     }
 
 

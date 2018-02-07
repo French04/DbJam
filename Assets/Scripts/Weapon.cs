@@ -4,16 +4,18 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    public enum WeaponType { OneShot, Spread, OneShot_Heating };
+    public enum WeaponType { OneShot, OneShot_Heating, Spread, ThreeShots };
     public WeaponType weaponType;
     public GameObject bullet;
     
     public float damage = 1;
     public float firePower = 1;
     public float fireRate = 1;
+    public float bulletPersistence = 2;
     public float spreadWidth = 5;
     public int spreadBulletCount = 8;
     public float spreadFrequency = 1000000;
+    public float threeShotDifference = 0.1f;
     public float heatIncreaseSpeed = 0.1f;
     public float heatDecreaseSpeed = 0.1f;
     public Transform bulletSpawn;
@@ -43,7 +45,7 @@ public class Weapon : MonoBehaviour
     }
 
 
-    public void Fire()
+    public IEnumerator Fire()
     {
         if (Time.time >= lastFireTime + fireRate)
         {
@@ -52,10 +54,9 @@ public class Weapon : MonoBehaviour
 
             if (weaponType == WeaponType.OneShot_Heating && heatLevel < 100 || weaponType == WeaponType.OneShot)
             {
-                
                 GameObject newBullet = Instantiate(bullet, bulletSpawn.position, Quaternion.identity);
                 newBullet.GetComponent<Rigidbody2D>().AddForce(bulletSpawn.transform.right * firePower, ForceMode2D.Impulse);
-                Destroy(newBullet, 2);
+                Destroy(newBullet, bulletPersistence);
             }
             else if (weaponType == WeaponType.Spread)
             {
@@ -65,7 +66,7 @@ public class Weapon : MonoBehaviour
                 {
                     float bulletOffset = Mathf.Sin((float)i * spreadFrequency) * spreadWidth; //Random.Range(-spreadWidth, spreadWidth);
                     mousePosTemp.y += bulletOffset;
-                    mousePosTemp.x += -bulletOffset;                                
+                    mousePosTemp.x += -bulletOffset;
 
                     Vector3 mousePos = Camera.main.ScreenToWorldPoint(mousePosTemp);
                     Vector3 direction = mousePos - transform.position;
@@ -74,12 +75,23 @@ public class Weapon : MonoBehaviour
 
                     GameObject newBullet = Instantiate(bullet, bulletSpawn.position, Quaternion.identity);
                     newBullet.GetComponent<Rigidbody2D>().AddForce(direction * (firePower * Random.Range(0.8f, 1.2f)), ForceMode2D.Impulse);
-                    Destroy(newBullet, 2);
-                }           
+                    Destroy(newBullet, bulletPersistence);
+                }
             }
-
+            else if (weaponType == WeaponType.ThreeShots)
+            {
+                for (int i = 0; i < 3; i++)
+                {                   
+                    GameObject newBullet = Instantiate(bullet, bulletSpawn.position, Quaternion.identity);
+                    newBullet.GetComponent<Rigidbody2D>().AddForce(bulletSpawn.transform.right * firePower, ForceMode2D.Impulse);
+                    Destroy(newBullet, bulletPersistence);
+                    lastFireTime = Time.time;
+                    yield return new WaitForSeconds(threeShotDifference);
+                }  
+            }
             
             lastFireTime = Time.time;
+            yield return null;
         }
     }
 }
