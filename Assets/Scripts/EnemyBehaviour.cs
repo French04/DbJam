@@ -12,10 +12,17 @@ public class EnemyBehaviour : MonoBehaviour
 
     GameObject[] organ = new GameObject[6];
 
+    bool coroutineStarted = false;
+
     private void Awake()
     {
         _Rb = GetComponent<Rigidbody2D>();
         _EnemyName = gameObject.name;
+
+        for (int i = 0; i < organ.Length; i++)
+        {
+            organ[i] = transform.GetChild(i).gameObject;
+        }
     }
 
     private void FixedUpdate()
@@ -32,15 +39,23 @@ public class EnemyBehaviour : MonoBehaviour
         if(collision.collider.CompareTag("Bullet"))
         {
             var _BulletDmg = Player.instance.currentWeapon.GetComponent<Weapon>().damage;
-            lifePoints -= _BulletDmg;
             
-            if (lifePoints <= 0)
-                Destroy(gameObject);
+
+            if (lifePoints <= 0 && coroutineStarted == false)
+            {
+                coroutineStarted = true;
+                _CanMove = false;
+                DropOrgans(_EnemyName);
+            }        
+            else if (lifePoints > 0)
+            {
+                lifePoints -= _BulletDmg;
+            }
         }
 
         if(collision.collider.CompareTag("Civilian"))
         {
-            StartCoroutine(KillingCivilian());
+            //StartCoroutine(KillingCivilian());
             //Play animation killing civilian
             //Play animation civilian dying
 
@@ -60,27 +75,26 @@ public class EnemyBehaviour : MonoBehaviour
     {
         if (SpawnEnemies.instance.LastEnemiesStanding > 0)
             SpawnEnemies.instance.LastEnemiesStanding--;
-
-        DropOrgans(_EnemyName);
-
     }
 
     private void DropOrgans(string enemyName)
     {
         if (enemyName.Contains("Flying"))
         {
-
             if (_EnemyName.Contains("V2"))
             {
                 //drop 4
+                StartCoroutine(SpawnOrgan(4));
             }
             else if (_EnemyName.Contains("V3"))
             {
                 //drop 5
+                StartCoroutine(SpawnOrgan(5));
             }
             else
             {
                 //drop 3
+                StartCoroutine(SpawnOrgan(3));
             }
         }
         else if (enemyName.Contains("Heavy"))
@@ -89,14 +103,17 @@ public class EnemyBehaviour : MonoBehaviour
             if (_EnemyName.Contains("V2"))
             {
                 //drop 5
+                StartCoroutine(SpawnOrgan(5));
             }
             else if (_EnemyName.Contains("V3"))
             {
                 //drop 6
+                StartCoroutine(SpawnOrgan(6));
             }
             else
             {
                 //drop 4
+                StartCoroutine(SpawnOrgan(4));
             }
         }
         else if (enemyName.Contains("Light"))
@@ -105,14 +122,17 @@ public class EnemyBehaviour : MonoBehaviour
             if (_EnemyName.Contains("V2"))
             {
                 //drop 3
+                StartCoroutine(SpawnOrgan(3));
             }
             else if (_EnemyName.Contains("V3"))
             {
                 //drop 4
+                StartCoroutine(SpawnOrgan(4));
             }
             else
             {
                 //drop 2
+                StartCoroutine(SpawnOrgan(2));
             }
         }
         else if (enemyName.Contains("Boss"))
@@ -121,15 +141,62 @@ public class EnemyBehaviour : MonoBehaviour
             if (_EnemyName.Contains("V2"))
             {
                 //drop 25
+                StartCoroutine(SpawnOrgan(25));
             }
             else if (_EnemyName.Contains("V3"))
             {
                 //drop 30
+                StartCoroutine(SpawnOrgan(30));
             }
             else
             {
                 //drop 20
+                StartCoroutine(SpawnOrgan(20));
             }
         }
+    }
+
+    IEnumerator SpawnOrgan(int maxDrop)
+    {
+        for (int i = 0; i < maxDrop; i++)
+        {
+            Debug.Log("dio caneeee");
+            int random = Random.Range(0, 100);
+            int randomforceX = Random.Range(-500, 500);
+            int randomforceY = Random.Range(300, 500);
+
+            if (random >= 0 && random < 5)
+            {
+                GameObject SpawnedOrgan = Instantiate(organ[0], transform.position, Quaternion.identity);
+                SpawnedOrgan.GetComponent<Rigidbody2D>().AddForce(new Vector2(randomforceX, randomforceY));
+            }
+            else if(random >= 5 && random < 15)
+            {
+                GameObject SpawnedOrgan = Instantiate(organ[1], transform.position, Quaternion.identity);
+                SpawnedOrgan.GetComponent<Rigidbody2D>().AddForce(new Vector2(randomforceX, randomforceY));
+            }
+            else if(random >= 15 && random < 30)
+            {
+                GameObject SpawnedOrgan = Instantiate(organ[2], transform.position, Quaternion.identity);
+                SpawnedOrgan.GetComponent<Rigidbody2D>().AddForce(new Vector2(randomforceX, randomforceY));
+            }
+            else if(random >= 30 && random < 50)
+            {
+                GameObject SpawnedOrgan = Instantiate(organ[3], transform.position, Quaternion.identity);
+                SpawnedOrgan.GetComponent<Rigidbody2D>().AddForce(new Vector2(randomforceX, randomforceY));
+            }
+            else if(random >= 50 && random < 75)
+            {
+                GameObject SpawnedOrgan = Instantiate(organ[4], transform.position, Quaternion.identity);
+                SpawnedOrgan.GetComponent<Rigidbody2D>().AddForce(new Vector2(randomforceX, randomforceY));
+            }
+            else if(random >= 75 && random < 100)
+            {
+                GameObject SpawnedOrgan = Instantiate(organ[5], transform.position, Quaternion.identity);
+                SpawnedOrgan.GetComponent<Rigidbody2D>().AddForce(new Vector2(randomforceX, randomforceY));
+            }
+            yield return null;
+        }
+        Destroy(gameObject);
     }
 }
