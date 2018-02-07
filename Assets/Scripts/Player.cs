@@ -66,8 +66,7 @@ public class Player : MonoBehaviour
                 {
                     StartCoroutine(currentWeapon.GetComponent<Weapon>().Fire());
                 }
-                
-                if (Input.GetMouseButton(1))
+                else if (Input.GetMouseButton(1))
                 {
                     grabber.GetComponent<Grabber>().FireGrabber();
                 }
