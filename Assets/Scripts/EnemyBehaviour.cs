@@ -63,14 +63,31 @@ public class EnemyBehaviour : MonoBehaviour
         }
     }
 
-    private IEnumerator KillingCivilian()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        _CanMove = false;
-        
-        yield return new WaitForSeconds(5f); //change waiting value with animation timer
-        //Destroy(gameObject);
-        //_CanMove = true;
+       
+        if (collision.tag == "Bullet")
+        {
+            var _BulletDmg = Player.instance.currentWeapon.GetComponent<Weapon>().damage;
+
+            if (lifePoints <= 0 && coroutineStarted == false)
+            {
+                coroutineStarted = true;
+                _CanMove = false;
+                DropOrgans(_EnemyName);
+            }
+            else if (lifePoints > 0)
+            {
+                lifePoints -= _BulletDmg;
+            }
+        }
+
+        if(collision.tag == "Civilian")
+        {
+            StartCoroutine(EatingCivilian());
+        }
     }
+
 
     private void OnDestroy()
     {
@@ -199,4 +216,11 @@ public class EnemyBehaviour : MonoBehaviour
         }
         Destroy(gameObject);
     }
+
+    private IEnumerator EatingCivilian()
+    {
+        yield return new WaitForSeconds(2.0f);
+        Destroy(gameObject);
+    }
 }
+
