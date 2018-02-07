@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
     public static Player instance;
     ShopEnabler seller;
     public Transform pern;
-
+    
 
     void Start()
     {
@@ -25,6 +25,8 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        grabber.GetComponent<Grabber>().lineRenderer.SetWidth(0, 0);
+
         if (!seller.openShop)
         {
             /*Vector3 pos = transform.position;
@@ -53,7 +55,7 @@ public class Player : MonoBehaviour
             /*Camera.main.WorldToScreenPoint(transform.position);
 
             Debug.Log(Camera.main.WorldToScreenPoint(transform.position));*/
-            //
+            //  
 
             if (Input.mousePosition.x > Camera.main.WorldToScreenPoint(transform.position).x - 50)
             {

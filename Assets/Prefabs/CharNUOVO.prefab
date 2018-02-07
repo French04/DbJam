@@ -1933,6 +1933,7 @@ MonoBehaviour:
   grabPower: 1
   bulletSpawn: {fileID: 4924091448979306}
   origin: {fileID: 0}
+  lineRenderer: {fileID: 0}
 --- !u!114 &114031183832773256
 MonoBehaviour:
   m_ObjectHideFlags: 1

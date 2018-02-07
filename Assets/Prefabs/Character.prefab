@@ -84,6 +84,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4151573697787538}
   - component: {fileID: 114186981915012412}
+  - component: {fileID: 120191176882975336}
   m_Layer: 0
   m_Name: Grabber
   m_TagString: Grabber
@@ -251,7 +252,6 @@ GameObject:
   - component: {fileID: 4947852594251470}
   - component: {fileID: 114037490720611470}
   - component: {fileID: 70876333034404984}
-  - component: {fileID: 120802077537172440}
   m_Layer: 0
   m_Name: Character
   m_TagString: Player
@@ -1943,7 +1943,7 @@ MonoBehaviour:
   threeShotDifference: 0
   heatIncreaseSpeed: 0
   heatDecreaseSpeed: 0
-  bulletSpawn: {fileID: 0}
+  bulletSpawn: {fileID: 4259779672202722}
   heatLevel: 0
   fireSound: {fileID: 0}
   volume: 0
@@ -1986,7 +1986,7 @@ MonoBehaviour:
   threeShotDifference: 0.1
   heatIncreaseSpeed: 0
   heatDecreaseSpeed: 0
-  bulletSpawn: {fileID: 0}
+  bulletSpawn: {fileID: 4259779672202722}
   heatLevel: 0
   fireSound: {fileID: 0}
   volume: 0
@@ -2029,7 +2029,7 @@ MonoBehaviour:
   threeShotDifference: 0.05
   heatIncreaseSpeed: 0.4
   heatDecreaseSpeed: 15
-  bulletSpawn: {fileID: 0}
+  bulletSpawn: {fileID: 4259779672202722}
   heatLevel: 0
   fireSound: {fileID: 0}
   volume: 0
@@ -2056,7 +2056,7 @@ MonoBehaviour:
   threeShotDifference: 0
   heatIncreaseSpeed: 0
   heatDecreaseSpeed: 0
-  bulletSpawn: {fileID: 0}
+  bulletSpawn: {fileID: 4259779672202722}
   heatLevel: 0
   fireSound: {fileID: 0}
   volume: 0
@@ -2083,7 +2083,7 @@ MonoBehaviour:
   threeShotDifference: 0
   heatIncreaseSpeed: 0
   heatDecreaseSpeed: 0
-  bulletSpawn: {fileID: 0}
+  bulletSpawn: {fileID: 4259779672202722}
   heatLevel: 0
   fireSound: {fileID: 0}
   volume: 0
@@ -2101,6 +2101,7 @@ MonoBehaviour:
   grabPower: 1
   bulletSpawn: {fileID: 4259779672202722}
   origin: {fileID: 4673371443842008}
+  lineRenderer: {fileID: 0}
 --- !u!114 &114207635022317902
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2184,26 +2185,26 @@ MonoBehaviour:
     - m_Bone: {fileID: 0}
       m_BoneTransform: {fileID: 4503640954551910}
       solverPosition: {x: 0.00000012961947, y: -0.00000003102201, z: 0}
-      solverRotation: {x: 0, y: 0, z: -0.7714033, w: 0.63634676}
+      solverRotation: {x: 0, y: 0, z: -0.77140313, w: 0.6363469}
       defaultLocalRotation: {x: 0, y: 0, z: -0.7831812, w: 0.62179357}
     - m_Bone: {fileID: 0}
       m_BoneTransform: {fileID: 4024352332772926}
-      solverPosition: {x: 0.6292122, y: 0.023572197, z: 0}
-      solverRotation: {x: 0, y: 0, z: 0.23623835, w: 0.97169524}
+      solverPosition: {x: 0.6292121, y: 0.023572378, z: 0}
+      solverRotation: {x: 0, y: 0, z: 0.23623925, w: 0.971695}
       defaultLocalRotation: {x: 0, y: 0, z: 0.26333353, w: 0.9647049}
     - m_Bone: {fileID: 0}
       m_BoneTransform: {fileID: 4150414092368922}
-      solverPosition: {x: 1.3242993, y: 0.41642776, z: 0}
-      solverRotation: {x: 0, y: 0, z: 0.6949956, w: 0.7190141}
+      solverPosition: {x: 1.3242984, y: 0.41642955, z: 0}
+      solverRotation: {x: 0, y: 0, z: 0.6949951, w: 0.7190146}
       defaultLocalRotation: {x: 0, y: 0, z: 0.734955, w: 0.6781159}
     - m_Bone: {fileID: 0}
       m_BoneTransform: {fileID: 4890333776770902}
-      solverPosition: {x: 1.1763991, y: 0.7001982, z: 0}
-      solverRotation: {x: 0, y: 0, z: -0.7415977, w: 0.67084473}
+      solverPosition: {x: 1.1763982, y: 0.7001999, z: 0}
+      solverRotation: {x: 0, y: 0, z: -0.7415977, w: 0.6708448}
       defaultLocalRotation: {x: 0, y: 0, z: -0.775567, w: 0.6312653}
     m_Weight: 1
     m_RestoreDefaultPose: 1
-    targetPosition: {x: 1.1600822, y: 1.4167652, z: -11.643458}
+    targetPosition: {x: -5.724983, y: 0.30073512, z: -11.647365}
     iterations: 10
     damping: 0.8
 --- !u!114 &114280955321687438
@@ -2315,7 +2316,7 @@ MonoBehaviour:
   threeShotDifference: 0.1
   heatIncreaseSpeed: 0.1
   heatDecreaseSpeed: 0.1
-  bulletSpawn: {fileID: 0}
+  bulletSpawn: {fileID: 4259779672202722}
   heatLevel: 0
   fireSound: {fileID: 0}
   volume: 0
@@ -2397,22 +2398,22 @@ MonoBehaviour:
     m_SolverPoses:
     - m_Bone: {fileID: 0}
       m_BoneTransform: {fileID: 4892615514611252}
-      solverPosition: {x: 0.00000015661574, y: 0.00000022575803, z: 0}
-      solverRotation: {x: 0, y: 0, z: -0.72648203, w: 0.6871855}
+      solverPosition: {x: 0.0000003433779, y: 0.00000033618153, z: 0}
+      solverRotation: {x: 0, y: 0, z: -0.7264819, w: 0.6871857}
       defaultLocalRotation: {x: 0, y: 0, z: -0.79148173, w: 0.6111929}
     - m_Bone: {fileID: 0}
       m_BoneTransform: {fileID: 4887046402118958}
-      solverPosition: {x: 0.50952005, y: 0.094193585, z: 0}
-      solverRotation: {x: 0, y: 0, z: 0.26324922, w: 0.9647277}
+      solverPosition: {x: 0.5095197, y: 0.094193496, z: 0}
+      solverRotation: {x: 0, y: 0, z: 0.26324928, w: 0.96472776}
       defaultLocalRotation: {x: 0, y: 0, z: 0.37465507, w: 0.92716426}
     - m_Bone: {fileID: 0}
       m_BoneTransform: {fileID: 4528645159947778}
-      solverPosition: {x: 0.83529955, y: 0.3874215, z: 0}
-      solverRotation: {x: 0, y: 0, z: -0.08227402, w: 0.9966098}
+      solverPosition: {x: 0.8352996, y: 0.3874216, z: 0}
+      solverRotation: {x: 0, y: 0, z: -0.082275465, w: 0.9966096}
       defaultLocalRotation: {x: 0, y: 0, z: 0, w: 1}
     m_Weight: 1
     m_RestoreDefaultPose: 1
-    targetPosition: {x: 1.1600823, y: 1.4167652, z: -11.643458}
+    targetPosition: {x: -5.724983, y: 0.30073524, z: -11.647365}
     iterations: 10
     damping: 0.8
 --- !u!114 &114467787882854210
@@ -2460,7 +2461,7 @@ MonoBehaviour:
   threeShotDifference: 0
   heatIncreaseSpeed: 0
   heatDecreaseSpeed: 0
-  bulletSpawn: {fileID: 0}
+  bulletSpawn: {fileID: 4259779672202722}
   heatLevel: 0
   fireSound: {fileID: 0}
   volume: 0
@@ -2523,7 +2524,7 @@ MonoBehaviour:
   threeShotDifference: 0
   heatIncreaseSpeed: 0
   heatDecreaseSpeed: 0
-  bulletSpawn: {fileID: 0}
+  bulletSpawn: {fileID: 4259779672202722}
   heatLevel: 0
   fireSound: {fileID: 0}
   volume: 0
@@ -2570,7 +2571,7 @@ MonoBehaviour:
   threeShotDifference: 0
   heatIncreaseSpeed: 0
   heatDecreaseSpeed: 0
-  bulletSpawn: {fileID: 0}
+  bulletSpawn: {fileID: 4259779672202722}
   heatLevel: 0
   fireSound: {fileID: 8300000, guid: b210addba11161840927f32184fc9cf0, type: 3}
   volume: 0
@@ -2640,7 +2641,7 @@ MonoBehaviour:
     - m_Bone: {fileID: 0}
       m_BoneTransform: {fileID: 4887046402118958}
       solverPosition: {x: 0, y: 0, z: 0}
-      solverRotation: {x: 0, y: 0, z: 0.35325146, w: 0.9355284}
+      solverRotation: {x: 0, y: 0, z: 0.1880204, w: 0.9821651}
       defaultLocalRotation: {x: 0, y: 0, z: 0.48283458, w: 0.8757116}
     - m_Bone: {fileID: 0}
       m_BoneTransform: {fileID: 4528645159947778}
@@ -2649,7 +2650,7 @@ MonoBehaviour:
       defaultLocalRotation: {x: 0, y: 0, z: -0.05761368, w: 0.998339}
     m_Weight: 1
     m_RestoreDefaultPose: 1
-    targetPosition: {x: -7.0831523, y: 1.1334065, z: -14.719971}
+    targetPosition: {x: -5.724983, y: 0.30073524, z: -11.647365}
     flip: 0
 --- !u!114 &114745924564691564
 MonoBehaviour:
@@ -2747,7 +2748,7 @@ MonoBehaviour:
   threeShotDifference: 0
   heatIncreaseSpeed: 0.4
   heatDecreaseSpeed: 20
-  bulletSpawn: {fileID: 0}
+  bulletSpawn: {fileID: 4259779672202722}
   heatLevel: 0
   fireSound: {fileID: 0}
   volume: 0
@@ -2804,12 +2805,12 @@ MonoBehaviour:
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 4703865361535940}
   m_AttachedIK: {fileID: 0}
---- !u!120 &120802077537172440
+--- !u!120 &120191176882975336
 LineRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1483577776440240}
+  m_GameObject: {fileID: 1183863002943106}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -2817,7 +2818,7 @@ LineRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 0848232fb01220945872bc65213b165a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
