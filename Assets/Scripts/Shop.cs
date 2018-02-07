@@ -7,6 +7,8 @@ public class Shop : MonoBehaviour
 {
     EnablerWeapon[] weapon = new EnablerWeapon[10];
 
+    GameObject wincester, shotGun, sniper, smg, sniperPlus, bazooka, shotgunPlus, granadeLauncher, machineGunSemiAuto, gatling;
+
     //[HideInInspector]
     public int organ1 = 0, organ2 = 0, organ3 = 0, organ4 = 0, organ5 = 0, organ6 = 0;
 
@@ -25,7 +27,39 @@ public class Shop : MonoBehaviour
         weapon[0].purchased = true;
 
         player = FindObjectOfType<Player>();
-        player.currentWeapon = player.transform.Find("Wpn_Winchester").gameObject;
+
+#region Weapon
+        wincester = GameObject.Find("Wpn_Winchester").gameObject;
+
+        shotGun = GameObject.Find("Wpn_Shotgun").gameObject;
+        shotGun.SetActive(false);
+
+        sniper = GameObject.Find("Wpn_Sniper").gameObject;
+        sniper.SetActive(false);
+
+        smg = GameObject.Find("Wpn_SMG").gameObject;
+        smg.SetActive(false);
+
+        sniperPlus = GameObject.Find("Wpn_SniperPlus").gameObject;
+        sniperPlus.SetActive(false);
+
+        bazooka = GameObject.Find("Wpn_Bazooka").gameObject;
+        bazooka.SetActive(false);
+
+        shotgunPlus = GameObject.Find("Wpn_ShotgunPlus").gameObject;
+        shotgunPlus.SetActive(false);
+
+        granadeLauncher = GameObject.Find("Wpn_GranadeLauncher").gameObject;
+        granadeLauncher.SetActive(false);
+
+        machineGunSemiAuto = GameObject.Find("Wpn_MachineGunSemiAuto").gameObject;
+        machineGunSemiAuto.SetActive(false);
+
+        gatling = GameObject.Find("Wpn_Gatling").gameObject;
+        gatling.SetActive(false);
+        #endregion
+
+        player.currentWeapon = wincester;
 
         ChangeColor();
 
@@ -65,50 +99,51 @@ public class Shop : MonoBehaviour
 
     void InstantiateWeapon()
     {
-        Destroy(player.currentWeapon);
+        player.currentWeapon.SetActive(false);
 
         switch (WeaponSelected)
         {
 
-            case 0:
-                //GameObject weaponPrefab0 = Resources.Load("Weapons/Winchester") as GameObject;
-                //player.currentWeapon = Instantiate(weaponPrefab0, transform.position, Quaternion.identity);
+            case 0:               
+                player.currentWeapon = wincester;
+                player.currentWeapon.SetActive(true);
+
                 break;
             case 1:
-                GameObject weaponPrefab1 = Resources.Load("Weapons/Sniper") as GameObject;
-                player.currentWeapon = Instantiate(weaponPrefab1, transform.position, Quaternion.identity);
+                player.currentWeapon = sniper;
+                player.currentWeapon.SetActive(true);
                 break;
             case 2:
-                GameObject weaponPrefab2 = Resources.Load("Weapons/SniperSuper") as GameObject;
-                player.currentWeapon = Instantiate(weaponPrefab2, transform.position, Quaternion.identity);
+                player.currentWeapon = sniperPlus;
+                player.currentWeapon.SetActive(true);
                 break;
             case 3:
-                GameObject weaponPrefab3 = Resources.Load("Weapons/Bazooka") as GameObject;
-                player.currentWeapon = Instantiate(weaponPrefab3, transform.position, Quaternion.identity);
+                player.currentWeapon = bazooka;
+                player.currentWeapon.SetActive(true);
                 break;
             case 4:
-                GameObject weaponPrefab4 = Resources.Load("Weapons/Shotgun") as GameObject;
-                player.currentWeapon = Instantiate(weaponPrefab4, transform.position, Quaternion.identity);
+                player.currentWeapon = shotGun;
+                player.currentWeapon.SetActive(true);
                 break;
             case 5:
-                GameObject weaponPrefab5 = Resources.Load("Weapons/ShotgunSuper") as GameObject;
-                player.currentWeapon = Instantiate(weaponPrefab5, transform.position, Quaternion.identity);
+                player.currentWeapon = shotgunPlus;
+                player.currentWeapon.SetActive(true);
                 break;
             case 6:
-                GameObject weaponPrefab6 = Resources.Load("Weapons/GranadeLauncher") as GameObject;
-                player.currentWeapon = Instantiate(weaponPrefab6, transform.position, Quaternion.identity);
+                player.currentWeapon = granadeLauncher;
+                player.currentWeapon.SetActive(true);
                 break;
             case 7:
-                GameObject weaponPrefab7 = Resources.Load("Weapons/MachineGunLight") as GameObject;
-                player.currentWeapon = Instantiate(weaponPrefab7, transform.position, Quaternion.identity);
+                player.currentWeapon = smg;
+                player.currentWeapon.SetActive(true);
                 break;
             case 8:
-                GameObject weaponPrefab8 = Resources.Load("Weapons/MachineGunTriple") as GameObject;
-                player.currentWeapon = Instantiate(weaponPrefab8, transform.position, Quaternion.identity);
+                player.currentWeapon = machineGunSemiAuto;
+                player.currentWeapon.SetActive(true);
                 break;
             case 9:
-                GameObject weaponPrefab9 = Resources.Load("Weapons/Gatling") as GameObject;
-                player.currentWeapon = Instantiate(weaponPrefab9, transform.position, Quaternion.identity);
+                player.currentWeapon = gatling;
+                player.currentWeapon.SetActive(true);
                 break;
 
         }

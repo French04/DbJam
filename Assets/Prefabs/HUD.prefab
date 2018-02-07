@@ -321,6 +321,7 @@ GameObject:
   - component: {fileID: 224076015935911192}
   - component: {fileID: 222255813912710794}
   - component: {fileID: 114579668195259866}
+  - component: {fileID: 114307802274816482}
   m_Layer: 5
   m_Name: FeedBack
   m_TagString: Untagged
@@ -1265,6 +1266,19 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114307802274816482
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1435091782094840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c014b8a78abaaf4490bb40fe799d382, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftClick: {fileID: 0}
+  rightClick: {fileID: 0}
 --- !u!114 &114331775531095290
 MonoBehaviour:
   m_ObjectHideFlags: 1

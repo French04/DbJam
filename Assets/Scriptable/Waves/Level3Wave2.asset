@@ -20,11 +20,11 @@ MonoBehaviour:
   flyingEnemies: 2
   flyingEnemiesV2: 2
   flyingEnemiesV3: 0
-  waveTimer: 60
+  waveTimer: 20
   nextSpawnCountDown: 3
   timeToNextWave: 5
-  randomMinEnemies: 2
-  randomMaxEnemies: 4
+  randomMinEnemies: 3
+  randomMaxEnemies: 5
   typeOfEnemies:
   - {fileID: 1448826862346976, guid: d12edfe83ee191a409a3b48f49aaf676, type: 2}
   - {fileID: 1448826862346976, guid: 97e889d2084e62b4f87e8a1319a0df31, type: 2}

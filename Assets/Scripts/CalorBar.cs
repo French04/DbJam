@@ -8,6 +8,7 @@ public class CalorBar : MonoBehaviour
 
     Shop shop;
 
+    Player player;
 
     float calor = 0;
     public float maxCalor = 125;
@@ -23,6 +24,7 @@ public class CalorBar : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
+        player = FindObjectOfType<Player>();
         shop = FindObjectOfType<Shop>();
 
         for (int i = 0; i < feedbackBlock.Length; i++)
@@ -34,8 +36,6 @@ public class CalorBar : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        Debug.Log(calor);
-
 		if(shop.WeaponSelected == 7 || shop.WeaponSelected == 9)
         {
             //increase calor valor if the player shoot with the gatling o machineGun
