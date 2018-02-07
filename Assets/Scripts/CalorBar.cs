@@ -34,8 +34,6 @@ public class CalorBar : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        Debug.Log(calor);
-
 		if(shop.WeaponSelected == 7 || shop.WeaponSelected == 9)
         {
             //increase calor valor if the player shoot with the gatling o machineGun
