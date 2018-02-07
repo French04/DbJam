@@ -6,18 +6,24 @@ public class OrganScript : MonoBehaviour
 {
     public bool grabberEnabled = false;
     Vector3 playerPosition;
-    //Rigidbody2D rb;
+    Rigidbody2D rb;
 
+    float timer = 5;
 
     private void Start()
     {
         playerPosition = GameObject.Find("Character").transform.position;
-        //rb = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
-    /*private void Update()
+    private void OnEnable()
     {
-        if (grabberEnabled)
+        timer = 5;
+    }
+
+    private void Update()
+    {
+        /*if (grabberEnabled)
         {
             if (transform.position != playerPosition)
             {
@@ -29,10 +35,17 @@ public class OrganScript : MonoBehaviour
         else
         {
             rb.gravityScale = 1;
+        }*/
+
+        timer -= Time.deltaTime * 2;
+
+        if(timer <= 0)
+        {
+            Destroy(gameObject);
         }
     }
 
-    public void OnMouseOver()
+    /*public void OnMouseOver()
     {
         grabberEnabled = Input.GetMouseButton(1);      
     }
@@ -41,4 +54,20 @@ public class OrganScript : MonoBehaviour
     {
         grabberEnabled = false;
     }*/
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Grabber"))
+        {
+            rb.gravityScale = 1;
+        }
+    }
 }

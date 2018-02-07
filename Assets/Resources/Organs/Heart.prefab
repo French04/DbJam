@@ -22,11 +22,10 @@ GameObject:
   - component: {fileID: 212197026415398210}
   - component: {fileID: 50153351515947568}
   - component: {fileID: 58262535964632556}
-  - component: {fileID: 58313036014981664}
-  - component: {fileID: 114434611066214262}
+  - component: {fileID: 114237419748813944}
   m_Layer: 10
-  m_Name: Lungs
-  m_TagString: Lungs
+  m_Name: Heart
+  m_TagString: Heart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1220452774318638}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.8, y: 1.1280576, z: 0}
+  m_LocalPosition: {x: 2.74, y: -0.9707814, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
@@ -79,22 +78,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.195
---- !u!58 &58313036014981664
-CircleCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1220452774318638}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
---- !u!114 &114434611066214262
+--- !u!114 &114237419748813944
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -139,7 +123,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300026, guid: 87efaf20c96bd46b2a6e7bf4d4d3fd57, type: 3}
-  m_Color: {r: 0, g: 0.7103448, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.375, b: 0.375, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
