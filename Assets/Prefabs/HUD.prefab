@@ -946,12 +946,12 @@ MonoBehaviour:
   imEnabled: 1
   purchased: 0
   iAmCurrentWeapon: 0
-  heart: 0
+  heart: 5
   brain: 0
-  lung: 0
-  kidney: 0
-  intestine: 0
-  liver: 0
+  lung: 10
+  kidney: 40
+  intestine: 30
+  liver: 60
 --- !u!114 &114099236119940402
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -966,12 +966,12 @@ MonoBehaviour:
   imEnabled: 1
   purchased: 0
   iAmCurrentWeapon: 0
-  heart: 0
-  brain: 0
-  lung: 0
-  kidney: 0
-  intestine: 0
-  liver: 0
+  heart: 10
+  brain: 2
+  lung: 12
+  kidney: 20
+  intestine: 25
+  liver: 25
 --- !u!114 &114117640552009462
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1824,11 +1824,11 @@ MonoBehaviour:
   purchased: 0
   iAmCurrentWeapon: 0
   heart: 0
-  brain: 0
-  lung: 0
-  kidney: 0
-  intestine: 0
-  liver: 0
+  brain: 2
+  lung: 3
+  kidney: 5
+  intestine: 25
+  liver: 20
 --- !u!114 &114527535784849268
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1908,12 +1908,12 @@ MonoBehaviour:
   imEnabled: 1
   purchased: 0
   iAmCurrentWeapon: 0
-  heart: 0
-  brain: 0
-  lung: 0
-  kidney: 0
-  intestine: 0
-  liver: 0
+  heart: 10
+  brain: 10
+  lung: 12
+  kidney: 15
+  intestine: 20
+  liver: 40
 --- !u!114 &114646389808719260
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1955,12 +1955,12 @@ MonoBehaviour:
   imEnabled: 1
   purchased: 0
   iAmCurrentWeapon: 0
-  heart: 0
-  brain: 0
-  lung: 0
-  kidney: 0
-  intestine: 0
-  liver: 0
+  heart: 13
+  brain: 13
+  lung: 13
+  kidney: 23
+  intestine: 30
+  liver: 30
 --- !u!114 &114697527082815600
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2205,12 +2205,12 @@ MonoBehaviour:
   imEnabled: 1
   purchased: 0
   iAmCurrentWeapon: 0
-  heart: 0
-  brain: 0
-  lung: 0
-  kidney: 0
-  intestine: 0
-  liver: 0
+  heart: 20
+  brain: 15
+  lung: 20
+  kidney: 10
+  intestine: 50
+  liver: 25
 --- !u!114 &114823527950608324
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2330,12 +2330,12 @@ MonoBehaviour:
   imEnabled: 1
   purchased: 0
   iAmCurrentWeapon: 0
-  heart: 0
-  brain: 0
-  lung: 0
-  kidney: 0
-  intestine: 0
-  liver: 0
+  heart: 25
+  brain: 25
+  lung: 30
+  kidney: 40
+  intestine: 50
+  liver: 50
 --- !u!114 &114883402654917014
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2410,12 +2410,12 @@ MonoBehaviour:
   imEnabled: 1
   purchased: 0
   iAmCurrentWeapon: 0
-  heart: 0
-  brain: 0
-  lung: 0
-  kidney: 0
-  intestine: 0
-  liver: 0
+  heart: 3
+  brain: 7
+  lung: 10
+  kidney: 3
+  intestine: 40
+  liver: 20
 --- !u!114 &114936777886806646
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2457,12 +2457,12 @@ MonoBehaviour:
   imEnabled: 1
   purchased: 0
   iAmCurrentWeapon: 0
-  heart: 0
-  brain: 0
-  lung: 0
-  kidney: 0
-  intestine: 0
-  liver: 0
+  heart: 2
+  brain: 2
+  lung: 5
+  kidney: 8
+  intestine: 8
+  liver: 10
 --- !u!114 &114948884773661684
 MonoBehaviour:
   m_ObjectHideFlags: 1
