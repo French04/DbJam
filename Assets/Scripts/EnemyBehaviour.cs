@@ -160,7 +160,6 @@ public class EnemyBehaviour : MonoBehaviour
     {
         for (int i = 0; i < maxDrop; i++)
         {
-            Debug.Log("dio caneeee");
             int random = Random.Range(0, 100);
             int randomforceX = Random.Range(-500, 500);
             int randomforceY = Random.Range(300, 500);
