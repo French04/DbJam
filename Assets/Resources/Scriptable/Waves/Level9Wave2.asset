@@ -21,7 +21,7 @@ MonoBehaviour:
   flyingEnemiesV2: 2
   flyingEnemiesV3: 3
   waveTimer: 20
-  nextSpawnCountDown: 3
+  nextSpawnCountDown: 5
   timeToNextWave: 5
   randomMinEnemies: 3
   randomMaxEnemies: 5

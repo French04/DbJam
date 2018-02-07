@@ -38,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1450883724678088}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.365051, y: -2.0997856, z: -0.12254906}
+  m_LocalPosition: {x: -15.65, y: -6.03, z: -0.12254906}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -131,6 +131,7 @@ MonoBehaviour:
   cursorTexture: {fileID: 2800000, guid: ad98dcb55ec3e984f9c446950887b092, type: 3}
   selectedColor: {r: 1, g: 1, b: 1, a: 1}
   unselectedColor: {r: 0.7058823, g: 0.7058823, b: 0.7058823, a: 1}
+  openShop: 0
 --- !u!212 &212375392426578852
 SpriteRenderer:
   m_ObjectHideFlags: 1
