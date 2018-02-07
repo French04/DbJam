@@ -26,10 +26,13 @@ public class EnemyBehaviour : MonoBehaviour
 
     SpriteRenderer spriteRenderer;
 
+    Animator animator;
+
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
     }
     void OnBecameVisible()
     {
@@ -232,8 +235,13 @@ public class EnemyBehaviour : MonoBehaviour
             }
             yield return null;
         }
-        Destroy(gameObject);
+        animator.SetBool("imDeath", true);
         audioSource.PlayOneShot(death, volume);
+    }
+
+    public void Destroy()
+    {
+        Destroy(gameObject);
     }
 
     private IEnumerator EatingCivilian()
