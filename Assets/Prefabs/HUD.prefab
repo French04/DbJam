@@ -252,6 +252,7 @@ GameObject:
   - component: {fileID: 114246811378616140}
   - component: {fileID: 114743832778618398}
   - component: {fileID: 114202877365617210}
+  - component: {fileID: 114495705636979644}
   m_Layer: 5
   m_Name: HUD
   m_TagString: Untagged
@@ -1656,6 +1657,17 @@ MonoBehaviour:
   kidney: 0
   intestine: 0
   liver: 0
+--- !u!114 &114495705636979644
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1407217802834952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ab1dfb7d8c7e654f8cc9a46baa1f069, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114495917385972164
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2779,7 +2791,7 @@ Canvas:
   m_GameObject: {fileID: 1407217802834952}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0

@@ -55,7 +55,7 @@ public class Player : MonoBehaviour
             Debug.Log(Camera.main.WorldToScreenPoint(transform.position));*/
             //
 
-            if (Input.mousePosition.x > Camera.main.WorldToScreenPoint(transform.position).x - 70)
+            if (Input.mousePosition.x > Camera.main.WorldToScreenPoint(transform.position).x - 50)
             {
                 IK.transform.position = mousePos;
             }

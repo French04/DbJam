@@ -17,6 +17,8 @@ public class OrganCollector : MonoBehaviour
         {
             //if not, set instance to this
             instance = this;
+
+            DontDestroyOnLoad(gameObject);
         }
         //If instance already exists and it's not this:
         else if (instance != this)
