@@ -8,10 +8,12 @@ public class EnemyBehaviour : MonoBehaviour
 
     private Rigidbody2D _Rb;
     private bool _CanMove = true;
+    private string _EnemyName;
 
     private void Awake()
     {
         _Rb = GetComponent<Rigidbody2D>();
+        _EnemyName = gameObject.name;
     }
 
     private void FixedUpdate()
@@ -57,6 +59,75 @@ public class EnemyBehaviour : MonoBehaviour
         if (SpawnEnemies.instance.LastEnemiesStanding > 0)
             SpawnEnemies.instance.LastEnemiesStanding--;
 
-        
+        DropOrgans(_EnemyName);
+
+    }
+
+    private void DropOrgans(string enemyName)
+    {
+        if (enemyName.Contains("Flying"))
+        {
+
+            if (_EnemyName.Contains("V2"))
+            {
+                //drop 4
+            }
+            else if (_EnemyName.Contains("V3"))
+            {
+                //drop 5
+            }
+            else
+            {
+                //drop 3
+            }
+        }
+        else if (enemyName.Contains("Heavy"))
+        {
+
+            if (_EnemyName.Contains("V2"))
+            {
+                //drop 5
+            }
+            else if (_EnemyName.Contains("V3"))
+            {
+                //drop 6
+            }
+            else
+            {
+                //drop 4
+            }
+        }
+        else if (enemyName.Contains("Light"))
+        {
+
+            if (_EnemyName.Contains("V2"))
+            {
+                //drop 3
+            }
+            else if (_EnemyName.Contains("V3"))
+            {
+                //drop 4
+            }
+            else
+            {
+                //drop 2
+            }
+        }
+        else if (enemyName.Contains("Boss"))
+        {
+
+            if (_EnemyName.Contains("V2"))
+            {
+                //drop 25
+            }
+            else if (_EnemyName.Contains("V3"))
+            {
+                //drop 30
+            }
+            else
+            {
+                //drop 20
+            }
+        }
     }
 }
