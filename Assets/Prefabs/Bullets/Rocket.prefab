@@ -90,7 +90,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyOnContact: 1
-  realisticBalistic: 1
+  realisticBalistic: 0
 --- !u!212 &212860397024050028
 SpriteRenderer:
   m_ObjectHideFlags: 1

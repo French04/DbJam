@@ -1208,7 +1208,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1483577776440240}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.9293113, y: -0.6595927, z: 0}
+  m_LocalPosition: {x: -6.82886, y: -0.74, z: -3.072606}
   m_LocalScale: {x: 0.8248822, y: 0.82488227, z: 0.82488227}
   m_Children:
   - {fileID: 4050372068069942}
@@ -2118,7 +2118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponType: 0
-  bullet: {fileID: 1016532901519986, guid: 1cc3f562b0f0cf345b70fc4bc666264a, type: 2}
+  bullet: {fileID: 1016532901519986, guid: fdf0f009a25487847b83aea80df3bf15, type: 2}
   damage: 200
   firePower: 100
   fireRate: 1.5
@@ -2162,7 +2162,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponType: 2
-  bullet: {fileID: 1016532901519986, guid: 09a525eb59eea6d40be10ade985047a5, type: 2}
+  bullet: {fileID: 1016532901519986, guid: 06b9b1811fe21254f864d4b174bee476, type: 2}
   damage: 50
   firePower: 30
   fireRate: 2
@@ -2206,7 +2206,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponType: 1
-  bullet: {fileID: 1016532901519986, guid: 1cc3f562b0f0cf345b70fc4bc666264a, type: 2}
+  bullet: {fileID: 1016532901519986, guid: 09a525eb59eea6d40be10ade985047a5, type: 2}
   damage: 50
   firePower: 40
   fireRate: 0.3
@@ -2234,7 +2234,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponType: 0
-  bullet: {fileID: 1016532901519986, guid: 09a525eb59eea6d40be10ade985047a5, type: 2}
+  bullet: {fileID: 1016532901519986, guid: 145fbcf14c1328246baa81903e2e3361, type: 2}
   damage: 300
   firePower: 15
   fireRate: 3
@@ -2262,7 +2262,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponType: 0
-  bullet: {fileID: 1016532901519986, guid: 145fbcf14c1328246baa81903e2e3361, type: 2}
+  bullet: {fileID: 1016532901519986, guid: af2b5197ac64c1548b1aedb085a794bb, type: 2}
   damage: 350
   firePower: 12
   fireRate: 2
@@ -2496,7 +2496,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponType: 2
-  bullet: {fileID: 1016532901519986, guid: 1cc3f562b0f0cf345b70fc4bc666264a, type: 2}
+  bullet: {fileID: 1016532901519986, guid: 06b9b1811fe21254f864d4b174bee476, type: 2}
   damage: 100
   firePower: 30
   fireRate: 1.5
@@ -2642,7 +2642,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponType: 0
-  bullet: {fileID: 1016532901519986, guid: 96a416c4315f04b448328db35e02697d, type: 2}
+  bullet: {fileID: 1016532901519986, guid: fdf0f009a25487847b83aea80df3bf15, type: 2}
   damage: 500
   firePower: 100
   fireRate: 1.5
@@ -2706,7 +2706,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponType: 3
-  bullet: {fileID: 1016532901519986, guid: 1cc3f562b0f0cf345b70fc4bc666264a, type: 2}
+  bullet: {fileID: 1016532901519986, guid: 0080601e9fd243743ae3c9abca60a526, type: 2}
   damage: 100
   firePower: 40
   fireRate: 0.8
@@ -2754,7 +2754,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponType: 0
-  bullet: {fileID: 1016532901519986, guid: 09a525eb59eea6d40be10ade985047a5, type: 2}
+  bullet: {fileID: 1016532901519986, guid: 1cc3f562b0f0cf345b70fc4bc666264a, type: 2}
   damage: 50
   firePower: 50
   fireRate: 0.5
@@ -2895,7 +2895,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 0.32000035
+  m_Length: 0.32000053
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 4890333776770902}
   m_AttachedIK: {fileID: 114898488572330618}
@@ -2932,7 +2932,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponType: 1
-  bullet: {fileID: 1016532901519986, guid: 1cc3f562b0f0cf345b70fc4bc666264a, type: 2}
+  bullet: {fileID: 1016532901519986, guid: 0080601e9fd243743ae3c9abca60a526, type: 2}
   damage: 50
   firePower: 40
   fireRate: 0.1

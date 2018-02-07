@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 50103404444263388}
   - component: {fileID: 114950365285232502}
   m_Layer: 11
-  m_Name: BulletArcade 2
+  m_Name: sniper
   m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
