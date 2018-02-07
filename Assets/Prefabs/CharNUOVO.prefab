@@ -1981,6 +1981,7 @@ MonoBehaviour:
   heatDecreaseSpeed: 0
   bulletSpawn: {fileID: 4924091448979306}
   heatLevel: 0
+  effectParticle: {fileID: 0}
   fireSound: {fileID: 8300000, guid: 35e7cd6bd82db82408835186bee390f7, type: 3}
   volume: 0
 --- !u!114 &114090458168255650
@@ -2028,6 +2029,7 @@ MonoBehaviour:
   heatDecreaseSpeed: 15
   bulletSpawn: {fileID: 4924091448979306}
   heatLevel: 0
+  effectParticle: {fileID: 0}
   fireSound: {fileID: 8300000, guid: a2c633a06ad619443b032257a6f9fd74, type: 3}
   volume: 1
 --- !u!114 &114146097348125920
@@ -2075,6 +2077,7 @@ MonoBehaviour:
   heatDecreaseSpeed: 0
   bulletSpawn: {fileID: 4924091448979306}
   heatLevel: 0
+  effectParticle: {fileID: 0}
   fireSound: {fileID: 8300000, guid: 23f7f53b835cd5f4298d03b89224f3bf, type: 3}
   volume: 1
 --- !u!114 &114233590537497916
@@ -2170,6 +2173,7 @@ MonoBehaviour:
   heatDecreaseSpeed: 0
   bulletSpawn: {fileID: 4924091448979306}
   heatLevel: 0
+  effectParticle: {fileID: 0}
   fireSound: {fileID: 8300000, guid: b6f0bce477cfecc4b97efa49f1512774, type: 3}
   volume: 0
 --- !u!114 &114384954719357600
@@ -2401,6 +2405,7 @@ MonoBehaviour:
   heatDecreaseSpeed: 0
   bulletSpawn: {fileID: 4924091448979306}
   heatLevel: 0
+  effectParticle: {fileID: 0}
   fireSound: {fileID: 8300000, guid: 7862ba83b0b297344b47dac374f6f0bf, type: 3}
   volume: 1
 --- !u!114 &114546223518905802
@@ -2534,6 +2539,7 @@ MonoBehaviour:
   heatDecreaseSpeed: 0
   bulletSpawn: {fileID: 4924091448979306}
   heatLevel: 0
+  effectParticle: {fileID: 0}
   fireSound: {fileID: 8300000, guid: 228c25e6860ccdd4c8d62d12b1a3cb91, type: 3}
   volume: 0.1
 --- !u!114 &114621218654301806
@@ -2561,6 +2567,7 @@ MonoBehaviour:
   heatDecreaseSpeed: 0.1
   bulletSpawn: {fileID: 4924091448979306}
   heatLevel: 0
+  effectParticle: {fileID: 0}
   fireSound: {fileID: 8300000, guid: 71ad5233830309d48a9b2821d0251d69, type: 3}
   volume: 0
 --- !u!114 &114631697022509070
@@ -2734,6 +2741,7 @@ MonoBehaviour:
   heatDecreaseSpeed: 0
   bulletSpawn: {fileID: 4924091448979306}
   heatLevel: 0
+  effectParticle: {fileID: 0}
   fireSound: {fileID: 8300000, guid: 04bb0b8e69a102c4686799c0b96c233c, type: 3}
   volume: 1
 --- !u!114 &114929353884875504
@@ -2777,6 +2785,7 @@ MonoBehaviour:
   heatDecreaseSpeed: 0
   bulletSpawn: {fileID: 4924091448979306}
   heatLevel: 0
+  effectParticle: {fileID: 0}
   fireSound: {fileID: 8300000, guid: 201b94d76cb6d104a80e347151dceb12, type: 3}
   volume: 0
 --- !u!114 &114956524112720106
@@ -2844,6 +2853,7 @@ MonoBehaviour:
   heatDecreaseSpeed: 20
   bulletSpawn: {fileID: 4924091448979306}
   heatLevel: 0
+  effectParticle: {fileID: 0}
   fireSound: {fileID: 8300000, guid: 5cc0c685a8e6c7a41bf084df811a3b48, type: 3}
   volume: 1
 --- !u!137 &137067578154899054

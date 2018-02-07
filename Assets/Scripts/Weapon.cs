@@ -22,19 +22,18 @@ public class Weapon : MonoBehaviour
     public Transform bulletSpawn;
     [HideInInspector] public float heatLevel = 0;
     float lastFireTime = 0;
-
-
+    public ParticleSystem effectParticle;
     public AudioClip fireSound;
     private AudioSource audioSource;
 	public float volume;
 
+
     private void Start()
     {
+        effectParticle = GameObject.Find("WFX_MF 4P RIFLE1").GetComponent<ParticleSystem>(); 
         audioSource = GetComponent<AudioSource>();
     }
-
-
-
+    
 
     void Update()
     {
@@ -64,7 +63,8 @@ public class Weapon : MonoBehaviour
 
             if (weaponType == WeaponType.OneShot_Heating && heatLevel < 100 || weaponType == WeaponType.OneShot)
             {
-				audioSource.PlayOneShot(fireSound, volume);
+                effectParticle.Play();
+                audioSource.PlayOneShot(fireSound, volume);
                 GameObject newBullet = Instantiate(bullet, bulletSpawn.position, Quaternion.identity);
                 newBullet.GetComponent<Rigidbody2D>().AddForce(bulletSpawn.transform.right * firePower, ForceMode2D.Impulse);
                 Destroy(newBullet, bulletPersistence);
@@ -72,6 +72,7 @@ public class Weapon : MonoBehaviour
             else if (weaponType == WeaponType.Spread)
             {
                 Vector3 mousePosTemp = Input.mousePosition;
+                effectParticle.Play();
 
                 for (int i = 0; i < spreadBulletCount; i++)
                 {
@@ -95,6 +96,7 @@ public class Weapon : MonoBehaviour
 				audioSource.PlayOneShot(fireSound, volume);
                 for (int i = 0; i < 3; i++)
                 {
+                    effectParticle.Play();
                     GameObject newBullet = Instantiate(bullet, bulletSpawn.position, Quaternion.identity);
                     newBullet.GetComponent<Rigidbody2D>().AddForce(bulletSpawn.transform.right * firePower, ForceMode2D.Impulse);
                     Destroy(newBullet, bulletPersistence);
