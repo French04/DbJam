@@ -44,30 +44,14 @@ Mesh:
     channels: []
     fullWeights: []
   m_BindPose:
-  - e00: 1.0875361
-    e01: 0.34964806
+  - e00: 1.142191
+    e01: 0.019680487
     e02: 0
-    e03: 0.22482412
-    e10: -0.34964803
-    e11: 1.0875361
+    e03: -0.092390925
+    e10: -0.019680485
+    e11: 1.142191
     e12: 0
-    e13: 0.07758218
-    e20: 0
-    e21: 0
-    e22: 1.1423607
-    e23: 0
-    e30: 0
-    e31: 0
-    e32: 0
-    e33: 1
-  - e00: 0.91029274
-    e01: 0.6901847
-    e02: 0
-    e03: -0.2623487
-    e10: -0.69018465
-    e11: 0.9102928
-    e12: 0
-    e13: 0.26081342
+    e13: 0.006683903
     e20: 0
     e21: 0
     e22: 1.1423607
@@ -100,20 +84,20 @@ Mesh:
     boneIndex[1]: 0
     boneIndex[2]: 0
     boneIndex[3]: 0
-  - weight[0]: 0.91179425
-    weight[1]: 0.08820578
+  - weight[0]: 1
+    weight[1]: 0
     weight[2]: 0
     weight[3]: 0
     boneIndex[0]: 0
-    boneIndex[1]: 1
+    boneIndex[1]: 0
     boneIndex[2]: 0
     boneIndex[3]: 0
-  - weight[0]: 0.99843407
-    weight[1]: 0.001565926
+  - weight[0]: 1
+    weight[1]: 0
     weight[2]: 0
     weight[3]: 0
     boneIndex[0]: 0
-    boneIndex[1]: 1
+    boneIndex[1]: 0
     boneIndex[2]: 0
     boneIndex[3]: 0
   - weight[0]: 1
@@ -265,20 +249,20 @@ MonoBehaviour:
     boneIndex1: -1
     boneIndex2: -1
     boneIndex3: -1
-  - weight0: 0.91179425
-    weight1: 0.08820578
+  - weight0: 1
+    weight1: 0
     weight2: 0
     weight3: 0
     boneIndex0: 0
-    boneIndex1: 1
+    boneIndex1: -1
     boneIndex2: -1
     boneIndex3: -1
-  - weight0: 0.99843407
-    weight1: 0.001565926
+  - weight0: 1
+    weight1: 0
     weight2: 0
     weight3: 0
     boneIndex0: 0
-    boneIndex1: 1
+    boneIndex1: -1
     boneIndex2: -1
     boneIndex3: -1
   - weight0: 1
@@ -314,14 +298,14 @@ MonoBehaviour:
   m_Indices: 000000000200000001000000050000000200000000000000050000000400000003000000020000000500000003000000
   m_BindPoses:
   - bindPose:
-      e00: 1.0875361
-      e01: 0.34964806
+      e00: 1.142191
+      e01: 0.019680487
       e02: 0
-      e03: 0.22482412
-      e10: -0.34964803
-      e11: 1.0875361
+      e03: -0.092390925
+      e10: -0.019680485
+      e11: 1.142191
       e12: 0
-      e13: 0.07758218
+      e13: 0.006683903
       e20: 0
       e21: 0
       e22: 1.1423607
@@ -334,27 +318,5 @@ MonoBehaviour:
     path: Chest/FrontArm1/FrontArm2/FrontHand
     name: FrontHand
     color: {r: 1, g: 0, b: 0, a: 1}
-    zOrder: 0
-  - bindPose:
-      e00: 0.91029274
-      e01: 0.6901847
-      e02: 0
-      e03: -0.2623487
-      e10: -0.69018465
-      e11: 0.9102928
-      e12: 0
-      e13: 0.26081342
-      e20: 0
-      e21: 0
-      e22: 1.1423607
-      e23: -0.00390625
-      e30: 0
-      e31: 0
-      e32: 0
-      e33: 1
-    boneLength: 0.26
-    path: Chest/BackArm1/BackArm2/BackHand
-    name: BackHand
-    color: {r: 1, g: 0.75, b: 0, a: 1}
     zOrder: 0
   m_Blendshapes: []
