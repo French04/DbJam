@@ -83,11 +83,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4151573697787538}
-  - component: {fileID: 114595553826026032}
-  - component: {fileID: 114612847438700532}
-  - component: {fileID: 137265635683675364}
   m_Layer: 0
-  m_Name: Wpn_Winchester
+  m_Name: Grabber
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -442,6 +439,24 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1876483612811304
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4460864178579914}
+  - component: {fileID: 114595553826026032}
+  - component: {fileID: 114612847438700532}
+  - component: {fileID: 137265635683675364}
+  m_Layer: 0
+  m_Name: Wpn_Winchester
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1886237640449646
 GameObject:
   m_ObjectHideFlags: 0
@@ -552,7 +567,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1963290020926152}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.134, y: 1.406, z: 0}
+  m_LocalPosition: {x: -1.0782775, y: 2.0569198, z: -14.120033}
   m_LocalScale: {x: 1.4, y: 1.4, z: 1}
   m_Children:
   - {fileID: 4167349255153040}
@@ -566,7 +581,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1804061988705100}
-  m_LocalRotation: {x: 0, y: 0, z: 0.26246107, w: 0.9649426}
+  m_LocalRotation: {x: 0, y: 0, z: 0.3149656, w: 0.9491031}
   m_LocalPosition: {x: 0.62965333, y: 0.00000017881393, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -599,7 +614,7 @@ Transform:
   m_LocalScale: {x: 0.99999726, y: 0.99999726, z: 0.99999726}
   m_Children: []
   m_Father: {fileID: 4692610919378524}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -37.149002}
 --- !u!4 &4150414092368922
 Transform:
@@ -607,7 +622,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1895145034770590}
-  m_LocalRotation: {x: 0, y: 0, z: 0.71605486, w: 0.698044}
+  m_LocalRotation: {x: 0, y: 0, z: 0.78183734, w: 0.62348247}
   m_LocalPosition: {x: 0.7984245, y: -0.00000018253922, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -621,9 +636,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1183863002943106}
-  m_LocalRotation: {x: -0, y: -0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.75, y: 1.15, z: 0}
-  m_LocalScale: {x: 1.1423607, y: 1.1423607, z: 1.1423607}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.75000024, y: 1.1499999, z: -0.000000037252903}
+  m_LocalScale: {x: 1.142357, y: 1.142357, z: 1.142357}
   m_Children: []
   m_Father: {fileID: 4692610919378524}
   m_RootOrder: 0
@@ -652,7 +667,7 @@ Transform:
   m_LocalScale: {x: 0.99999714, y: 0.99999714, z: 0.99999726}
   m_Children: []
   m_Father: {fileID: 4692610919378524}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -38.765003}
 --- !u!4 &4232119009960638
 Transform:
@@ -665,7 +680,7 @@ Transform:
   m_LocalScale: {x: 0.99999726, y: 0.99999726, z: 0.99999726}
   m_Children: []
   m_Father: {fileID: 4692610919378524}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -38.513}
 --- !u!4 &4250685700496130
 Transform:
@@ -720,13 +735,26 @@ Transform:
   m_Father: {fileID: 4703865361535940}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 7.208}
+--- !u!4 &4460864178579914
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1876483612811304}
+  m_LocalRotation: {x: -0, y: -0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.75, y: 1.15, z: 0}
+  m_LocalScale: {x: 1.1423607, y: 1.1423607, z: 1.1423607}
+  m_Children: []
+  m_Father: {fileID: 4692610919378524}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -37.567}
 --- !u!4 &4503640954551910
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1442629086819286}
-  m_LocalRotation: {x: 0, y: 0, z: -0.76155424, w: 0.6481012}
+  m_LocalRotation: {x: 0, y: 0, z: -0.7516092, w: 0.65960866}
   m_LocalPosition: {x: 0.687108, y: 0.5581781, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -740,7 +768,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1446124942619672}
-  m_LocalRotation: {x: 0, y: 0, z: -0.066814944, w: 0.9977654}
+  m_LocalRotation: {x: 0, y: 0, z: -0.014720525, w: 0.99989164}
   m_LocalPosition: {x: 0.438309, y: 0.000000037252903, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -758,7 +786,7 @@ Transform:
   m_LocalScale: {x: 0.99999726, y: 0.99999726, z: 0.99999726}
   m_Children: []
   m_Father: {fileID: 4692610919378524}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -38.765003}
 --- !u!4 &4538578335097976
 Transform:
@@ -784,7 +812,7 @@ Transform:
   m_LocalScale: {x: 0.99999726, y: 0.99999726, z: 0.99999726}
   m_Children: []
   m_Father: {fileID: 4692610919378524}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -37.149002}
 --- !u!4 &4692610919378524
 Transform:
@@ -797,6 +825,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4151573697787538}
+  - {fileID: 4460864178579914}
   - {fileID: 4920659110310266}
   - {fileID: 4537239010314818}
   - {fileID: 4232119009960638}
@@ -836,7 +865,7 @@ Transform:
   m_LocalScale: {x: 0.99999726, y: 0.99999726, z: 0.99999726}
   m_Children: []
   m_Father: {fileID: 4692610919378524}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -37.149002}
 --- !u!4 &4861330748769634
 Transform:
@@ -849,7 +878,7 @@ Transform:
   m_LocalScale: {x: 0.99999714, y: 0.99999714, z: 0.99999726}
   m_Children: []
   m_Father: {fileID: 4692610919378524}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -38.765003}
 --- !u!4 &4887046402118958
 Transform:
@@ -857,7 +886,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1560790385919262}
-  m_LocalRotation: {x: 0, y: 0, z: 0.30350927, w: 0.9528285}
+  m_LocalRotation: {x: 0, y: 0, z: 0.4088248, w: 0.9126129}
   m_LocalPosition: {x: 0.5180758, y: -0.008952498, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -871,7 +900,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1490837134110024}
-  m_LocalRotation: {x: 0, y: 0, z: -0.73288363, w: 0.680354}
+  m_LocalRotation: {x: 0, y: 0, z: -0.6910109, w: 0.7228444}
   m_LocalPosition: {x: 0.3200002, y: -0.00000020861626, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -885,7 +914,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1645622754387722}
-  m_LocalRotation: {x: 0, y: 0, z: -0.6941017, w: 0.719877}
+  m_LocalRotation: {x: 0, y: 0, z: -0.60903555, w: 0.7931429}
   m_LocalPosition: {x: 0.77, y: -0.26, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -904,7 +933,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4692610919378524}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -37.149002}
 --- !u!4 &4926555867202822
 Transform:
@@ -930,7 +959,7 @@ Transform:
   m_LocalScale: {x: 0.9999972, y: 0.9999972, z: 0.99999726}
   m_Children: []
   m_Father: {fileID: 4692610919378524}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -37.149002}
 --- !u!4 &4946904196096218
 Transform:
@@ -1047,16 +1076,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponType: 0
   bullet: {fileID: 1016532901519986, guid: 1cc3f562b0f0cf345b70fc4bc666264a, type: 2}
-  damage: 1
+  damage: 200
   firePower: 100
-  fireRate: 0.1
+  fireRate: 2
   bulletPersistence: 2
-  spreadWidth: 5
-  spreadBulletCount: 8
-  spreadFrequency: 1000000
-  threeShotDifference: 0.1
-  heatIncreaseSpeed: 0.1
-  heatDecreaseSpeed: 0.1
+  spreadWidth: 0
+  spreadBulletCount: 0
+  spreadFrequency: 0
+  threeShotDifference: 0
+  heatIncreaseSpeed: 0
+  heatDecreaseSpeed: 0
   bulletSpawn: {fileID: 4259779672202722}
   heatLevel: 0
 --- !u!114 &114037490720611470
@@ -1071,7 +1100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aimTexture: {fileID: 2800000, guid: 1ea199db619ae4443bb6d88e96bbc4e1, type: 3}
-  currentWeapon: {fileID: 1183863002943106}
+  currentWeapon: {fileID: 1870808443326122}
   IK: {fileID: 4017817280312472}
   pern: {fileID: 4926555867202822}
 --- !u!114 &114103848492307740
@@ -1086,14 +1115,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponType: 2
-  bullet: {fileID: 1016532901519986, guid: 1cc3f562b0f0cf345b70fc4bc666264a, type: 2}
+  bullet: {fileID: 1016532901519986, guid: 09a525eb59eea6d40be10ade985047a5, type: 2}
   damage: 50
   firePower: 30
   fireRate: 2
-  bulletPersistence: 0.5
+  bulletPersistence: 0.8
   spreadWidth: 20
   spreadBulletCount: 20
-  spreadFrequency: 1000000
+  spreadFrequency: 100
   threeShotDifference: 0.1
   heatIncreaseSpeed: 0
   heatDecreaseSpeed: 0
@@ -1111,7 +1140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 0.51807576
+  m_Length: 0.5180758
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 4887046402118958}
   m_AttachedIK: {fileID: 114451064640907966}
@@ -1126,18 +1155,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43fd7cb1cfbd5ab4dab77c064d900ff4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponType: 0
+  weaponType: 1
   bullet: {fileID: 1016532901519986, guid: 1cc3f562b0f0cf345b70fc4bc666264a, type: 2}
-  damage: 1
-  firePower: 100
-  fireRate: 0.1
+  damage: 50
+  firePower: 70
+  fireRate: 0.3
   bulletPersistence: 2
-  spreadWidth: 5
-  spreadBulletCount: 8
-  spreadFrequency: 1000000
-  threeShotDifference: 0.1
-  heatIncreaseSpeed: 0.1
-  heatDecreaseSpeed: 0.1
+  spreadWidth: 0
+  spreadBulletCount: 0
+  spreadFrequency: 0
+  threeShotDifference: 0.05
+  heatIncreaseSpeed: 0.4
+  heatDecreaseSpeed: 15
   bulletSpawn: {fileID: 4259779672202722}
   heatLevel: 0
 --- !u!114 &114129807388848450
@@ -1152,17 +1181,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponType: 0
-  bullet: {fileID: 1016532901519986, guid: 1cc3f562b0f0cf345b70fc4bc666264a, type: 2}
-  damage: 1
-  firePower: 100
-  fireRate: 0.1
+  bullet: {fileID: 1016532901519986, guid: 09a525eb59eea6d40be10ade985047a5, type: 2}
+  damage: 300
+  firePower: 15
+  fireRate: 3
   bulletPersistence: 2
-  spreadWidth: 5
-  spreadBulletCount: 8
-  spreadFrequency: 1000000
-  threeShotDifference: 0.1
-  heatIncreaseSpeed: 0.1
-  heatDecreaseSpeed: 0.1
+  spreadWidth: 0
+  spreadBulletCount: 0
+  spreadFrequency: 0
+  threeShotDifference: 0
+  heatIncreaseSpeed: 0
+  heatDecreaseSpeed: 0
   bulletSpawn: {fileID: 4259779672202722}
   heatLevel: 0
 --- !u!114 &114134212989153342
@@ -1178,16 +1207,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponType: 0
   bullet: {fileID: 1016532901519986, guid: 1cc3f562b0f0cf345b70fc4bc666264a, type: 2}
-  damage: 1
-  firePower: 100
-  fireRate: 0.1
-  bulletPersistence: 2
-  spreadWidth: 5
-  spreadBulletCount: 8
-  spreadFrequency: 1000000
-  threeShotDifference: 0.1
-  heatIncreaseSpeed: 0.1
-  heatDecreaseSpeed: 0.1
+  damage: 350
+  firePower: 20
+  fireRate: 2
+  bulletPersistence: 5
+  spreadWidth: 0
+  spreadBulletCount: 0
+  spreadFrequency: 0
+  threeShotDifference: 0
+  heatIncreaseSpeed: 0
+  heatDecreaseSpeed: 0
   bulletSpawn: {fileID: 4259779672202722}
   heatLevel: 0
 --- !u!114 &114207635022317902
@@ -1253,26 +1282,26 @@ MonoBehaviour:
     - m_Bone: {fileID: 0}
       m_BoneTransform: {fileID: 4503640954551910}
       solverPosition: {x: 0.00000012961947, y: -0.00000003102201, z: 0}
-      solverRotation: {x: 0, y: 0, z: -0.76155424, w: 0.6481012}
+      solverRotation: {x: 0, y: 0, z: -0.7516093, w: 0.6596087}
       defaultLocalRotation: {x: 0, y: 0, z: -0.7831812, w: 0.62179357}
     - m_Bone: {fileID: 0}
       m_BoneTransform: {fileID: 4024352332772926}
-      solverPosition: {x: 0.6281932, y: 0.04285643, z: 0}
-      solverRotation: {x: 0, y: 0, z: 0.26246104, w: 0.9649425}
+      solverPosition: {x: 0.6265992, y: 0.061942633, z: 0}
+      solverRotation: {x: 0, y: 0, z: 0.3149656, w: 0.9491031}
       defaultLocalRotation: {x: 0, y: 0, z: 0.26333353, w: 0.9647049}
     - m_Bone: {fileID: 0}
       m_BoneTransform: {fileID: 4150414092368922}
-      solverPosition: {x: 1.2874961, y: 0.49319214, z: 0}
-      solverRotation: {x: 0, y: 0, z: 0.7160548, w: 0.69804394}
+      solverPosition: {x: 1.2165473, y: 0.59994185, z: 0}
+      solverRotation: {x: 0, y: 0, z: 0.78183734, w: 0.62348247}
       defaultLocalRotation: {x: 0, y: 0, z: 0.734955, w: 0.6781159}
     - m_Bone: {fileID: 0}
       m_BoneTransform: {fileID: 4890333776770902}
-      solverPosition: {x: 1.1003343, y: 0.75275105, z: 0}
-      solverRotation: {x: 0, y: 0, z: -0.7328836, w: 0.68035394}
+      solverPosition: {x: 0.95371157, y: 0.78247285, z: 0}
+      solverRotation: {x: 0, y: 0, z: -0.6910109, w: 0.7228444}
       defaultLocalRotation: {x: 0, y: 0, z: -0.775567, w: 0.6312653}
     m_Weight: 1
     m_RestoreDefaultPose: 1
-    targetPosition: {x: -6.083166, y: 0.5964742, z: -3.072606}
+    targetPosition: {x: -7.0831523, y: 1.1334063, z: -14.719971}
     iterations: 10
     damping: 0.8
 --- !u!114 &114280955321687438
@@ -1287,7 +1316,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 0.79842436
+  m_Length: 0.79842496
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 4150414092368922}
   m_AttachedIK: {fileID: 114269756421523808}
@@ -1372,13 +1401,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43fd7cb1cfbd5ab4dab77c064d900ff4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponType: 0
+  weaponType: 2
   bullet: {fileID: 1016532901519986, guid: 1cc3f562b0f0cf345b70fc4bc666264a, type: 2}
-  damage: 1
-  firePower: 100
-  fireRate: 0.1
-  bulletPersistence: 2
-  spreadWidth: 5
+  damage: 100
+  firePower: 30
+  fireRate: 1.5
+  bulletPersistence: 1.5
+  spreadWidth: 10
   spreadBulletCount: 8
   spreadFrequency: 1000000
   threeShotDifference: 0.1
@@ -1398,7 +1427,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 0.4383093
+  m_Length: 0.4383094
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 4528645159947778}
   m_AttachedIK: {fileID: 114451064640907966}
@@ -1465,21 +1494,21 @@ MonoBehaviour:
     - m_Bone: {fileID: 0}
       m_BoneTransform: {fileID: 4892615514611252}
       solverPosition: {x: 0.0000003433779, y: 0.00000033618153, z: 0}
-      solverRotation: {x: 0, y: 0, z: -0.6941017, w: 0.719877}
+      solverRotation: {x: 0, y: 0, z: -0.6090356, w: 0.79314303}
       defaultLocalRotation: {x: 0, y: 0, z: -0.79148173, w: 0.6111929}
     - m_Bone: {fileID: 0}
       m_BoneTransform: {fileID: 4887046402118958}
-      solverPosition: {x: 0.49870658, y: 0.14062193, z: 0}
-      solverRotation: {x: 0, y: 0, z: 0.30350924, w: 0.9528284}
+      solverPosition: {x: 0.45484853, y: 0.24818486, z: 0}
+      solverRotation: {x: 0, y: 0, z: 0.4088248, w: 0.9126129}
       defaultLocalRotation: {x: 0, y: 0, z: 0.37465507, w: 0.92716426}
     - m_Bone: {fileID: 0}
       m_BoneTransform: {fileID: 4528645159947778}
-      solverPosition: {x: 0.7681105, y: 0.486363, z: 0}
-      solverRotation: {x: 0, y: 0, z: -0.06681494, w: 0.99776536}
+      solverPosition: {x: 0.54694426, y: 0.67670983, z: 0}
+      solverRotation: {x: 0, y: 0, z: -0.014720524, w: 0.9998916}
       defaultLocalRotation: {x: 0, y: 0, z: 0, w: 1}
     m_Weight: 1
     m_RestoreDefaultPose: 1
-    targetPosition: {x: -6.083166, y: 0.5964743, z: -3.072606}
+    targetPosition: {x: -7.0831523, y: 1.1334065, z: -14.719971}
     iterations: 10
     damping: 0.8
 --- !u!114 &114466579467588664
@@ -1493,18 +1522,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43fd7cb1cfbd5ab4dab77c064d900ff4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponType: 0
+  weaponType: 3
   bullet: {fileID: 1016532901519986, guid: 1cc3f562b0f0cf345b70fc4bc666264a, type: 2}
-  damage: 1
-  firePower: 100
-  fireRate: 0.1
+  damage: 100
+  firePower: 70
+  fireRate: 0.3
   bulletPersistence: 2
-  spreadWidth: 5
-  spreadBulletCount: 8
-  spreadFrequency: 1000000
-  threeShotDifference: 0.1
-  heatIncreaseSpeed: 0.1
-  heatDecreaseSpeed: 0.1
+  spreadWidth: 0
+  spreadBulletCount: 0
+  spreadFrequency: 0
+  threeShotDifference: 0
+  heatIncreaseSpeed: 0
+  heatDecreaseSpeed: 0
   bulletSpawn: {fileID: 4259779672202722}
   heatLevel: 0
 --- !u!114 &114467787882854210
@@ -1542,16 +1571,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponType: 0
   bullet: {fileID: 1016532901519986, guid: 1cc3f562b0f0cf345b70fc4bc666264a, type: 2}
-  damage: 1
+  damage: 500
   firePower: 100
-  fireRate: 0.1
+  fireRate: 2
   bulletPersistence: 2
-  spreadWidth: 5
-  spreadBulletCount: 8
-  spreadFrequency: 1000000
-  threeShotDifference: 0.1
-  heatIncreaseSpeed: 0.1
-  heatDecreaseSpeed: 0.1
+  spreadWidth: 0
+  spreadBulletCount: 0
+  spreadFrequency: 0
+  threeShotDifference: 0
+  heatIncreaseSpeed: 0
+  heatDecreaseSpeed: 0
   bulletSpawn: {fileID: 4259779672202722}
   heatLevel: 0
 --- !u!114 &114506739085888290
@@ -1566,7 +1595,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 0.62965304
+  m_Length: 0.62965333
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 4024352332772926}
   m_AttachedIK: {fileID: 114269756421523808}
@@ -1601,18 +1630,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43fd7cb1cfbd5ab4dab77c064d900ff4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponType: 0
+  weaponType: 1
   bullet: {fileID: 1016532901519986, guid: 1cc3f562b0f0cf345b70fc4bc666264a, type: 2}
-  damage: 1
-  firePower: 100
+  damage: 50
+  firePower: 40
   fireRate: 0.1
   bulletPersistence: 2
-  spreadWidth: 5
-  spreadBulletCount: 8
-  spreadFrequency: 1000000
-  threeShotDifference: 0.1
-  heatIncreaseSpeed: 0.1
-  heatDecreaseSpeed: 0.1
+  spreadWidth: 0
+  spreadBulletCount: 0
+  spreadFrequency: 0
+  threeShotDifference: 0
+  heatIncreaseSpeed: 0.4
+  heatDecreaseSpeed: 20
   bulletSpawn: {fileID: 4259779672202722}
   heatLevel: 0
 --- !u!114 &114533776963228302
@@ -1660,7 +1689,7 @@ MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1183863002943106}
+  m_GameObject: {fileID: 1876483612811304}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 43fd7cb1cfbd5ab4dab77c064d900ff4, type: 3}
@@ -1685,7 +1714,7 @@ MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1183863002943106}
+  m_GameObject: {fileID: 1876483612811304}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5ec17ceaa560940e9bf0dbeafc3a1971, type: 3}
@@ -1746,7 +1775,7 @@ MonoBehaviour:
     - m_Bone: {fileID: 0}
       m_BoneTransform: {fileID: 4887046402118958}
       solverPosition: {x: 0, y: 0, z: 0}
-      solverRotation: {x: 0, y: 0, z: 0.37465507, w: 0.92716426}
+      solverRotation: {x: 0, y: 0, z: 0.35325146, w: 0.9355284}
       defaultLocalRotation: {x: 0, y: 0, z: 0.48283458, w: 0.8757116}
     - m_Bone: {fileID: 0}
       m_BoneTransform: {fileID: 4528645159947778}
@@ -1755,7 +1784,7 @@ MonoBehaviour:
       defaultLocalRotation: {x: 0, y: 0, z: -0.05761368, w: 0.998339}
     m_Weight: 1
     m_RestoreDefaultPose: 1
-    targetPosition: {x: -0.4655956, y: 1.300622, z: 0.00390625}
+    targetPosition: {x: -7.0831523, y: 1.1334065, z: -14.719971}
     flip: 0
 --- !u!114 &114745924564691564
 MonoBehaviour:
@@ -1805,7 +1834,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 0.32000017
+  m_Length: 0.31999987
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 4890333776770902}
   m_AttachedIK: {fileID: 114269756421523808}
@@ -2026,7 +2055,7 @@ SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1183863002943106}
+  m_GameObject: {fileID: 1876483612811304}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
