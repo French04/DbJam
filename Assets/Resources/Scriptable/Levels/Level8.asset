@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Name: Level8
   m_EditorClassIdentifier: 
   waveNumber:
-  - {fileID: 11400000, guid: 326baddc39dab2943b2459e471d3f617, type: 2}
-  - {fileID: 11400000, guid: b9f235fa417fbaa4d84e14e36e89d12a, type: 2}
-  - {fileID: 11400000, guid: b72b08b4ea453134aba10e9212dd42a8, type: 2}
-  - {fileID: 11400000, guid: 702efd1cf01e2e542891e2b8f538b28a, type: 2}
+  - {fileID: 11400000, guid: 18ed9454bad639240a51961f297d0516, type: 2}
+  - {fileID: 11400000, guid: cc665c58c0111d947b67cd845f677835, type: 2}
+  - {fileID: 11400000, guid: 4e90d51854218324ab0d26a1f5338d80, type: 2}
+  - {fileID: 11400000, guid: f3b4715c8086c1c469634a88c1047619, type: 2}
+  boss: {fileID: 0}
