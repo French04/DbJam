@@ -198,7 +198,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 399b1d180ec332448916ce4a943ecebe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 9
+  movementSpeed: 5
   lifePoints: 200
   spawn: {fileID: 0}
   death: {fileID: 0}
