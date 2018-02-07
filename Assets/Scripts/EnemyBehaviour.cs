@@ -50,8 +50,8 @@ public class EnemyBehaviour : MonoBehaviour
         _CanMove = false;
         
         yield return new WaitForSeconds(5f); //change waiting value with animation timer
-        Destroy(gameObject);
-        _CanMove = true;
+        //Destroy(gameObject);
+        //_CanMove = true;
     }
 
     private void OnDestroy()
