@@ -11,7 +11,8 @@ public class Player : MonoBehaviour
     public static Player instance;
     ShopEnabler seller;
     public Transform pern;
-    
+    Grabber grabberScript;
+
 
     void Start()
     {
@@ -20,12 +21,14 @@ public class Player : MonoBehaviour
         //GameObject weaponPrefab = Resources.Load("Weapons/Winchester") as GameObject;
         //currentWeapon = Instantiate(weaponPrefab, transform.position, Quaternion.identity);
         seller = GameObject.Find("Seller").GetComponent<ShopEnabler>();
+        grabberScript = grabber.GetComponent<Grabber>();
     }
 
 
     void Update()
     {
-        grabber.GetComponent<Grabber>().lineRenderer.SetWidth(0, 0);
+        //grabber.GetComponent<Grabber>().lineRenderer.SetWidth(0, 0);
+        grabberScript.lineRenderer.enabled = false;
 
         if (!seller.openShop)
         {
@@ -69,7 +72,7 @@ public class Player : MonoBehaviour
                     }
                     else if (Input.GetMouseButton(1))
                     {
-                        grabber.GetComponent<Grabber>().FireGrabber();
+                        grabberScript.FireGrabber();
                     }
                 }
             }
