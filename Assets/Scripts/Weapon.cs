@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class Weapon : MonoBehaviour
 {
     public enum WeaponType { OneShot, OneShot_Heating, Spread, ThreeShots };
@@ -21,7 +22,18 @@ public class Weapon : MonoBehaviour
     public Transform bulletSpawn;
     [HideInInspector] public float heatLevel = 0;
     float lastFireTime = 0;
-    
+
+
+    public AudioClip fireSound;
+    private AudioSource audioSource;
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
+
+
 
     void Update()
     {
@@ -51,6 +63,7 @@ public class Weapon : MonoBehaviour
 
             if (weaponType == WeaponType.OneShot_Heating && heatLevel < 100 || weaponType == WeaponType.OneShot)
             {
+                audioSource.PlayOneShot(fireSound, 1);
                 GameObject newBullet = Instantiate(bullet, bulletSpawn.position, Quaternion.identity);
                 newBullet.GetComponent<Rigidbody2D>().AddForce(bulletSpawn.transform.right * firePower, ForceMode2D.Impulse);
                 Destroy(newBullet, bulletPersistence);
@@ -86,7 +99,10 @@ public class Weapon : MonoBehaviour
                     yield return new WaitForSeconds(threeShotDifference);
                 }  
             }
-            
+
+            //insert sounds
+          
+
             lastFireTime = Time.time;
             yield return null;
         }
