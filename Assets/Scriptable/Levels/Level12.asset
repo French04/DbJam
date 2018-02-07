@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: Level12
   m_EditorClassIdentifier: 
   waveNumber:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: adf93474d16cd254ea9d1caa117ebe8d, type: 2}
+  - {fileID: 11400000, guid: 52c0bcf0b138bd8429084768915f6a10, type: 2}
+  - {fileID: 11400000, guid: 2d1e1dfeefbb6a343bf4b7b8baf86379, type: 2}
+  - {fileID: 11400000, guid: 36984f075afc7d641a21e4b0530989b6, type: 2}
