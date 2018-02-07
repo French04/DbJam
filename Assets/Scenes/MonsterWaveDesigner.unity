@@ -1137,15 +1137,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4887046402118958, guid: 5aab97572c30c174aafdab89d318bab0, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 0.9647279
+      value: 0.9821651
       objectReference: {fileID: 0}
     - target: {fileID: 4528645159947778, guid: 5aab97572c30c174aafdab89d318bab0, type: 2}
       propertyPath: m_LocalRotation.z
-      value: -0.082275465
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4528645159947778, guid: 5aab97572c30c174aafdab89d318bab0, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 0.9966096
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4890333776770902, guid: 5aab97572c30c174aafdab89d318bab0, type: 2}
       propertyPath: m_LocalRotation.z
@@ -1161,7 +1161,45 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4887046402118958, guid: 5aab97572c30c174aafdab89d318bab0, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0.2632493
+      value: 0.1880204
+      objectReference: {fileID: 0}
+    - target: {fileID: 4887046402118958, guid: 5aab97572c30c174aafdab89d318bab0, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 21.675001
+      objectReference: {fileID: 0}
+    - target: {fileID: 4528645159947778, guid: 5aab97572c30c174aafdab89d318bab0, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -720
+      objectReference: {fileID: 0}
+    - target: {fileID: 137192875129200300, guid: 5aab97572c30c174aafdab89d318bab0,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 137939729298739688, guid: 5aab97572c30c174aafdab89d318bab0,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 137453795130552858, guid: 5aab97572c30c174aafdab89d318bab0,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 137146587548027010, guid: 5aab97572c30c174aafdab89d318bab0,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 137426823919130090, guid: 5aab97572c30c174aafdab89d318bab0,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 137957538532400160, guid: 5aab97572c30c174aafdab89d318bab0,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5aab97572c30c174aafdab89d318bab0, type: 2}
