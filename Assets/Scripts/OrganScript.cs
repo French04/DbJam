@@ -4,56 +4,38 @@ using UnityEngine;
 
 public class OrganScript : MonoBehaviour
 {
+    [HideInInspector]
     public bool grabberEnabled = false;
     Vector3 playerPosition;
     Rigidbody2D rb;
 
-    float timer = 5;
+    bool coroutineStarted = false;
+
+    float timer = 10;
 
     private void Start()
     {
         playerPosition = GameObject.Find("Character").transform.position;
         rb = GetComponent<Rigidbody2D>();
-    }
-
-    private void OnEnable()
-    {
-        timer = 5;
+        StartCoroutine(ResetGravity());
     }
 
     private void Update()
     {
-        /*if (grabberEnabled)
-        {
-            if (transform.position != playerPosition)
-            {
-                transform.position = Vector3.Lerp(transform.position, playerPosition, 1f * Time.deltaTime);
-            }
-
-            rb.gravityScale = 0;
-        }
-        else
-        {
-            rb.gravityScale = 1;
-        }*/
-
-        timer -= Time.deltaTime * 2;
+        if(grabberEnabled == false)
+            timer -= Time.deltaTime * 2;
 
         if(timer <= 0)
         {
             Destroy(gameObject);
         }
-    }
 
-    /*public void OnMouseOver()
-    {
-        grabberEnabled = Input.GetMouseButton(1);      
+        if (!coroutineStarted)
+        {
+            coroutineStarted = true;
+            StartCoroutine(ResetGravity());
+        }
     }
-
-    public void OnMouseExit()
-    {
-        grabberEnabled = false;
-    }*/
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -63,11 +45,21 @@ public class OrganScript : MonoBehaviour
         }
     }
 
-    void OnTriggerExit2D(Collider2D collision)
+    void OnTriggerExit2D(Collider2D collider)
     {
-        if (collision.CompareTag("Grabber"))
+        Debug.Log("EXIT: " + collider.name);
+        
+        if (collider.CompareTag("Grabber"))
         {
             rb.gravityScale = 1;
+            grabberEnabled = false;
         }
+    }
+
+    IEnumerator ResetGravity()
+    {
+        rb.gravityScale = 1;
+        yield return new WaitForSeconds(0.2f);
+        coroutineStarted = false;
     }
 }

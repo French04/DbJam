@@ -10,7 +10,7 @@ public class EnemyBehaviour : MonoBehaviour
     private bool _CanMove = true;
     private string _EnemyName;
 
-    GameObject[] organ = new GameObject[6];
+    //GameObject[] organ = new GameObject[6];
 
     bool coroutineStarted = false;
 
@@ -19,11 +19,11 @@ public class EnemyBehaviour : MonoBehaviour
         _Rb = GetComponent<Rigidbody2D>();
         _EnemyName = gameObject.name;
 
-        for (int i = 0; i < organ.Length; i++)
-        {
-            organ[i] = transform.GetChild(i).gameObject;
-            //organ[i].SetActive(false);
-        }
+        //for (int i = 0; i < organ.Length; i++)
+        //{
+        //    organ[i] = transform.GetChild(i).gameObject;
+        //    //organ[i].SetActive(false);
+        //}
     }
 
     private void FixedUpdate()
@@ -167,38 +167,32 @@ public class EnemyBehaviour : MonoBehaviour
 
             if (random >= 0 && random < 5)
             {
-                Debug.Log("instanzio1");
-                GameObject SpawnedOrgan = Instantiate(organ[0], transform.position, Quaternion.identity);
+                GameObject SpawnedOrgan = Instantiate(Resources.Load("Organs/Heart") as GameObject, transform.position, Quaternion.identity);
                 SpawnedOrgan.GetComponent<Rigidbody2D>().AddForce(new Vector2(randomforceX, randomforceY));
             }
             else if(random >= 5 && random < 15)
             {
-                Debug.Log("instanzio2");
-                GameObject SpawnedOrgan = Instantiate(organ[1], transform.position, Quaternion.identity);
+                GameObject SpawnedOrgan = Instantiate(Resources.Load("Organs/Brain") as GameObject, transform.position, Quaternion.identity);
                 SpawnedOrgan.GetComponent<Rigidbody2D>().AddForce(new Vector2(randomforceX, randomforceY));
             }
             else if(random >= 15 && random < 30)
             {
-                Debug.Log("instanzio3");
-                GameObject SpawnedOrgan = Instantiate(organ[2], transform.position, Quaternion.identity);
+                GameObject SpawnedOrgan = Instantiate(Resources.Load("Organs/Lungs") as GameObject, transform.position, Quaternion.identity);
                 SpawnedOrgan.GetComponent<Rigidbody2D>().AddForce(new Vector2(randomforceX, randomforceY));
             }
             else if(random >= 30 && random < 50)
             {
-                Debug.Log("instanzio4");
-                GameObject SpawnedOrgan = Instantiate(organ[3], transform.position, Quaternion.identity);
+                GameObject SpawnedOrgan = Instantiate(Resources.Load("Organs/Kidney") as GameObject, transform.position, Quaternion.identity);
                 SpawnedOrgan.GetComponent<Rigidbody2D>().AddForce(new Vector2(randomforceX, randomforceY));
             }
             else if(random >= 50 && random < 75)
             {
-                Debug.Log("instanzio5");
-                GameObject SpawnedOrgan = Instantiate(organ[4], transform.position, Quaternion.identity);
+                GameObject SpawnedOrgan = Instantiate(Resources.Load("Organs/Intestine") as GameObject, transform.position, Quaternion.identity);
                 SpawnedOrgan.GetComponent<Rigidbody2D>().AddForce(new Vector2(randomforceX, randomforceY));
             }
             else if(random >= 75 && random < 100)
             {
-                Debug.Log("instanzio6");
-                GameObject SpawnedOrgan = Instantiate(organ[5], transform.position, Quaternion.identity);
+                GameObject SpawnedOrgan = Instantiate(Resources.Load("Organs/Liver") as GameObject, transform.position, Quaternion.identity);
                 SpawnedOrgan.GetComponent<Rigidbody2D>().AddForce(new Vector2(randomforceX, randomforceY));
             }
             yield return null;
