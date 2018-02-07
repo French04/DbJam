@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     {
         //Go to main menu
         //or restart
+        print("Game over");
         LevelCounter.currentLevel = 0;
     }
 
@@ -16,5 +17,6 @@ public class GameManager : MonoBehaviour
         LevelCounter.currentLevel++;
         SceneManager.LoadScene(LevelCounter.currentLevel);
     }
+
 }
 

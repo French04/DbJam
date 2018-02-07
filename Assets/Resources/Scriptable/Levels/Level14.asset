@@ -17,4 +17,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e722ba90c158237478f413fcac7238bd, type: 2}
   - {fileID: 11400000, guid: e17a5676327f1a04c8a83ed96a01f033, type: 2}
   - {fileID: 11400000, guid: 4fe0ea570474f7a48a3e1155254dc8c8, type: 2}
+  civilians: 30
   boss: {fileID: 1896337715111242, guid: 9bda5498779e6f5418bc1875728c4a09, type: 2}
