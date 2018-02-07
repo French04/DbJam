@@ -83,9 +83,10 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4151573697787538}
+  - component: {fileID: 114186981915012412}
   m_Layer: 0
   m_Name: Grabber
-  m_TagString: Untagged
+  m_TagString: Grabber
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -588,7 +589,7 @@ Transform:
   - {fileID: 4150414092368922}
   m_Father: {fileID: 4503640954551910}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 30.433}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 36.717003}
 --- !u!4 &4050372068069942
 Transform:
   m_ObjectHideFlags: 1
@@ -629,7 +630,7 @@ Transform:
   - {fileID: 4890333776770902}
   m_Father: {fileID: 4024352332772926}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -268.541}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -257.142}
 --- !u!4 &4151573697787538
 Transform:
   m_ObjectHideFlags: 1
@@ -761,7 +762,7 @@ Transform:
   - {fileID: 4024352332772926}
   m_Father: {fileID: 4703865361535940}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 260.797}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 262.53998}
 --- !u!4 &4528645159947778
 Transform:
   m_ObjectHideFlags: 1
@@ -774,7 +775,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4887046402118958}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -727.662}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -721.687}
 --- !u!4 &4537239010314818
 Transform:
   m_ObjectHideFlags: 1
@@ -893,7 +894,7 @@ Transform:
   - {fileID: 4528645159947778}
   m_Father: {fileID: 4892615514611252}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 35.337}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 48.262}
 --- !u!4 &4890333776770902
 Transform:
   m_ObjectHideFlags: 1
@@ -907,7 +908,7 @@ Transform:
   - {fileID: 4259779672202722}
   m_Father: {fileID: 4150414092368922}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -94.258}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -87.420006}
 --- !u!4 &4892615514611252
 Transform:
   m_ObjectHideFlags: 1
@@ -921,7 +922,7 @@ Transform:
   - {fileID: 4887046402118958}
   m_Father: {fileID: 4703865361535940}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -87.911}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -75.04}
 --- !u!4 &4920659110310266
 Transform:
   m_ObjectHideFlags: 1
@@ -1078,7 +1079,7 @@ MonoBehaviour:
   bullet: {fileID: 1016532901519986, guid: 1cc3f562b0f0cf345b70fc4bc666264a, type: 2}
   damage: 200
   firePower: 100
-  fireRate: 2
+  fireRate: 1.5
   bulletPersistence: 2
   spreadWidth: 0
   spreadBulletCount: 0
@@ -1101,6 +1102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aimTexture: {fileID: 2800000, guid: 1ea199db619ae4443bb6d88e96bbc4e1, type: 3}
   currentWeapon: {fileID: 1870808443326122}
+  grabber: {fileID: 1183863002943106}
   IK: {fileID: 4017817280312472}
   pern: {fileID: 4926555867202822}
 --- !u!114 &114103848492307740
@@ -1219,6 +1221,19 @@ MonoBehaviour:
   heatDecreaseSpeed: 0
   bulletSpawn: {fileID: 4259779672202722}
   heatLevel: 0
+--- !u!114 &114186981915012412
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1183863002943106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a7f3ac893ef2104fbcdf35ade0aa2b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grabPower: 1
+  bulletSpawn: {fileID: 4259779672202722}
 --- !u!114 &114207635022317902
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1573,7 +1588,7 @@ MonoBehaviour:
   bullet: {fileID: 1016532901519986, guid: 1cc3f562b0f0cf345b70fc4bc666264a, type: 2}
   damage: 500
   firePower: 100
-  fireRate: 2
+  fireRate: 1.5
   bulletPersistence: 2
   spreadWidth: 0
   spreadBulletCount: 0
