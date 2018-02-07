@@ -65,7 +65,7 @@ public class Weapon : MonoBehaviour
             {
                 effectParticle.Play();
                 audioSource.PlayOneShot(fireSound, volume);
-                GameObject newBullet = Instantiate(bullet, bulletSpawn.position, Quaternion.identity);
+                GameObject newBullet = Instantiate(bullet, bulletSpawn.position, bulletSpawn.rotation);
                 newBullet.GetComponent<Rigidbody2D>().AddForce(bulletSpawn.transform.right * firePower, ForceMode2D.Impulse);
                 Destroy(newBullet, bulletPersistence);
             }
@@ -86,7 +86,7 @@ public class Weapon : MonoBehaviour
                     direction.z = 0;
                     direction /= direction.magnitude;
 
-                    GameObject newBullet = Instantiate(bullet, bulletSpawn.position, Quaternion.identity);
+                    GameObject newBullet = Instantiate(bullet, bulletSpawn.position, bulletSpawn.rotation);
                     newBullet.GetComponent<Rigidbody2D>().AddForce(direction * (firePower * Random.Range(0.8f, 1.2f)), ForceMode2D.Impulse);
                     Destroy(newBullet, bulletPersistence);
                 }
@@ -97,7 +97,7 @@ public class Weapon : MonoBehaviour
                 for (int i = 0; i < 3; i++)
                 {
                     effectParticle.Play();
-                    GameObject newBullet = Instantiate(bullet, bulletSpawn.position, Quaternion.identity);
+                    GameObject newBullet = Instantiate(bullet, bulletSpawn.position, bulletSpawn.rotation);
                     newBullet.GetComponent<Rigidbody2D>().AddForce(bulletSpawn.transform.right * firePower, ForceMode2D.Impulse);
                     Destroy(newBullet, bulletPersistence);
                     lastFireTime = Time.time;

@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 58262535964632556}
   - component: {fileID: 114434611066214262}
   m_Layer: 10
-  m_Name: Lungs
+  m_Name: Blood
   m_TagString: Lungs
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

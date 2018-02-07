@@ -6,10 +6,10 @@ public class GameManager : MonoBehaviour
 
     public static void GameOver()
     {
-        //Go to main menu
-        //or restart
         print("Game over");
-        LevelCounter.currentLevel = 0;
+        Pause.instance.gameOverScreen.SetActive(true);
+        Time.timeScale = 0;
+        
     }
 
     public static void NextLevel()
@@ -21,6 +21,8 @@ public class GameManager : MonoBehaviour
         }
         else
         {
+            SceneManager.LoadScene("MainMenu");
+            LevelCounter.currentLevel = 0;
             print("Game Over");
         }
     }
