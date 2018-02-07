@@ -54,13 +54,6 @@ public class EnemyBehaviour : MonoBehaviour
             }
         }
 
-        if(collision.collider.CompareTag("Civilian"))
-        {
-            //StartCoroutine(KillingCivilian());
-            //Play animation killing civilian
-            //Play animation civilian dying
-
-        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -219,6 +212,13 @@ public class EnemyBehaviour : MonoBehaviour
 
     private IEnumerator EatingCivilian()
     {
+        CivilianManager.instance.CiviliansReamins--;
+
+        if(CivilianManager.instance.CiviliansReamins <= 0)
+        {
+            GameManager.GameOver();
+        }
+        
         yield return new WaitForSeconds(2.0f);
         Destroy(gameObject);
     }
