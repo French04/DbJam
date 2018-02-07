@@ -12,6 +12,7 @@ public class SpawnEnemies : MonoBehaviour
     private List<GameObject> _EnemyesType = new List<GameObject>();
     private Level _CurrentLevel;
     private EnemiesCounter _EnemiesCounter;
+    private GameObject _Boss;
 
     private Transform _SpawnPoint;
     private IEnumerator _SpawnEnum;
@@ -29,7 +30,9 @@ public class SpawnEnemies : MonoBehaviour
     {
         instance = this;
         LevelCounter.currentLevel = level;
+        
         _CurrentLevel = Resources.Load<SpawnContainer>("Scriptable/ScriptableContainer/SpawnContainer").levels[LevelCounter.currentLevel];
+        _Boss = _CurrentLevel.boss;
         _SpawnPoint = GameObject.Find("SpawnPoint").transform;
         _SpawnEnum = Spawn();
 
@@ -112,6 +115,8 @@ public class SpawnEnemies : MonoBehaviour
         }
         else
         {
+            yield return StartCoroutine(BossFight());
+            yield return StartCoroutine(WaitForTheNextWave());
             print("Waves over, good job (trigger go to the next level)");
             //SceneManager.LoadAsync(level++);
             //LevelCounter.level ++;
@@ -135,6 +140,20 @@ public class SpawnEnemies : MonoBehaviour
             yield return null;
         }
         print("Wave Cleared");
+    }
+
+    private IEnumerator BossFight()
+    {
+        var clone = Instantiate(_Boss);
+        clone.transform.position = _SpawnPoint.position;
+        print("Boss spawned");
+
+        while(clone.gameObject != null)
+        {
+            yield return null;
+        }
+
+        print("Boss null");
     }
 
     private void GetLastEnemiesLeft()

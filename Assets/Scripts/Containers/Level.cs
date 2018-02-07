@@ -3,4 +3,5 @@
 public class Level : ScriptableObject
 {
     public WaveSpawn[] waveNumber;
+    public GameObject boss;
 }
