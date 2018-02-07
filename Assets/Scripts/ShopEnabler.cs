@@ -48,14 +48,14 @@ public class ShopEnabler : MonoBehaviour
     {
         if (shop.gameObject.activeSelf)
         {
-            Cursor.SetCursor(aimTexture, new Vector2(0, 0), CursorMode.Auto);
+            Cursor.SetCursor(aimTexture, new Vector2(aimTexture.width / 2, aimTexture.height / 2), CursorMode.Auto);
             //shop.gameObject.SetActive(false);
             sellerAnimator.SetBool("IsClicked", true);
             openShop = false;
         }
         else
         {
-            Cursor.SetCursor(cursorTexture, new Vector2(0, 0), CursorMode.Auto);
+            Cursor.SetCursor(cursorTexture, new Vector2(cursorTexture.width / 2, cursorTexture.height / 2), CursorMode.Auto);
             //shop.gameObject.SetActive(true);
             sellerAnimator.SetBool("IsClicked", true);
             openShop = true;

@@ -13,8 +13,11 @@ public class OrganScript : MonoBehaviour
 
     float timer = 10;
 
+    OrganCollector organCollector;
+
     private void Start()
     {
+        organCollector = FindObjectOfType<OrganCollector>();
         playerPosition = GameObject.Find("Character").transform.position;
         rb = GetComponent<Rigidbody2D>();
         StartCoroutine(ResetGravity());
@@ -41,18 +44,37 @@ public class OrganScript : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Destroy(gameObject);
-        }
-    }
+            if (transform.CompareTag("Brain"))
+            {
+                organCollector.brain += 1;
+                Destroy(gameObject);
+            }
+            else if (transform.CompareTag("Heart"))
+            {
+                organCollector.heart += 1;
+                Destroy(gameObject);
+            }
+            else if (transform.CompareTag("Intestine"))
+            {
+                organCollector.intestine += 1;
+                Destroy(gameObject);
+            }
+            else if (transform.CompareTag("Kidney"))
+            {
+                organCollector.kidney += 1;
+                Destroy(gameObject);
+            }
+            else if (transform.CompareTag("Liver"))
+            {
+                organCollector.liver += 1;
+                Destroy(gameObject);
+            }
+            else if (transform.CompareTag("Lungs"))
+            {
+                organCollector.lung += 1;
+                Destroy(gameObject);
+            }
 
-    void OnTriggerExit2D(Collider2D collider)
-    {
-        Debug.Log("EXIT: " + collider.name);
-        
-        if (collider.CompareTag("Grabber"))
-        {
-            rb.gravityScale = 1;
-            grabberEnabled = false;
         }
     }
 

@@ -6,7 +6,8 @@ public class Grabber : MonoBehaviour
 {
     public float grabPower = 1;
     public Transform bulletSpawn;
-    
+
+    public Transform origin;
 
     public void FireGrabber()
     {
@@ -26,7 +27,7 @@ public class Grabber : MonoBehaviour
                     rbOrgan.velocity = Vector2.zero;
 
                     hit.collider.gameObject.GetComponent<OrganScript>().grabberEnabled = true;
-                    hit.collider.gameObject.transform.position = Vector3.Lerp(hit.collider.gameObject.transform.position, transform.position, grabPower * Time.deltaTime);
+                    hit.collider.gameObject.transform.position = Vector3.Lerp(hit.collider.gameObject.transform.position, origin.position, grabPower * Time.deltaTime);
                 }
             }
         }

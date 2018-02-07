@@ -16,7 +16,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         instance = this;
-        Cursor.SetCursor(aimTexture, new Vector2(0, 0), CursorMode.Auto);
+        Cursor.SetCursor(aimTexture, new Vector2(aimTexture.width/2, aimTexture.height/2), CursorMode.Auto);
         //GameObject weaponPrefab = Resources.Load("Weapons/Winchester") as GameObject;
         //currentWeapon = Instantiate(weaponPrefab, transform.position, Quaternion.identity);
         seller = GameObject.Find("Seller").GetComponent<ShopEnabler>();
