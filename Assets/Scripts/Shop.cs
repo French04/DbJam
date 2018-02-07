@@ -78,14 +78,14 @@ public class Shop : MonoBehaviour
             //if i have already buy this weapon
             if(weapon[choise].purchased == true)
             {
-                Debug.Log("arma già acquistata");
+                //arma già acquistata
                 WeaponSelected = choise;
 
                 InstantiateWeapon();
             }
             else
             {
-                Debug.Log("arma nuova");
+                //arma nuova
                 organCollector.heart -= weapon[choise].heart;
                 organCollector.brain -= weapon[choise].brain;
                 organCollector.lung -= weapon[choise].lung;
