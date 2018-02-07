@@ -74,6 +74,7 @@ public class Weapon : MonoBehaviour
 
                 for (int i = 0; i < spreadBulletCount; i++)
                 {
+                    audioSource.PlayOneShot(fireSound, 1);
                     float bulletOffset = Mathf.Sin((float)i * spreadFrequency) * spreadWidth; //Random.Range(-spreadWidth, spreadWidth);
                     mousePosTemp.y += bulletOffset;
                     mousePosTemp.x += -bulletOffset;
@@ -91,7 +92,8 @@ public class Weapon : MonoBehaviour
             else if (weaponType == WeaponType.ThreeShots)
             {
                 for (int i = 0; i < 3; i++)
-                {                   
+                {
+                    audioSource.PlayOneShot(fireSound, 1);
                     GameObject newBullet = Instantiate(bullet, bulletSpawn.position, Quaternion.identity);
                     newBullet.GetComponent<Rigidbody2D>().AddForce(bulletSpawn.transform.right * firePower, ForceMode2D.Impulse);
                     Destroy(newBullet, bulletPersistence);
