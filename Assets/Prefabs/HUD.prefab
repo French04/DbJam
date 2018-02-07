@@ -250,6 +250,7 @@ GameObject:
   - component: {fileID: 223740038203486590}
   - component: {fileID: 114246811378616140}
   - component: {fileID: 114743832778618398}
+  - component: {fileID: 114202877365617210}
   m_Layer: 5
   m_Name: HUD
   m_TagString: Untagged
@@ -884,12 +885,12 @@ MonoBehaviour:
   imEnabled: 1
   purchased: 0
   iAmCurrentWeapon: 0
-  organ1value: 90
-  organ2value: 90
-  organ3value: 90
-  organ4value: 90
-  organ5value: 90
-  organ6value: 90
+  heart: 0
+  brain: 0
+  lung: 0
+  kidney: 0
+  intestine: 0
+  liver: 0
 --- !u!114 &114089846130056634
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1171,6 +1172,23 @@ MonoBehaviour:
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   delegates: []
+--- !u!114 &114202877365617210
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1407217802834952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71bbc3bb4f7264b4c8ddc9c12c5306d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heart: 0
+  brain: 0
+  lung: 0
+  kidney: 0
+  intestine: 0
+  liver: 0
 --- !u!114 &114241694680951844
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1185,12 +1203,12 @@ MonoBehaviour:
   imEnabled: 1
   purchased: 0
   iAmCurrentWeapon: 0
-  organ1value: 70
-  organ2value: 70
-  organ3value: 70
-  organ4value: 70
-  organ5value: 70
-  organ6value: 70
+  heart: 0
+  brain: 0
+  lung: 0
+  kidney: 0
+  intestine: 0
+  liver: 0
 --- !u!114 &114246811378616140
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1293,12 +1311,12 @@ MonoBehaviour:
   imEnabled: 1
   purchased: 0
   iAmCurrentWeapon: 0
-  organ1value: 50
-  organ2value: 50
-  organ3value: 50
-  organ4value: 50
-  organ5value: 50
-  organ6value: 50
+  heart: 0
+  brain: 0
+  lung: 0
+  kidney: 0
+  intestine: 0
+  liver: 0
 --- !u!114 &114337383660388140
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1460,12 +1478,12 @@ MonoBehaviour:
   imEnabled: 1
   purchased: 0
   iAmCurrentWeapon: 0
-  organ1value: 60
-  organ2value: 60
-  organ3value: 60
-  organ4value: 60
-  organ5value: 60
-  organ6value: 60
+  heart: 0
+  brain: 0
+  lung: 0
+  kidney: 0
+  intestine: 0
+  liver: 0
 --- !u!114 &114421727854858730
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1551,12 +1569,12 @@ MonoBehaviour:
   imEnabled: 1
   purchased: 0
   iAmCurrentWeapon: 0
-  organ1value: 30
-  organ2value: 30
-  organ3value: 30
-  organ4value: 30
-  organ5value: 30
-  organ6value: 30
+  heart: 0
+  brain: 0
+  lung: 0
+  kidney: 0
+  intestine: 0
+  liver: 0
 --- !u!114 &114495917385972164
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1786,12 +1804,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c95f493648c66648ac009c25e6ace4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  organ1: 500
-  organ2: 500
-  organ3: 500
-  organ4: 500
-  organ5: 500
-  organ6: 500
   WeaponSelected: 0
 --- !u!114 &114588784475228216
 MonoBehaviour:
@@ -2033,12 +2045,12 @@ MonoBehaviour:
   imEnabled: 1
   purchased: 0
   iAmCurrentWeapon: 0
-  organ1value: 40
-  organ2value: 40
-  organ3value: 40
-  organ4value: 40
-  organ5value: 40
-  organ6value: 40
+  heart: 0
+  brain: 0
+  lung: 0
+  kidney: 0
+  intestine: 0
+  liver: 0
 --- !u!114 &114714984011757282
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2123,12 +2135,12 @@ MonoBehaviour:
   imEnabled: 1
   purchased: 0
   iAmCurrentWeapon: 0
-  organ1value: 20
-  organ2value: 20
-  organ3value: 20
-  organ4value: 20
-  organ5value: 20
-  organ6value: 20
+  heart: 0
+  brain: 0
+  lung: 0
+  kidney: 0
+  intestine: 0
+  liver: 0
 --- !u!114 &114767432201344506
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2300,12 +2312,12 @@ MonoBehaviour:
   imEnabled: 1
   purchased: 0
   iAmCurrentWeapon: 0
-  organ1value: 80
-  organ2value: 80
-  organ3value: 80
-  organ4value: 80
-  organ5value: 80
-  organ6value: 80
+  heart: 0
+  brain: 0
+  lung: 0
+  kidney: 0
+  intestine: 0
+  liver: 0
 --- !u!114 &114837308203256428
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2320,12 +2332,12 @@ MonoBehaviour:
   imEnabled: 1
   purchased: 0
   iAmCurrentWeapon: 0
-  organ1value: 10
-  organ2value: 10
-  organ3value: 10
-  organ4value: 10
-  organ5value: 10
-  organ6value: 10
+  heart: 0
+  brain: 0
+  lung: 0
+  kidney: 0
+  intestine: 0
+  liver: 0
 --- !u!114 &114881740305094178
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2354,12 +2366,12 @@ MonoBehaviour:
   imEnabled: 1
   purchased: 0
   iAmCurrentWeapon: 0
-  organ1value: 100
-  organ2value: 100
-  organ3value: 100
-  organ4value: 100
-  organ5value: 100
-  organ6value: 100
+  heart: 0
+  brain: 0
+  lung: 0
+  kidney: 0
+  intestine: 0
+  liver: 0
 --- !u!114 &114886608495654708
 MonoBehaviour:
   m_ObjectHideFlags: 1

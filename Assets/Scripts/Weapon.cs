@@ -38,6 +38,8 @@ public class Weapon : MonoBehaviour
                 heatLevel -= heatDecreaseSpeed * Time.deltaTime;
             }
         }
+
+        Debug.Log(heatLevel);
     }
 
 
@@ -46,7 +48,7 @@ public class Weapon : MonoBehaviour
         if (Time.time >= lastFireTime + fireRate)
         {
             heatLevel += heatIncreaseSpeed;
-            Debug.Log(heatLevel);
+
 
             if (weaponType == WeaponType.OneShot_Heating && heatLevel < 100 || weaponType == WeaponType.OneShot)
             {

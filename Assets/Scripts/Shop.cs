@@ -10,12 +10,14 @@ public class Shop : MonoBehaviour
     GameObject wincester, shotGun, sniper, smg, sniperPlus, bazooka, shotgunPlus, granadeLauncher, machineGunSemiAuto, gatling;
 
     //[HideInInspector]
-    public int organ1 = 0, organ2 = 0, organ3 = 0, organ4 = 0, organ5 = 0, organ6 = 0;
+    //public int organ1 = 0, organ2 = 0, organ3 = 0, organ4 = 0, organ5 = 0, organ6 = 0;
 
     [HideInInspector]
     public int WeaponSelected = 0;
 
     Player player;
+
+    OrganCollector organCollector;
 
     private void Start()
     {
@@ -28,7 +30,9 @@ public class Shop : MonoBehaviour
 
         player = FindObjectOfType<Player>();
 
-#region Weapon
+        organCollector = FindObjectOfType<OrganCollector>();
+
+        #region Weapon
         wincester = GameObject.Find("Wpn_Winchester").gameObject;
 
         shotGun = GameObject.Find("Wpn_Shotgun").gameObject;
@@ -82,12 +86,12 @@ public class Shop : MonoBehaviour
             else
             {
                 Debug.Log("arma nuova");
-                organ1 -= weapon[choise].organ1value;
-                organ2 -= weapon[choise].organ2value;
-                organ3 -= weapon[choise].organ3value;
-                organ4 -= weapon[choise].organ4value;
-                organ5 -= weapon[choise].organ5value;
-                organ6 -= weapon[choise].organ6value;
+                organCollector.heart -= weapon[choise].heart;
+                organCollector.brain -= weapon[choise].brain;
+                organCollector.lung -= weapon[choise].lung;
+                organCollector.kidney -= weapon[choise].kidney;
+                organCollector.intestine -= weapon[choise].intestine;
+                organCollector.liver -= weapon[choise].liver;
 
                 WeaponSelected = choise;
                 weapon[choise].purchased = true;

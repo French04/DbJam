@@ -16,15 +16,15 @@ public class EnablerWeapon : MonoBehaviour
 
     Image myImage;
 
-    public int organ1value = 0, organ2value = 0, organ3value = 0, organ4value = 0, organ5value = 0, organ6value = 0;
+    public int heart = 0, brain = 0, lung = 0, kidney = 0, intestine = 0, liver = 0;
 
-    Shop shop;
+    OrganCollector organCollector;
 
 	// Use this for initialization
 	void Start ()
     {
         myImage = transform.GetComponent<Image>();
-        shop = FindObjectOfType<Shop>();
+        organCollector = FindObjectOfType<OrganCollector>();
 	}
 	
 	// Update is called once per frame
@@ -37,7 +37,7 @@ public class EnablerWeapon : MonoBehaviour
             if (!purchased)
             {
                 //if i have money
-                if(shop.organ1 >= organ1value && shop.organ2 >= organ2value && shop.organ3 >= organ3value && shop.organ4 >= organ4value && shop.organ5 >= organ5value && shop.organ6 >= organ6value)
+                if(organCollector.heart >= heart && organCollector.brain >= brain && organCollector.lung >= lung && organCollector.kidney >= kidney && organCollector.intestine >= intestine && organCollector.liver >= liver)
                 {
                     //if i am disabled
                     if (!imEnabled)

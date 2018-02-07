@@ -10,6 +10,8 @@ public class EnemyBehaviour : MonoBehaviour
     private bool _CanMove = true;
     private string _EnemyName;
 
+    GameObject[] organ = new GameObject[6];
+
     private void Awake()
     {
         _Rb = GetComponent<Rigidbody2D>();
