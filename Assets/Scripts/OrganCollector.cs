@@ -17,6 +17,8 @@ public class OrganCollector : MonoBehaviour
 
     public Text feedbackHeart, feedbackBrain, feedbackLungs, feedbackKidney, feedbackIntestine, feedbackLiver, civilNumber;
 
+    public GameObject eventSystem;
+
     private void Awake()
     {
         shop = GameObject.Find("Shop");
@@ -80,7 +82,7 @@ public class OrganCollector : MonoBehaviour
 
             feedback.SetActive(true);
             pauseButton.SetActive(true);
-
+            eventSystem.SetActive(true);
         }
         else
         {
@@ -94,6 +96,7 @@ public class OrganCollector : MonoBehaviour
                 pauseButton.SetActive(false);
             }
 
+            eventSystem.SetActive(false);
             Destroy(gameObject);
         }
 	}
