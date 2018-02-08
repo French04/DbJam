@@ -201,10 +201,10 @@ MonoBehaviour:
   movementSpeed: 3
   lifePoints: 800
   spawn: {fileID: 0}
-  death: {fileID: 0}
+  death: {fileID: 8300000, guid: e1218f931b737574ba4c14a6061289b8, type: 3}
   hurt: {fileID: 0}
   civilianScream: {fileID: 0}
-  volume: 0
+  volume: 0.5
 --- !u!212 &212096610706870892
 SpriteRenderer:
   m_ObjectHideFlags: 1
