@@ -5,14 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class Pause : MonoBehaviour
 {
-    public static Pause instance;
+    
     public GameObject gameOverScreen;
 
     OrganCollector organCollector;
 
     private void Awake()
     {
-        instance = this;
+        //instance = this;
         organCollector = FindObjectOfType<OrganCollector>();
     }
 

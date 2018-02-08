@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     {
         print("Game over");
 
-        Pause.instance.gameOverScreen.SetActive(true);
+        GameObject.Find("HUD").GetComponent<Pause>().gameOverScreen.SetActive(true);
         Time.timeScale = 0;
         
     }
