@@ -43,7 +43,7 @@ public class Pause : MonoBehaviour
         organCollector.lung = 0;
 
         Time.timeScale = 1;
-        SceneManager.LoadScene(LevelCounter.currentLevel);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
 
