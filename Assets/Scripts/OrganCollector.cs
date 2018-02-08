@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class OrganCollector : MonoBehaviour
@@ -14,9 +15,13 @@ public class OrganCollector : MonoBehaviour
     GameObject pauseButton;
     GameObject shop;
 
+    public Text feedbackHeart, feedbackBrain, feedbackLungs, feedbackKidney, feedbackIntestine, feedbackLiver;
+
     private void Awake()
     {
         shop = GameObject.Find("Shop");
+
+
     }
 
 
@@ -47,6 +52,13 @@ public class OrganCollector : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
+        feedbackHeart.text = "" +heart;
+        feedbackBrain.text = "" + brain;
+        feedbackLungs.text = "" + lung;
+        feedbackKidney.text = "" + kidney;
+        feedbackIntestine.text = "" + intestine;
+        feedbackLiver.text = "" + liver;
+
         if (SceneManager.GetActiveScene().name != "MainMenu")
         {
 

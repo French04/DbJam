@@ -259,6 +259,7 @@ public class EnemyBehaviour : MonoBehaviour
 
     private IEnumerator Flickering()
     {
+        
         Color noColor;
         Color yesColor;
         noColor = spriteRenderer.color;
@@ -276,30 +277,39 @@ public class EnemyBehaviour : MonoBehaviour
         }
 
 
-
+        if (lifePoints <= 0)
+        {
+            spriteRenderer.color = yesColor;
+            yield break;
+        }
         spriteRenderer.color = noColor;
         yield return new WaitForSeconds(0.1f);
+
+        if (lifePoints <= 0)
+        {
+            spriteRenderer.color = yesColor;
+            yield break;
+        }
         spriteRenderer.color = yesColor;
         
         yield return new WaitForSeconds(0.1f);
 
-        spriteRenderer.color = noColor;
-        yield return new WaitForSeconds(0.1f);
-        spriteRenderer.color = yesColor;
-       
-        yield return new WaitForSeconds(0.1f);
+        if (lifePoints <= 0)
+        {
+            spriteRenderer.color = yesColor;
+            yield break;
+        }
 
         spriteRenderer.color = noColor;
         yield return new WaitForSeconds(0.1f);
-      
-        spriteRenderer.color = yesColor;
-        yield return new WaitForSeconds(0.1f);
 
-        spriteRenderer.color = noColor;
-        yield return new WaitForSeconds(0.1f);
-        
+        if (lifePoints <= 0)
+        {
+            spriteRenderer.color = yesColor;
+            yield break;
+        }
+
         spriteRenderer.color = yesColor;
-        yield return new WaitForSeconds(0.1f);
 
     }
 }
