@@ -15,7 +15,7 @@ public class OrganCollector : MonoBehaviour
     GameObject pauseButton;
     GameObject shop;
 
-    public Text feedbackHeart, feedbackBrain, feedbackLungs, feedbackKidney, feedbackIntestine, feedbackLiver;
+    public Text feedbackHeart, feedbackBrain, feedbackLungs, feedbackKidney, feedbackIntestine, feedbackLiver, civilNumber;
 
     private void Awake()
     {
@@ -58,6 +58,20 @@ public class OrganCollector : MonoBehaviour
         feedbackKidney.text = "" + kidney;
         feedbackIntestine.text = "" + intestine;
         feedbackLiver.text = "" + liver;
+        civilNumber.text = "" + CivilianManager.instance.CiviliansReamins;
+
+        if(CivilianManager.instance.CiviliansReamins <= 1)
+        {
+            civilNumber.color = Color.red;
+        }
+        else if(CivilianManager.instance.CiviliansReamins == 2)
+        {
+            civilNumber.color = Color.yellow;
+        }
+        else
+        {
+            civilNumber.color = Color.green;
+        }
 
         if (SceneManager.GetActiveScene().name != "MainMenu")
         {
