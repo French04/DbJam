@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     public static void GameOver()
     {
         print("Game over");
+
         Pause.instance.gameOverScreen.SetActive(true);
         Time.timeScale = 0;
         

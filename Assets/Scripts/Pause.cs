@@ -28,6 +28,7 @@ public class Pause : MonoBehaviour
 
     public void MainMenuLevel()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene("MainMenu");
         LevelCounter.currentLevel = 0;
     }
