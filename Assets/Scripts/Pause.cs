@@ -8,9 +8,12 @@ public class Pause : MonoBehaviour
     public static Pause instance;
     public GameObject gameOverScreen;
 
+    OrganCollector organCollector;
+
     private void Awake()
     {
         instance = this;
+        organCollector = FindObjectOfType<OrganCollector>();
     }
 
     public void PauseMenu()
@@ -31,6 +34,13 @@ public class Pause : MonoBehaviour
 
     public void RetryMission()
     {
+        organCollector.brain = 0;
+        organCollector.heart = 0;
+        organCollector.intestine = 0;
+        organCollector.kidney = 0;
+        organCollector.liver = 0;
+        organCollector.lung = 0;
+
         Time.timeScale = 1;
         SceneManager.LoadScene(LevelCounter.currentLevel);
     }
