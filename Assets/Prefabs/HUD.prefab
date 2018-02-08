@@ -759,23 +759,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1264264283642820
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4914776868038406}
-  - component: {fileID: 114513058564008594}
-  - component: {fileID: 114823527950608324}
-  m_Layer: 5
-  m_Name: EventSystem
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1264270396076322
 GameObject:
   m_ObjectHideFlags: 1
@@ -3441,19 +3424,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4914776868038406
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1264264283642820}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.00007151161, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 224171446222183812}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &82763541907965006
 AudioSource:
   m_ObjectHideFlags: 1
@@ -4728,7 +4698,7 @@ MonoBehaviour:
   feedbackIntestine: {fileID: 114929894033224490}
   feedbackLiver: {fileID: 114010971053610088}
   civilNumber: {fileID: 114601853557035438}
-  eventSystem: {fileID: 1264264283642820}
+  eventSystem: {fileID: 0}
 --- !u!114 &114203002204886096
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6824,20 +6794,6 @@ MonoBehaviour:
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   delegates: []
---- !u!114 &114513058564008594
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1264264283642820}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -619905303, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
-  m_sendNavigationEvents: 1
-  m_DragThreshold: 5
 --- !u!114 &114514275535001646
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9218,24 +9174,6 @@ MonoBehaviour:
   kidney: 10
   intestine: 50
   liver: 25
---- !u!114 &114823527950608324
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1264264283642820}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1077351063, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
-  m_InputActionsPerSecond: 10
-  m_RepeatDelay: 0.5
-  m_ForceModuleActive: 0
 --- !u!114 &114828826599626024
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11770,7 +11708,6 @@ RectTransform:
   - {fileID: 224626886858301044}
   - {fileID: 224196986259704424}
   - {fileID: 224923504870614382}
-  - {fileID: 4914776868038406}
   - {fileID: 224269607461540986}
   - {fileID: 224619352247201976}
   m_Father: {fileID: 0}
@@ -12200,7 +12137,7 @@ RectTransform:
   - {fileID: 224261460489760470}
   - {fileID: 224015485595653804}
   m_Father: {fileID: 224171446222183812}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -13477,7 +13414,7 @@ RectTransform:
   - {fileID: 224994804027906332}
   - {fileID: 224210371286338910}
   m_Father: {fileID: 224171446222183812}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
