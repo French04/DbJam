@@ -31,6 +31,7 @@ public class Pause : MonoBehaviour
 
     public void RetryMission()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene(LevelCounter.currentLevel);
     }
 

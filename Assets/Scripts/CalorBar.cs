@@ -11,6 +11,8 @@ public class CalorBar : MonoBehaviour
 
     Player player;
 
+    GameObject currentWeapon;
+
     //float calor = 0;
     //public float maxCalor = 125;
     int Step1 = 20;
@@ -58,55 +60,63 @@ public class CalorBar : MonoBehaviour
             calor -= calorDecrease * Time.deltaTime; ;
         }*/
 
+        try
+        {
+            currentWeapon = player.currentWeapon;
+        }
+        catch
+        {
+            Debug.Log("null");
+        }
 
-        if (SceneManager.GetActiveScene().name != "MainMenu")
+        if (SceneManager.GetActiveScene().name != "MainMenu" && player.currentWeapon != null)
         {
             //block1
-            if (player.currentWeapon.GetComponent<Weapon>().heatLevel < Step1 && feedbackBlock[0].activeSelf)
+            if (currentWeapon.GetComponent<Weapon>().heatLevel < Step1 && feedbackBlock[0].activeSelf)
             {
                 feedbackBlock[0].SetActive(false);
             }
-            else if (player.currentWeapon.GetComponent<Weapon>().heatLevel >= Step1 && !feedbackBlock[0].activeSelf)
+            else if (currentWeapon.GetComponent<Weapon>().heatLevel >= Step1 && !feedbackBlock[0].activeSelf)
             {
                 feedbackBlock[0].SetActive(true);
             }
 
             //block2
-            if (player.currentWeapon.GetComponent<Weapon>().heatLevel < Step2 && feedbackBlock[1].activeSelf)
+            if (currentWeapon.GetComponent<Weapon>().heatLevel < Step2 && feedbackBlock[1].activeSelf)
             {
                 feedbackBlock[1].SetActive(false);
             }
-            else if (player.currentWeapon.GetComponent<Weapon>().heatLevel >= Step2 && !feedbackBlock[1].activeSelf)
+            else if (currentWeapon.GetComponent<Weapon>().heatLevel >= Step2 && !feedbackBlock[1].activeSelf)
             {
                 feedbackBlock[1].SetActive(true);
             }
 
             //block3
-            if (player.currentWeapon.GetComponent<Weapon>().heatLevel < Step3 && feedbackBlock[2].activeSelf)
+            if (currentWeapon.GetComponent<Weapon>().heatLevel < Step3 && feedbackBlock[2].activeSelf)
             {
                 feedbackBlock[2].SetActive(false);
             }
-            else if (player.currentWeapon.GetComponent<Weapon>().heatLevel >= Step3 && !feedbackBlock[2].activeSelf)
+            else if (currentWeapon.GetComponent<Weapon>().heatLevel >= Step3 && !feedbackBlock[2].activeSelf)
             {
                 feedbackBlock[2].SetActive(true);
             }
 
             //block4
-            if (player.currentWeapon.GetComponent<Weapon>().heatLevel < Step4 && feedbackBlock[3].activeSelf)
+            if (currentWeapon.GetComponent<Weapon>().heatLevel < Step4 && feedbackBlock[3].activeSelf)
             {
                 feedbackBlock[3].SetActive(false);
             }
-            else if (player.currentWeapon.GetComponent<Weapon>().heatLevel >= Step4 && !feedbackBlock[3].activeSelf)
+            else if (currentWeapon.GetComponent<Weapon>().heatLevel >= Step4 && !feedbackBlock[3].activeSelf)
             {
                 feedbackBlock[3].SetActive(true);
             }
 
             //block5
-            if (player.currentWeapon.GetComponent<Weapon>().heatLevel < Step5 && feedbackBlock[4].activeSelf)
+            if (currentWeapon.GetComponent<Weapon>().heatLevel < Step5 && feedbackBlock[4].activeSelf)
             {
                 feedbackBlock[4].SetActive(false);
             }
-            else if (player.currentWeapon.GetComponent<Weapon>().heatLevel >= Step5 && !feedbackBlock[4].activeSelf)
+            else if (currentWeapon.GetComponent<Weapon>().heatLevel >= Step5 && !feedbackBlock[4].activeSelf)
             {
                 feedbackBlock[4].SetActive(true);
             }
