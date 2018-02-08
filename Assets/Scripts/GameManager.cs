@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
         if (LevelCounter.currentLevel < 13)
         {
             LevelCounter.currentLevel++;
-            SceneManager.LoadScene(LevelCounter.currentLevel);
+            SceneManager.LoadScene(LevelCounter.currentLevel+1);
         }
         else
         {

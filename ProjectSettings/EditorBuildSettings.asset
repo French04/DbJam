@@ -6,11 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 324a0c8fbf447b64ea2089eb5e96843a
+  - enabled: 1
     path: Assets/Scenes/Livelli/Livello1.unity
     guid: 38120712ae2c4bb49aefb7ac5bdaf63c
-  - enabled: 0
-    path: 
-    guid: 9a290f45b6665994990d90a6ef6d1d87
   - enabled: 1
     path: Assets/Scenes/Livelli/Livello2.unity
     guid: 09b18a53eeab9a14abb33443394f6c99
@@ -50,6 +50,3 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Livelli/Livello14.unity
     guid: 6a8156cfc33b0464495e8861bd24b57e
-  - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
-    guid: 324a0c8fbf447b64ea2089eb5e96843a
