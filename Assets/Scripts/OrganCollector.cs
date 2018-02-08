@@ -73,6 +73,8 @@ public class OrganCollector : MonoBehaviour
             civilNumber.color = Color.green;
         }
 
+
+
         if (SceneManager.GetActiveScene().name != "MainMenu")
         {
 
@@ -91,6 +93,8 @@ public class OrganCollector : MonoBehaviour
                 feedback.SetActive(false);
                 pauseButton.SetActive(false);
             }
+
+            Destroy(gameObject);
         }
 	}
 }

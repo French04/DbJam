@@ -108,12 +108,6 @@ NavMeshSettings:
     tileSize: 256
     accuratePlacement: 0
   m_NavMeshData: {fileID: 0}
---- !u!114 &74084361 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114391874037670808, guid: 373019016b9f57c4597f103d1fe0e8b2,
-    type: 2}
-  m_PrefabInternal: {fileID: 1049998646}
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1001 &220665122
 Prefab:
   m_ObjectHideFlags: 0
@@ -206,11 +200,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 81c1fe6ba33eb4347b684f462ff189ec, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &261852689 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1785711109453992, guid: 373019016b9f57c4597f103d1fe0e8b2,
-    type: 2}
-  m_PrefabInternal: {fileID: 1049998646}
 --- !u!1001 &517167224
 Prefab:
   m_ObjectHideFlags: 0
@@ -905,12 +894,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: be074b2ca146a0949afbb5c2e3695f75, type: 2}
   m_IsPrefabParent: 0
---- !u!114 &660161197 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114527535784849268, guid: 373019016b9f57c4597f103d1fe0e8b2,
-    type: 2}
-  m_PrefabInternal: {fileID: 1049998646}
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1001 &788320158
 Prefab:
   m_ObjectHideFlags: 0
@@ -1020,14 +1003,33 @@ Prefab:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4528645159947778, guid: 5aab97572c30c174aafdab89d318bab0, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0.08227474
+      objectReference: {fileID: 0}
+    - target: {fileID: 4528645159947778, guid: 5aab97572c30c174aafdab89d318bab0, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.9966097
+      objectReference: {fileID: 0}
+    - target: {fileID: 4528645159947778, guid: 5aab97572c30c174aafdab89d318bab0, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -729.439
+      objectReference: {fileID: 0}
+    - target: {fileID: 4887046402118958, guid: 5aab97572c30c174aafdab89d318bab0, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0.26324913
+      objectReference: {fileID: 0}
+    - target: {fileID: 4887046402118958, guid: 5aab97572c30c174aafdab89d318bab0, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.96472794
+      objectReference: {fileID: 0}
+    - target: {fileID: 4887046402118958, guid: 5aab97572c30c174aafdab89d318bab0, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 30.526001
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5aab97572c30c174aafdab89d318bab0, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &884176199 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1407217802834952, guid: 373019016b9f57c4597f103d1fe0e8b2,
-    type: 2}
-  m_PrefabInternal: {fileID: 1049998646}
 --- !u!1001 &978916193
 Prefab:
   m_ObjectHideFlags: 0
@@ -1077,11 +1079,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114742171955166088, guid: 373019016b9f57c4597f103d1fe0e8b2,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 224171446222183812, guid: 373019016b9f57c4597f103d1fe0e8b2,
         type: 2}
       propertyPath: m_LocalPosition.x
@@ -1172,46 +1169,6 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114003297952309044, guid: 373019016b9f57c4597f103d1fe0e8b2,
-        type: 2}
-      propertyPath: leftClick
-      value: 
-      objectReference: {fileID: 74084361}
-    - target: {fileID: 114003297952309044, guid: 373019016b9f57c4597f103d1fe0e8b2,
-        type: 2}
-      propertyPath: rightClick
-      value: 
-      objectReference: {fileID: 660161197}
-    - target: {fileID: 114697527082815600, guid: 373019016b9f57c4597f103d1fe0e8b2,
-        type: 2}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: ed474c9a39a0a374b9cdbca8722b3ed9,
-        type: 3}
-    - target: {fileID: 114803376481200272, guid: 373019016b9f57c4597f103d1fe0e8b2,
-        type: 2}
-      propertyPath: gameOverScreen
-      value: 
-      objectReference: {fileID: 261852689}
-    - target: {fileID: 1785711109453992, guid: 373019016b9f57c4597f103d1fe0e8b2, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114742171955166088, guid: 373019016b9f57c4597f103d1fe0e8b2,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114742171955166088, guid: 373019016b9f57c4597f103d1fe0e8b2,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114742171955166088, guid: 373019016b9f57c4597f103d1fe0e8b2,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 884176199}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 373019016b9f57c4597f103d1fe0e8b2, type: 2}
   m_IsPrefabParent: 0
