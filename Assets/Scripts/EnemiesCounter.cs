@@ -1,4 +1,4 @@
-﻿public class EnemiesCounter
+﻿public class EnemiesCounter 
 {
     public int  lightEnemies =0,
                 lightEnemiesV2 = 0,

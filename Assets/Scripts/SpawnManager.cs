@@ -2,14 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnEnemies : MonoBehaviour
+public class SpawnManager : MonoBehaviour
 {
-    public static SpawnEnemies instance;
+    public static SpawnManager instance;
     public float spawnDistance = 1f;
 
     private List<WaveSpawn> _LevelWaves = new List<WaveSpawn>();
     private List<GameObject> _EnemyesType = new List<GameObject>();
-    private Level _CurrentLevel;
     private EnemiesCounter _EnemiesCounter;
     private GameObject _Boss;
 
@@ -29,17 +28,10 @@ public class SpawnEnemies : MonoBehaviour
     private void Awake()
     {
         instance = this;
-        
-        _CurrentLevel = Resources.Load<SpawnContainer>("Scriptable/ScriptableContainer/SpawnContainer").levels[LevelCounter.currentLevel];
-        _Boss = _CurrentLevel.boss;
         _SpawnPoint = GameObject.Find("SpawnPoint").transform;
         _SpawnEnum = Spawn();
 
-        foreach (WaveSpawn waves in _CurrentLevel.waveNumber )
-        {
-            _LevelWaves.Add(waves);
-        }
-
+        GetLevelInfo();
         GetWaveInfo();
     }
 
@@ -57,14 +49,28 @@ public class SpawnEnemies : MonoBehaviour
         }
     }
 
+    private void GetLevelInfo()
+    {
+        
+        _Boss = GameManager.currentLevel.boss;
+
+        if (_LevelWaves.Count > 0)
+            _LevelWaves.Clear();
+
+        foreach (WaveSpawn waves in GameManager.currentLevel.waveNumber)
+        {
+            _LevelWaves.Add(waves);
+        }
+    }
+
     private void GetWaveInfo()
     {
         if (_EnemyesType.Count > 0)
             _EnemyesType.Clear();
 
-        foreach (GameObject go in _CurrentLevel.waveNumber[_CurrentWave].typeOfEnemies)
+        foreach (GameObject enemy in GameManager.currentLevel.waveNumber[_CurrentWave].typeOfEnemies)
         {
-            _EnemyesType.Add(go);
+            _EnemyesType.Add(enemy);
         }
 
         _WaveTimer = _LevelWaves[_CurrentWave].waveTimer;
@@ -84,12 +90,14 @@ public class SpawnEnemies : MonoBehaviour
         {
             var clone = Instantiate(RandomEnemy());
             clone.transform.position = new Vector2(_SpawnPoint.position.x + i * spawnDistance , _SpawnPoint.position.y);
+
             if (clone.name.Contains("Flying"))
             {
                 var _NewPos = clone.transform.position;
                 _NewPos.y += 10;
                 clone.transform.position = _NewPos;
             }
+
             _WaveEnemiesCount--;
 
             if (_WaveEnemiesCount <= 0)
@@ -97,7 +105,7 @@ public class SpawnEnemies : MonoBehaviour
                 StartCoroutine(StopEnemiesSpawn());
             }
 
-            yield return null;
+            yield return new WaitForSeconds(1f);
         }
         
         
@@ -126,17 +134,22 @@ public class SpawnEnemies : MonoBehaviour
                 yield return StartCoroutine(WaitForTheNextWave());
             }
             print("Waves over, good job (trigger go to the next level)");
-            
-            GameManager.NextLevel();
+            yield return StartCoroutine(GameManager.NextLevel());
+            GetLevelInfo();
+            GetWaveInfo();
+
         }
         yield return null;
-    }
+    }    
+
 
     private IEnumerator WaitForTheNextWave()
     {
         print("Shopping time!");
         _TimeTrigger = false;
+        //Open shop
         yield return new WaitForSeconds(_TimeToNextWave);
+        //Close shop
         print("Shopping time over");
     }
 
@@ -162,7 +175,7 @@ public class SpawnEnemies : MonoBehaviour
             yield return null;
         }
 
-        print("Boss null");
+        print("Boss defeated");
     }
 
     private void GetLastEnemiesLeft()
@@ -181,7 +194,7 @@ public class SpawnEnemies : MonoBehaviour
             loop = false;
             _RandomEnemy  = Random.Range(0, _EnemyesType.Count);
             _EnemyName = _EnemyesType[_RandomEnemy].name;
-            print(_EnemyName);
+            //print(_EnemyName);
 
             if (_EnemyName == "LightEnemy" && _EnemiesCounter.lightEnemies > 0)
             {
@@ -263,3 +276,4 @@ public class SpawnEnemies : MonoBehaviour
 
 
 }
+

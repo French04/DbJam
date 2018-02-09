@@ -112,8 +112,8 @@ public class EnemyBehaviour : MonoBehaviour
 
     private void OnDestroy()
     {
-        if (SpawnEnemies.instance.LastEnemiesStanding > 0)
-            SpawnEnemies.instance.LastEnemiesStanding--;
+        if (SpawnManager.instance.LastEnemiesStanding > 0)
+            SpawnManager.instance.LastEnemiesStanding--;
     }
 
     private void DropOrgans(string enemyName)
