@@ -5,12 +5,12 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public Texture2D aimTexture = null;
+    public Texture2D cursorTexture = null;
     public GameObject currentWeapon = null;
     public GameObject grabber = null;
     public Transform IK;
     public static Player instance;
     ShopEnabler seller;
-    public Transform pern;
     Grabber grabberScript;
 
 
@@ -19,6 +19,8 @@ public class Player : MonoBehaviour
         instance = this;
         seller = GameObject.Find("Seller").GetComponent<ShopEnabler>();
         grabberScript = grabber.GetComponent<Grabber>();
+
+        Cursor.SetCursor(cursorTexture, new Vector2(cursorTexture.width/2, cursorTexture.height/2), CursorMode.Auto);
         Cursor.visible = false;
     }
 

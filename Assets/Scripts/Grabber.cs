@@ -26,7 +26,7 @@ public class Grabber : MonoBehaviour
             lineRenderer.enabled = true;
             //lineRenderer.SetWidth(1, 1);
             lineRenderer.SetPosition(0, bulletSpawn.transform.position);
-            lineRenderer.SetPosition(1, bulletSpawn.transform.position - bulletSpawn.transform.right * -30);
+            lineRenderer.SetPosition(1, bulletSpawn.transform.position - bulletSpawn.transform.right * -50);
         }
         else
         {
