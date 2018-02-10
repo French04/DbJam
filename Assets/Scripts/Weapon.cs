@@ -26,17 +26,22 @@ public class Weapon : MonoBehaviour
     public AudioClip fireSound;
     private AudioSource audioSource;
 	public float volume;
+    LineRenderer lineRenderer = null;
 
 
-    private void Start()
+    void Start()
     {
         effectParticle = GameObject.Find("WFX_MF 4P RIFLE1").GetComponent<ParticleSystem>(); 
         audioSource = GetComponent<AudioSource>();
+        lineRenderer = GetComponent<LineRenderer>();
     }
     
 
     void Update()
     {
+        lineRenderer.SetPosition(0, bulletSpawn.position);
+        lineRenderer.SetPosition(1, bulletSpawn.position - bulletSpawn.right * -50);
+
         if (heatLevel > 100)
         {
             heatLevel = 100;

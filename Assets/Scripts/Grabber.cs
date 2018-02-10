@@ -26,7 +26,7 @@ public class Grabber : MonoBehaviour
             lineRenderer.enabled = true;
             //lineRenderer.SetWidth(1, 1);
             lineRenderer.SetPosition(0, bulletSpawn.transform.position);
-            lineRenderer.SetPosition(1, (mousePos - bulletSpawn.transform.position) * 5);
+            lineRenderer.SetPosition(1, bulletSpawn.transform.position - bulletSpawn.transform.right * -30);
         }
         else
         {
@@ -34,7 +34,7 @@ public class Grabber : MonoBehaviour
             lineRenderer.enabled = false;
         }
         
-        RaycastHit2D[] hits = Physics2D.RaycastAll(bulletSpawn.transform.position, (Vector2)(mousePos - bulletSpawn.transform.position) * 50);
+        RaycastHit2D[] hits = Physics2D.RaycastAll(bulletSpawn.transform.position, (bulletSpawn.transform.position - bulletSpawn.transform.right * -50));
 
         if (hits.Length > 0)
         {
@@ -47,7 +47,7 @@ public class Grabber : MonoBehaviour
                     rbOrgan.velocity = Vector2.zero;
 
                     hit.collider.gameObject.GetComponent<OrganScript>().grabberEnabled = true;
-                    hit.collider.gameObject.transform.position = Vector3.Lerp(hit.collider.gameObject.transform.position, origin.position, grabPower * Time.deltaTime);
+                    hit.collider.gameObject.transform.position = Vector3.Lerp(hit.collider.gameObject.transform.position, origin.position, (grabPower / Vector3.Distance(hit.collider.gameObject.transform.position, origin.position)) * Time.deltaTime);
                 }
             }
         }
