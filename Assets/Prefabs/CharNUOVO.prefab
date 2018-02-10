@@ -2496,10 +2496,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aimTexture: {fileID: 2800000, guid: 1ea199db619ae4443bb6d88e96bbc4e1, type: 3}
+  cursorTexture: {fileID: 0}
   currentWeapon: {fileID: 1458094287154400}
   grabber: {fileID: 1170223037454540}
   IK: {fileID: 4777931636064296}
-  pern: {fileID: 4237618032234544}
 --- !u!114 &114599918479942834
 MonoBehaviour:
   m_ObjectHideFlags: 1
