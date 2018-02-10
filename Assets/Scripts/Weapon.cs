@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(AudioSource))]
 public class Weapon : MonoBehaviour
 {
-    public enum WeaponType { OneShot, OneShot_Heating, Spread, ThreeShots };
+    public enum WeaponType { OneShot, Spread, ThreeShots };
     public WeaponType weaponType;
     public GameObject bullet;
     
@@ -66,53 +66,53 @@ public class Weapon : MonoBehaviour
         {
             heatLevel += heatIncreaseSpeed;
 
-            if (weaponType == WeaponType.OneShot_Heating && heatLevel < 100 || weaponType == WeaponType.OneShot)
+            if (heatLevel < 100)
             {
-                effectParticle.Play();
-                audioSource.PlayOneShot(fireSound, volume);
-                GameObject newBullet = Instantiate(bullet, bulletSpawn.position, bulletSpawn.rotation);
-                newBullet.GetComponent<Rigidbody2D>().AddForce(bulletSpawn.transform.right * firePower, ForceMode2D.Impulse);
-                Destroy(newBullet, bulletPersistence);
-            }
-            else if (weaponType == WeaponType.Spread)
-            {
-                Vector3 mousePosTemp = Input.mousePosition;
-                effectParticle.Play();
-
-                for (int i = 0; i < spreadBulletCount; i++)
-                {
-					audioSource.PlayOneShot(fireSound, volume);
-                    float bulletOffset = Mathf.Sin((float)i * spreadFrequency) * spreadWidth; //Random.Range(-spreadWidth, spreadWidth);
-                    mousePosTemp.y += bulletOffset;
-                    mousePosTemp.x += -bulletOffset;
-
-                    Vector3 mousePos = Camera.main.ScreenToWorldPoint(mousePosTemp);
-                    Vector3 direction = mousePos - transform.position;
-                    direction.z = 0;
-                    direction /= direction.magnitude;
-
-                    GameObject newBullet = Instantiate(bullet, bulletSpawn.position, bulletSpawn.rotation);
-                    newBullet.GetComponent<Rigidbody2D>().AddForce(direction * (firePower * Random.Range(0.8f, 1.2f)), ForceMode2D.Impulse);
-                    Destroy(newBullet, bulletPersistence);
-                }
-            }
-            else if (weaponType == WeaponType.ThreeShots)
-            {
-				audioSource.PlayOneShot(fireSound, volume);
-                for (int i = 0; i < 3; i++)
+                if (weaponType == WeaponType.OneShot)
                 {
                     effectParticle.Play();
+                    audioSource.PlayOneShot(fireSound, volume);
                     GameObject newBullet = Instantiate(bullet, bulletSpawn.position, bulletSpawn.rotation);
                     newBullet.GetComponent<Rigidbody2D>().AddForce(bulletSpawn.transform.right * firePower, ForceMode2D.Impulse);
                     Destroy(newBullet, bulletPersistence);
-                    lastFireTime = Time.time;
-                    yield return new WaitForSeconds(threeShotDifference);
-                }  
-            }
+                }
+                else if (weaponType == WeaponType.Spread)
+                {
+                    Vector3 mousePosTemp = Input.mousePosition;
+                    effectParticle.Play();
 
-            //insert sounds
+                    for (int i = 0; i < spreadBulletCount; i++)
+                    {
+                        audioSource.PlayOneShot(fireSound, volume);
+                        float bulletOffset = Mathf.Sin((float)i * spreadFrequency) * spreadWidth; //Random.Range(-spreadWidth, spreadWidth);
+                        mousePosTemp.y += bulletOffset;
+                        mousePosTemp.x += -bulletOffset;
+
+                        Vector3 mousePos = Camera.main.ScreenToWorldPoint(mousePosTemp);
+                        Vector3 direction = mousePos - transform.position;
+                        direction.z = 0;
+                        direction /= direction.magnitude;
+
+                        GameObject newBullet = Instantiate(bullet, bulletSpawn.position, bulletSpawn.rotation);
+                        newBullet.GetComponent<Rigidbody2D>().AddForce(direction * (firePower * Random.Range(0.8f, 1.2f)), ForceMode2D.Impulse);
+                        Destroy(newBullet, bulletPersistence);
+                    }
+                }
+                else if (weaponType == WeaponType.ThreeShots)
+                {
+                    audioSource.PlayOneShot(fireSound, volume);
+                    for (int i = 0; i < 3; i++)
+                    {
+                        effectParticle.Play();
+                        GameObject newBullet = Instantiate(bullet, bulletSpawn.position, bulletSpawn.rotation);
+                        newBullet.GetComponent<Rigidbody2D>().AddForce(bulletSpawn.transform.right * firePower, ForceMode2D.Impulse);
+                        Destroy(newBullet, bulletPersistence);
+                        lastFireTime = Time.time;
+                        yield return new WaitForSeconds(threeShotDifference);
+                    }
+                }
+            }           //insert sounds
           
-
             lastFireTime = Time.time;
             yield return null;
         }

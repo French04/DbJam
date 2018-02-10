@@ -2171,7 +2171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43fd7cb1cfbd5ab4dab77c064d900ff4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponType: 2
+  weaponType: 1
   bullet: {fileID: 1016532901519986, guid: 06b9b1811fe21254f864d4b174bee476, type: 2}
   damage: 50
   firePower: 30
@@ -2215,7 +2215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43fd7cb1cfbd5ab4dab77c064d900ff4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponType: 1
+  weaponType: 0
   bullet: {fileID: 1016532901519986, guid: 09a525eb59eea6d40be10ade985047a5, type: 2}
   damage: 50
   firePower: 40
@@ -2505,7 +2505,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43fd7cb1cfbd5ab4dab77c064d900ff4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponType: 2
+  weaponType: 1
   bullet: {fileID: 1016532901519986, guid: 06b9b1811fe21254f864d4b174bee476, type: 2}
   damage: 100
   firePower: 30
@@ -2715,7 +2715,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43fd7cb1cfbd5ab4dab77c064d900ff4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponType: 3
+  weaponType: 2
   bullet: {fileID: 1016532901519986, guid: 0080601e9fd243743ae3c9abca60a526, type: 2}
   damage: 100
   firePower: 40
@@ -2941,7 +2941,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43fd7cb1cfbd5ab4dab77c064d900ff4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponType: 1
+  weaponType: 0
   bullet: {fileID: 1016532901519986, guid: 0080601e9fd243743ae3c9abca60a526, type: 2}
   damage: 50
   firePower: 40
