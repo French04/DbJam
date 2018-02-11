@@ -10,14 +10,12 @@ public class Player : MonoBehaviour
     public GameObject grabber = null;
     public Transform IK;
     public static Player instance;
-    SpawnManager spawnManager;
     Grabber grabberScript;
 
 
     void Start()
     {
         instance = this;
-        spawnManager = FindObjectOfType<SpawnManager>();
         grabberScript = grabber.GetComponent<Grabber>();
 
         Cursor.SetCursor(cursorTexture, new Vector2(cursorTexture.width/2, cursorTexture.height/2), CursorMode.Auto);
@@ -29,7 +27,7 @@ public class Player : MonoBehaviour
     {
         grabberScript.lineRenderer.enabled = false;
 
-        if (!spawnManager.shopIsOpen)
+        if (!ShopEnabler.instance.IsShopOpen && !Pause.instance.IsMenuOpen && !GameManager.IsGameOver)
         {
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
            

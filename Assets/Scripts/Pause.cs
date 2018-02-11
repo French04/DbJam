@@ -5,24 +5,30 @@ using UnityEngine.SceneManagement;
 
 public class Pause : MonoBehaviour
 {
-    
-    public GameObject gameOverScreen;
+    public static Pause instance;
+
+    public bool IsMenuOpen { get; private set; }
+
 
     OrganCollector organCollector;
 
     private void Awake()
     {
-        //instance = this;
+        instance = this;
         organCollector = FindObjectOfType<OrganCollector>();
     }
 
     public void PauseMenu()
     {
+        Cursor.visible = true;
+        IsMenuOpen = true;
         Time.timeScale = 0;
     }
 
     public void ResumeGame()
     {
+        Cursor.visible = false;
+        IsMenuOpen = false;
         Time.timeScale = 1;
     }
 
