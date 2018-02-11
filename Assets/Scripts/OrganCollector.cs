@@ -30,7 +30,7 @@ public class OrganCollector : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
-        //Check if instance already exists
+        /*//Check if instance already exists
         if (instance == null)
         {
             //if not, set instance to this
@@ -43,7 +43,7 @@ public class OrganCollector : MonoBehaviour
         {
             //Then destroy this. This enforces our singleton pattern, meaning there can only ever be one instance of a GameManager.
             Destroy(gameObject);
-        }
+        }*/
 
         feedback = GameObject.Find("FeedBack");
         pauseButton = GameObject.Find("PauseButton");

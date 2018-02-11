@@ -200,7 +200,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 4
   lifePoints: 50
-  spawn: {fileID: 8300000, guid: 54ccedfac2620274cbd9f4d62a890069, type: 3}
+  spawn: {fileID: 0}
   death: {fileID: 8300000, guid: e1218f931b737574ba4c14a6061289b8, type: 3}
   hurt: {fileID: 0}
   civilianScream: {fileID: 0}

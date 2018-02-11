@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ShopEnabler : MonoBehaviour
 {
-    Shop shop;
+    /*Shop shop;
     public Texture2D aimTexture;
     public Texture2D cursorTexture;
 
@@ -48,6 +48,7 @@ public class ShopEnabler : MonoBehaviour
     {
         if (shop.gameObject.activeSelf)
         {
+            Cursor.lockState = CursorLockMode.None;
             Cursor.SetCursor(aimTexture, new Vector2(aimTexture.width / 2, aimTexture.height / 2), CursorMode.Auto);
             //shop.gameObject.SetActive(false);
             sellerAnimator.SetBool("IsClicked", true);
@@ -76,5 +77,5 @@ public class ShopEnabler : MonoBehaviour
         sellerAnimator.SetBool("ShopIsClosed", true);
         shop.gameObject.SetActive(false);
         canClickOnSeller = true;
-    }
+    }*/
 }

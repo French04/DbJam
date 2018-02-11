@@ -25,9 +25,11 @@ public class Shop : MonoBehaviour
 
     private void Start()
     {
+        GameObject content = transform.GetChild(0).GetChild(0).GetChild(0).gameObject;
+
         for (int i = 0; i < weapon.Length; i++)
         {
-            weapon[i] = transform.GetChild(i).GetComponent<EnablerWeapon>();
+            weapon[i] = content.transform.GetChild(i).GetComponent<EnablerWeapon>();
         }
 
         weapon[0].purchased = true;
@@ -71,7 +73,7 @@ public class Shop : MonoBehaviour
 
         ChangeColor();
 
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
 
         audioSource = GetComponent<AudioSource>();
     }
