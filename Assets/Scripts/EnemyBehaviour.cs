@@ -62,23 +62,22 @@ public class EnemyBehaviour : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.collider.CompareTag("Bullet"))
+        if(collision.collider.tag == "Bullet")
         {
             var _BulletDmg = Player.instance.currentWeapon.GetComponent<Weapon>().damage;
+            lifePoints -= _BulletDmg;
+            audioSource.PlayOneShot(hurt, volume);
             StartCoroutine(Flickering());
             
 
             if (lifePoints <= 0 && coroutineStarted == false)
             {
+                lifePoints = 0;
                 coroutineStarted = true;
                 _CanMove = false;
                 DropOrgans(_EnemyName);
             }        
-            else if (lifePoints > 0)
-            {
-                lifePoints -= _BulletDmg;
-                audioSource.PlayOneShot(spawn, volume);
-            }
+           
         }
 
     }
@@ -90,16 +89,17 @@ public class EnemyBehaviour : MonoBehaviour
         {
             var _BulletDmg = Player.instance.currentWeapon.GetComponent<Weapon>().damage;
 
+            lifePoints -= _BulletDmg;
+            audioSource.PlayOneShot(hurt, volume);
+
             if (lifePoints <= 0 && coroutineStarted == false)
             {
+                lifePoints = 0;
                 coroutineStarted = true;
                 _CanMove = false;
                 DropOrgans(_EnemyName);
             }
-            else if (lifePoints > 0)
-            {
-                lifePoints -= _BulletDmg;
-            }
+            
         }
 
         if(collision.tag == "Civilian")
