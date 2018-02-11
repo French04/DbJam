@@ -11,9 +11,6 @@ public class SpawnManager : MonoBehaviour
     private List<GameObject> _EnemyesType = new List<GameObject>();
     private EnemiesCounter _EnemiesCounter;
     private GameObject _Boss;
-    private Animator _shopAnimator;
-    [HideInInspector]
-    public bool shopIsOpen = false;
 
     private Transform _SpawnPoint;
     private IEnumerator _SpawnEnum;
@@ -33,8 +30,6 @@ public class SpawnManager : MonoBehaviour
         instance = this;
         _SpawnPoint = GameObject.Find("SpawnPoint").transform;
         _SpawnEnum = Spawn();
-        _shopAnimator = GameObject.Find("Shop").GetComponent<Animator>();
-
         GetLevelInfo();
         GetWaveInfo();
     }
@@ -152,12 +147,11 @@ public class SpawnManager : MonoBehaviour
         print("Shopping time!");
         _TimeTrigger = false;
         //Open shop
-        _shopAnimator.SetBool("isOpen", true);
-        shopIsOpen = true;
+        ShopEnabler.instance.ShopActivation(true);
         yield return new WaitForSeconds(_TimeToNextWave);
         //Close shop
-        _shopAnimator.SetBool("isOpen", false);
-        shopIsOpen = false;
+        ShopEnabler.instance.ShopActivation(false);
+        
         print("Shopping time over");
     }
 

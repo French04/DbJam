@@ -6,10 +6,13 @@ public class GameManager : MonoBehaviour
 {
     public static SpawnContainer spawnContainer;
     public static Level currentLevel;
+    private static GameObject _GameOverScreen;
+    public static bool IsGameOver { get; private set; }
 
     private void Awake()
     {
         spawnContainer = Resources.Load<SpawnContainer>("Scriptable/ScriptableContainer/SpawnContainer");
+        _GameOverScreen = GameObject.Find("HUD").transform.GetChild(4).gameObject;
         GetLevelInfo();
     }
 
@@ -17,7 +20,9 @@ public class GameManager : MonoBehaviour
     public static void GameOver()
     {
         print("Game over");
-        GameObject.Find("HUD").GetComponent<Pause>().gameOverScreen.SetActive(true);
+        _GameOverScreen.SetActive(true);
+        Cursor.visible = true;
+        IsGameOver = true;
         Time.timeScale = 0;
         
     }
@@ -42,9 +47,9 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public static void JumpToLevel(int i)
+    public static void LoadGameScene()
     {
-        SceneManager.LoadScene(i);
+        SceneManager.LoadScene("GameScene");
     }
 
     private static void GetLevelInfo()

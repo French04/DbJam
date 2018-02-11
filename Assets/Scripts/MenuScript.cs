@@ -33,7 +33,7 @@ public class MenuScript : MonoBehaviour {
     public void LoadLevel(int i)
     {
         LevelCounter.currentLevel = i-1;
-        GameManager.JumpToLevel(i);
+        GameManager.LoadGameScene();
     }
 
     

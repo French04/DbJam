@@ -4,6 +4,36 @@ using UnityEngine;
 
 public class ShopEnabler : MonoBehaviour
 {
+    public static ShopEnabler instance;
+    private Animator _ShopAnim;
+    private bool _IsShopOpen = false;
+
+    public bool IsShopOpen { get { return _IsShopOpen; } }
+
+
+    private void Awake()
+    {
+        instance = this;
+        _ShopAnim = GameObject.Find("Shop").GetComponent<Animator>();
+    }
+
+    public void ShopActivation(bool openShop)
+    {
+        if (openShop)
+        {
+            _ShopAnim.SetBool("isOpen", true);
+            _IsShopOpen = true;
+            Cursor.visible = true;
+        }
+        else
+        {
+            _ShopAnim.SetBool("isOpen", false);
+            _IsShopOpen = false;
+            Cursor.visible = false;
+        }
+    }
+
+
     /*Shop shop;
     public Texture2D aimTexture;
     public Texture2D cursorTexture;
